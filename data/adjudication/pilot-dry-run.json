@@ -1,0 +1,67 @@
+{
+  "format": "adjudication-run-report-v1",
+  "model": "test/dry-run-model",
+  "promptVersion": "dependency-adjudication-v1",
+  "dryRun": true,
+  "requestLimit": 0,
+  "maxAttemptsPerCandidate": 2,
+  "selectedCandidateIds": [
+    "GITHUB_ADD_A_REPOSITORY_COLLABORATOR:output:$.data.repository.id=>GITHUB_ADD_REPO_TO_ORG_SECRET_WITH_SELECTED_ACCESS:input:$.repository_id",
+    "GITHUB_ADD_A_REPOSITORY_COLLABORATOR:output:$.data.repository.id=>GITHUB_ADD_REPO_TO_ORG_SECRET_WITH_SELECTED_VISIBILITY:input:$.repository_id",
+    "GITHUB_ADD_A_REPOSITORY_COLLABORATOR:output:$.data.repository.id=>GITHUB_ADD_SELECTED_REPOSITORY_TO_ORGANIZATION_SECRET:input:$.repository_id",
+    "GITHUB_ADD_A_REPOSITORY_COLLABORATOR:output:$.data.repository.id=>GITHUB_ADD_SELECTED_REPOSITORY_TO_ORGANIZATION_VARIABLE:input:$.repository_id"
+  ],
+  "startedAt": "2026-07-21T10:03:02.545Z",
+  "updatedAt": "2026-07-21T10:03:02.655Z",
+  "completedAt": "2026-07-21T10:03:02.655Z",
+  "stopReason": "COMPLETED",
+  "requestCount": 0,
+  "results": {
+    "GITHUB_ADD_A_REPOSITORY_COLLABORATOR:output:$.data.repository.id=>GITHUB_ADD_REPO_TO_ORG_SECRET_WITH_SELECTED_ACCESS:input:$.repository_id": {
+      "status": "DRY_RUN",
+      "candidateId": "GITHUB_ADD_A_REPOSITORY_COLLABORATOR:output:$.data.repository.id=>GITHUB_ADD_REPO_TO_ORG_SECRET_WITH_SELECTED_ACCESS:input:$.repository_id",
+      "model": "test/dry-run-model",
+      "cacheKey": "00bd64cb109a5cfeb27836274e3c5f1f3b2711a5d8eb8b1942f1263ec1107b4a",
+      "requestHash": "1b642684a80440c1f62d50948ef4921d56ab5053888d35f63c995af119820df1",
+      "attempts": 0,
+      "llmRequestsMade": false
+    },
+    "GITHUB_ADD_A_REPOSITORY_COLLABORATOR:output:$.data.repository.id=>GITHUB_ADD_REPO_TO_ORG_SECRET_WITH_SELECTED_VISIBILITY:input:$.repository_id": {
+      "status": "DRY_RUN",
+      "candidateId": "GITHUB_ADD_A_REPOSITORY_COLLABORATOR:output:$.data.repository.id=>GITHUB_ADD_REPO_TO_ORG_SECRET_WITH_SELECTED_VISIBILITY:input:$.repository_id",
+      "model": "test/dry-run-model",
+      "cacheKey": "1964c2bcd7ebf15d48398f315624296b88f3019f4a1066713299779e72d0a19b",
+      "requestHash": "fba947ca4ceab787b205a5abcadd7e2ba3900da8c76eb1439b864770ff9b503d",
+      "attempts": 0,
+      "llmRequestsMade": false
+    },
+    "GITHUB_ADD_A_REPOSITORY_COLLABORATOR:output:$.data.repository.id=>GITHUB_ADD_SELECTED_REPOSITORY_TO_ORGANIZATION_SECRET:input:$.repository_id": {
+      "status": "DRY_RUN",
+      "candidateId": "GITHUB_ADD_A_REPOSITORY_COLLABORATOR:output:$.data.repository.id=>GITHUB_ADD_SELECTED_REPOSITORY_TO_ORGANIZATION_SECRET:input:$.repository_id",
+      "model": "test/dry-run-model",
+      "cacheKey": "4887d8d60775f41003518176b92f073f3b2e4e943d88e78070978190e14e6921",
+      "requestHash": "f2ab7898aaa23d92a5183049a7feeaf2c3992ff9a7e4dfc6f8e0083f1cd9b897",
+      "attempts": 0,
+      "llmRequestsMade": false
+    },
+    "GITHUB_ADD_A_REPOSITORY_COLLABORATOR:output:$.data.repository.id=>GITHUB_ADD_SELECTED_REPOSITORY_TO_ORGANIZATION_VARIABLE:input:$.repository_id": {
+      "status": "DRY_RUN",
+      "candidateId": "GITHUB_ADD_A_REPOSITORY_COLLABORATOR:output:$.data.repository.id=>GITHUB_ADD_SELECTED_REPOSITORY_TO_ORGANIZATION_VARIABLE:input:$.repository_id",
+      "model": "test/dry-run-model",
+      "cacheKey": "8d163d5ae460f5b23e6edaa87d32a7566e906d25ef5b96e44120295b2535e467",
+      "requestHash": "7878e4104a2e7af8082e57d9857a976b172e96c0db7d8ca6269f7561f885443e",
+      "attempts": 0,
+      "llmRequestsMade": false
+    }
+  },
+  "summary": {
+    "selectedCandidateCount": 4,
+    "terminalResultCount": 4,
+    "completedCount": 0,
+    "cacheHitCount": 0,
+    "dryRunCount": 4,
+    "failedCount": 0,
+    "requestCount": 0,
+    "resumedResultCount": 0
+  }
+}

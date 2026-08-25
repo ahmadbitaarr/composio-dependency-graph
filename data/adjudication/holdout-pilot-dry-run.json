@@ -1,0 +1,247 @@
+{
+  "format": "adjudication-run-report-v1",
+  "model": "test/dry-run-model",
+  "promptVersion": "dependency-adjudication-v1",
+  "dryRun": true,
+  "requestLimit": 0,
+  "maxAttemptsPerCandidate": 2,
+  "selectedCandidateIds": [
+    "GITHUB_COMMIT_MULTIPLE_FILES:output:$.data.commit.sha=>GITHUB_CREATE_A_COMMIT_STATUS:input:$.sha",
+    "GITHUB_CREATE_AN_ORGANIZATION_REPOSITORY:output:$.data.name=>GITHUB_SYNC_FORK_BRANCH_WITH_UPSTREAM:input:$.repo",
+    "GITHUB_CREATE_A_GITHUB_PAGES_SITE:output:$.data.source.branch=>GITHUB_CREATE_A_DEPLOYMENT_BRANCH_POLICY:input:$.name",
+    "GITHUB_FIND_REPOSITORIES:output:$.data.items[].full_name=>GITHUB_ADD_APP_ACCESS_RESTRICTIONS:input:$.repo",
+    "GITHUB_FIND_REPOSITORIES:output:$.data.items[].full_name=>GITHUB_CREATE_A_DEPLOYMENT:input:$.owner",
+    "GITHUB_GET_COMMIT_COMMENT:output:$.data.commit_id=>GITHUB_GET_A_COMMIT:input:$.ref",
+    "GITHUB_LIST_ATTESTATION_REPOSITORIES:output:$.data.repositories[].name=>GITHUB_CREATE_A_DEPLOYMENT:input:$.repo",
+    "GITHUB_LIST_REPO_ACCESS_BY_TOKEN:output:$.data.repositories[].owner.login=>GITHUB_ADD_STATUS_CHECK_CONTEXTS:input:$.owner",
+    "GITHUB_SEARCH_ISSUES_AND_PULL_REQUESTS:output:$.data.items[].number=>GITHUB_ADD_ASSIGNEES_TO_AN_ISSUE:input:$.issue_number",
+    "GITHUB_SEARCH_ISSUES_AND_PULL_REQUESTS:output:$.data.items[].number=>GITHUB_DELETE_ISSUE_REACTION:input:$.issue_number",
+    "GITHUB_UPDATE_A_CHECK_RUN:output:$.data.head_sha=>GITHUB_GET_COMMIT_STATUSES:input:$.ref",
+    "GITHUB_UPDATE_A_COMMIT_COMMENT:output:$.data.commit_id=>GITHUB_COMPARE_TWO_COMMITS:input:$.basehead",
+    "GOOGLESUPER_CREATE_CALENDAR:output:$.data.id=>GOOGLESUPER_FREE_BUSY_QUERY:input:$.items[].id",
+    "GOOGLESUPER_CREATE_DRIVE:output:$.data.backgroundImageFile.id=>GOOGLESUPER_CREATE_SHORTCUT_TO_FILE:input:$.target_id",
+    "GOOGLESUPER_CREATE_FILE:output:$.data.id=>GOOGLESUPER_DELETE_COMMENT:input:$.comment_id",
+    "GOOGLESUPER_CREATE_FILE_FROM_TEXT:output:$.data.id=>GOOGLESUPER_ADD_PARENT:input:$.id",
+    "GOOGLESUPER_CREATE_FOLDER:output:$.data.id=>GOOGLESUPER_INSERT_CHILD:input:$.id",
+    "GOOGLESUPER_CREATE_TEAM_DRIVE:output:$.data.backgroundImageFile.id=>GOOGLESUPER_CREATE_COMMENT:input:$.file_id",
+    "GOOGLESUPER_GET_CALENDAR_PROFILE:output:$.data.id=>GOOGLESUPER_CALENDARS_DELETE:input:$.calendar_id",
+    "GOOGLESUPER_GET_CHANGE:output:$.data.drive.backgroundImageFile.id=>GOOGLESUPER_CREATE_REPLY:input:$.file_id",
+    "GOOGLESUPER_GET_CONTACTS:output:$.data.connections[].emailAddresses[].value=>GOOGLESUPER_CREATE_EMAIL_DRAFT:input:$.recipient_email",
+    "GOOGLESUPER_GET_CONTACTS:output:$.data.connections[].emailAddresses[].value=>GOOGLESUPER_UPDATE_DRAFT:input:$.recipient_email"
+  ],
+  "startedAt": "2026-07-21T10:17:45.611Z",
+  "updatedAt": "2026-07-21T10:17:46.445Z",
+  "completedAt": "2026-07-21T10:17:46.445Z",
+  "stopReason": "COMPLETED",
+  "requestCount": 0,
+  "results": {
+    "GITHUB_COMMIT_MULTIPLE_FILES:output:$.data.commit.sha=>GITHUB_CREATE_A_COMMIT_STATUS:input:$.sha": {
+      "status": "DRY_RUN",
+      "candidateId": "GITHUB_COMMIT_MULTIPLE_FILES:output:$.data.commit.sha=>GITHUB_CREATE_A_COMMIT_STATUS:input:$.sha",
+      "model": "test/dry-run-model",
+      "cacheKey": "c6aaf0fe089d57828563ecffbea8713cb40139519d46c46bf27e6f8fafda77df",
+      "requestHash": "bc85f2249e2ab3d7553d3b5f23dbb386f8595f0279d0bdf53019bab143d6cd82",
+      "attempts": 0,
+      "llmRequestsMade": false
+    },
+    "GITHUB_CREATE_AN_ORGANIZATION_REPOSITORY:output:$.data.name=>GITHUB_SYNC_FORK_BRANCH_WITH_UPSTREAM:input:$.repo": {
+      "status": "DRY_RUN",
+      "candidateId": "GITHUB_CREATE_AN_ORGANIZATION_REPOSITORY:output:$.data.name=>GITHUB_SYNC_FORK_BRANCH_WITH_UPSTREAM:input:$.repo",
+      "model": "test/dry-run-model",
+      "cacheKey": "df2c45c82d315979803be948f273a851989da2d5f2d0b87511bc81219418eca7",
+      "requestHash": "6963c8a7b98a926d12fd764aab2a1e68b4c5ee08905a8ec8a3af45a5b31ccf25",
+      "attempts": 0,
+      "llmRequestsMade": false
+    },
+    "GITHUB_CREATE_A_GITHUB_PAGES_SITE:output:$.data.source.branch=>GITHUB_CREATE_A_DEPLOYMENT_BRANCH_POLICY:input:$.name": {
+      "status": "DRY_RUN",
+      "candidateId": "GITHUB_CREATE_A_GITHUB_PAGES_SITE:output:$.data.source.branch=>GITHUB_CREATE_A_DEPLOYMENT_BRANCH_POLICY:input:$.name",
+      "model": "test/dry-run-model",
+      "cacheKey": "0a37d369115f0637ae84302693d9a08f80501f177d03e046012e44b723f84edb",
+      "requestHash": "26e39b10a9c388862857c9dd2abaf84e08e90cfb17b7bf8077605d7eb9b97906",
+      "attempts": 0,
+      "llmRequestsMade": false
+    },
+    "GITHUB_FIND_REPOSITORIES:output:$.data.items[].full_name=>GITHUB_ADD_APP_ACCESS_RESTRICTIONS:input:$.repo": {
+      "status": "DRY_RUN",
+      "candidateId": "GITHUB_FIND_REPOSITORIES:output:$.data.items[].full_name=>GITHUB_ADD_APP_ACCESS_RESTRICTIONS:input:$.repo",
+      "model": "test/dry-run-model",
+      "cacheKey": "6fff85db04b44f17e8a6b78d84341c2e59078de24e975345c91ca67f21534976",
+      "requestHash": "8f4b6b5836d0af16819ebced4e88ac2efc4d7f064b6b864c4fae997ca28aa923",
+      "attempts": 0,
+      "llmRequestsMade": false
+    },
+    "GITHUB_FIND_REPOSITORIES:output:$.data.items[].full_name=>GITHUB_CREATE_A_DEPLOYMENT:input:$.owner": {
+      "status": "DRY_RUN",
+      "candidateId": "GITHUB_FIND_REPOSITORIES:output:$.data.items[].full_name=>GITHUB_CREATE_A_DEPLOYMENT:input:$.owner",
+      "model": "test/dry-run-model",
+      "cacheKey": "5e781129e819ed8fca9d754b4f4e78270455685bbdfd0741c4422561bc205208",
+      "requestHash": "6861598d98f452b739c882599b843db896f52813ed0671e77423056316754960",
+      "attempts": 0,
+      "llmRequestsMade": false
+    },
+    "GITHUB_GET_COMMIT_COMMENT:output:$.data.commit_id=>GITHUB_GET_A_COMMIT:input:$.ref": {
+      "status": "DRY_RUN",
+      "candidateId": "GITHUB_GET_COMMIT_COMMENT:output:$.data.commit_id=>GITHUB_GET_A_COMMIT:input:$.ref",
+      "model": "test/dry-run-model",
+      "cacheKey": "07f126274556926bdd183e4511eb19c5100533d88251a30fa37431e3c4c25f1f",
+      "requestHash": "3b266bee1ea4e3879f15595445791794ef4aac1b72eb225283ad9141545eff92",
+      "attempts": 0,
+      "llmRequestsMade": false
+    },
+    "GITHUB_LIST_ATTESTATION_REPOSITORIES:output:$.data.repositories[].name=>GITHUB_CREATE_A_DEPLOYMENT:input:$.repo": {
+      "status": "DRY_RUN",
+      "candidateId": "GITHUB_LIST_ATTESTATION_REPOSITORIES:output:$.data.repositories[].name=>GITHUB_CREATE_A_DEPLOYMENT:input:$.repo",
+      "model": "test/dry-run-model",
+      "cacheKey": "212c432a7e46f7c056e4e0aaae4b5bd709afef199faa2ce65d7e14774dd2174c",
+      "requestHash": "e932d8d4c943af64b759dad5fd344851d091ec1a2aee14782bc26a081e6c1d83",
+      "attempts": 0,
+      "llmRequestsMade": false
+    },
+    "GITHUB_LIST_REPO_ACCESS_BY_TOKEN:output:$.data.repositories[].owner.login=>GITHUB_ADD_STATUS_CHECK_CONTEXTS:input:$.owner": {
+      "status": "DRY_RUN",
+      "candidateId": "GITHUB_LIST_REPO_ACCESS_BY_TOKEN:output:$.data.repositories[].owner.login=>GITHUB_ADD_STATUS_CHECK_CONTEXTS:input:$.owner",
+      "model": "test/dry-run-model",
+      "cacheKey": "76eab1949c6bd59cf5537b88c5351ae82fd0b1887f2cfcafcc7a1fea8e470cb9",
+      "requestHash": "4c64395a595215bf381fce6787ade65a4ed06b55f0d90474cd6c28ba90773184",
+      "attempts": 0,
+      "llmRequestsMade": false
+    },
+    "GITHUB_SEARCH_ISSUES_AND_PULL_REQUESTS:output:$.data.items[].number=>GITHUB_ADD_ASSIGNEES_TO_AN_ISSUE:input:$.issue_number": {
+      "status": "DRY_RUN",
+      "candidateId": "GITHUB_SEARCH_ISSUES_AND_PULL_REQUESTS:output:$.data.items[].number=>GITHUB_ADD_ASSIGNEES_TO_AN_ISSUE:input:$.issue_number",
+      "model": "test/dry-run-model",
+      "cacheKey": "36ac581816ba0a4b619836b67881e371b044260e5389a99e8cd3ef920bb8eb40",
+      "requestHash": "4f7e23c2be55f9cc5cf1c3218b4396161a30057e3118469d4142b301cc5d9747",
+      "attempts": 0,
+      "llmRequestsMade": false
+    },
+    "GITHUB_SEARCH_ISSUES_AND_PULL_REQUESTS:output:$.data.items[].number=>GITHUB_DELETE_ISSUE_REACTION:input:$.issue_number": {
+      "status": "DRY_RUN",
+      "candidateId": "GITHUB_SEARCH_ISSUES_AND_PULL_REQUESTS:output:$.data.items[].number=>GITHUB_DELETE_ISSUE_REACTION:input:$.issue_number",
+      "model": "test/dry-run-model",
+      "cacheKey": "594f67fb35dc1227803311c27764f6fd76876defebe4651fa5c2718679fff950",
+      "requestHash": "8b1845e83bd3a3ce3ec0228aa5bf7dcfc9b75d87d85fafc2fc4d0a42fe419e36",
+      "attempts": 0,
+      "llmRequestsMade": false
+    },
+    "GITHUB_UPDATE_A_CHECK_RUN:output:$.data.head_sha=>GITHUB_GET_COMMIT_STATUSES:input:$.ref": {
+      "status": "DRY_RUN",
+      "candidateId": "GITHUB_UPDATE_A_CHECK_RUN:output:$.data.head_sha=>GITHUB_GET_COMMIT_STATUSES:input:$.ref",
+      "model": "test/dry-run-model",
+      "cacheKey": "75dde3b07e182233104493358f57abb9f8a6363f70fda76052df199ecee5a53b",
+      "requestHash": "4bcf3b03a5a44ea22c91fa0e96a709425d65a21904c81c7cb9f52f72cc39394d",
+      "attempts": 0,
+      "llmRequestsMade": false
+    },
+    "GITHUB_UPDATE_A_COMMIT_COMMENT:output:$.data.commit_id=>GITHUB_COMPARE_TWO_COMMITS:input:$.basehead": {
+      "status": "DRY_RUN",
+      "candidateId": "GITHUB_UPDATE_A_COMMIT_COMMENT:output:$.data.commit_id=>GITHUB_COMPARE_TWO_COMMITS:input:$.basehead",
+      "model": "test/dry-run-model",
+      "cacheKey": "0218efd28b4e8d0363cfeafd5166ff3b878dc1287dfe5fdac97b9b396bee1a90",
+      "requestHash": "8111c5a6fe639e43be2ade0811a70a9054897e9cb29a2f62025663ad845e47b4",
+      "attempts": 0,
+      "llmRequestsMade": false
+    },
+    "GOOGLESUPER_CREATE_CALENDAR:output:$.data.id=>GOOGLESUPER_FREE_BUSY_QUERY:input:$.items[].id": {
+      "status": "DRY_RUN",
+      "candidateId": "GOOGLESUPER_CREATE_CALENDAR:output:$.data.id=>GOOGLESUPER_FREE_BUSY_QUERY:input:$.items[].id",
+      "model": "test/dry-run-model",
+      "cacheKey": "ea80c6ea365751d9d72d5a8a87aa1f54c91976ce9984d40f3971b6246b143a3c",
+      "requestHash": "205344259b0f503d225076562161d7c28265a96100a5dd73ceb7dc27078b1385",
+      "attempts": 0,
+      "llmRequestsMade": false
+    },
+    "GOOGLESUPER_CREATE_DRIVE:output:$.data.backgroundImageFile.id=>GOOGLESUPER_CREATE_SHORTCUT_TO_FILE:input:$.target_id": {
+      "status": "DRY_RUN",
+      "candidateId": "GOOGLESUPER_CREATE_DRIVE:output:$.data.backgroundImageFile.id=>GOOGLESUPER_CREATE_SHORTCUT_TO_FILE:input:$.target_id",
+      "model": "test/dry-run-model",
+      "cacheKey": "c18f0c48f06d340601d41b6de01c331291802c166f50185f27fd755011f2e214",
+      "requestHash": "0a7f14b4dc042d6008730d9be6d639c6eb7f9e99a9cb14f2dc96be5857e30634",
+      "attempts": 0,
+      "llmRequestsMade": false
+    },
+    "GOOGLESUPER_CREATE_FILE:output:$.data.id=>GOOGLESUPER_DELETE_COMMENT:input:$.comment_id": {
+      "status": "DRY_RUN",
+      "candidateId": "GOOGLESUPER_CREATE_FILE:output:$.data.id=>GOOGLESUPER_DELETE_COMMENT:input:$.comment_id",
+      "model": "test/dry-run-model",
+      "cacheKey": "724e774ea41693dd8f7f217593fcf941e1362f1c8b607a5e6114dc5d38126fed",
+      "requestHash": "d0a50bff0fa071eb8e01743c59af4500ff2a332c60a45fffc1e17f8c875050dc",
+      "attempts": 0,
+      "llmRequestsMade": false
+    },
+    "GOOGLESUPER_CREATE_FILE_FROM_TEXT:output:$.data.id=>GOOGLESUPER_ADD_PARENT:input:$.id": {
+      "status": "DRY_RUN",
+      "candidateId": "GOOGLESUPER_CREATE_FILE_FROM_TEXT:output:$.data.id=>GOOGLESUPER_ADD_PARENT:input:$.id",
+      "model": "test/dry-run-model",
+      "cacheKey": "eaa44528710cbd9310ed2c68c31a7ee638a32117d9966d7104f4af52cfa61398",
+      "requestHash": "f07dc5aeab5e06a70e116bd621ed29a31add180842f016f8f73a3b5071059091",
+      "attempts": 0,
+      "llmRequestsMade": false
+    },
+    "GOOGLESUPER_CREATE_FOLDER:output:$.data.id=>GOOGLESUPER_INSERT_CHILD:input:$.id": {
+      "status": "DRY_RUN",
+      "candidateId": "GOOGLESUPER_CREATE_FOLDER:output:$.data.id=>GOOGLESUPER_INSERT_CHILD:input:$.id",
+      "model": "test/dry-run-model",
+      "cacheKey": "814e76bcbc914ec277e9bdbec616e9c271380a71bad9ca7d22ccf950c8b880fd",
+      "requestHash": "cec01f9952b3a18c13ed756490818e46c08e05a3b22e054396e5304aef8db8e9",
+      "attempts": 0,
+      "llmRequestsMade": false
+    },
+    "GOOGLESUPER_CREATE_TEAM_DRIVE:output:$.data.backgroundImageFile.id=>GOOGLESUPER_CREATE_COMMENT:input:$.file_id": {
+      "status": "DRY_RUN",
+      "candidateId": "GOOGLESUPER_CREATE_TEAM_DRIVE:output:$.data.backgroundImageFile.id=>GOOGLESUPER_CREATE_COMMENT:input:$.file_id",
+      "model": "test/dry-run-model",
+      "cacheKey": "1176f51875b64733010ab3a3e392fcd1a35944271f8b960cd7b53bc1decf3644",
+      "requestHash": "ed98680195929ee29c04a8e8963ef3b1705eeca9ebf546eb5956f94ed9078d4d",
+      "attempts": 0,
+      "llmRequestsMade": false
+    },
+    "GOOGLESUPER_GET_CALENDAR_PROFILE:output:$.data.id=>GOOGLESUPER_CALENDARS_DELETE:input:$.calendar_id": {
+      "status": "DRY_RUN",
+      "candidateId": "GOOGLESUPER_GET_CALENDAR_PROFILE:output:$.data.id=>GOOGLESUPER_CALENDARS_DELETE:input:$.calendar_id",
+      "model": "test/dry-run-model",
+      "cacheKey": "119cd62c3a6c08b0aa07675404f6c08a4c29fb7f16a3c4ae8331724933b9032b",
+      "requestHash": "cb230851bbf8e3381f20d1b4b78de49d171ddb8ec970b29f651a903bd2220320",
+      "attempts": 0,
+      "llmRequestsMade": false
+    },
+    "GOOGLESUPER_GET_CHANGE:output:$.data.drive.backgroundImageFile.id=>GOOGLESUPER_CREATE_REPLY:input:$.file_id": {
+      "status": "DRY_RUN",
+      "candidateId": "GOOGLESUPER_GET_CHANGE:output:$.data.drive.backgroundImageFile.id=>GOOGLESUPER_CREATE_REPLY:input:$.file_id",
+      "model": "test/dry-run-model",
+      "cacheKey": "7c9514233fdcd26b841aca3876daefc384cf9a2048ca958b940b659ddca4805b",
+      "requestHash": "b0d87b6fa44b3a556855ec18d685a5e10ba26874994e24463800f5d38ed4dd81",
+      "attempts": 0,
+      "llmRequestsMade": false
+    },
+    "GOOGLESUPER_GET_CONTACTS:output:$.data.connections[].emailAddresses[].value=>GOOGLESUPER_CREATE_EMAIL_DRAFT:input:$.recipient_email": {
+      "status": "DRY_RUN",
+      "candidateId": "GOOGLESUPER_GET_CONTACTS:output:$.data.connections[].emailAddresses[].value=>GOOGLESUPER_CREATE_EMAIL_DRAFT:input:$.recipient_email",
+      "model": "test/dry-run-model",
+      "cacheKey": "baa14327caba36d59764d93a9da4afd10fece8ff4d972622e891fbac7ac2aa17",
+      "requestHash": "116e8a2d9e42dd6bd394cc727035374224b44ab7ff6c87481ea8f2e69aecf787",
+      "attempts": 0,
+      "llmRequestsMade": false
+    },
+    "GOOGLESUPER_GET_CONTACTS:output:$.data.connections[].emailAddresses[].value=>GOOGLESUPER_UPDATE_DRAFT:input:$.recipient_email": {
+      "status": "DRY_RUN",
+      "candidateId": "GOOGLESUPER_GET_CONTACTS:output:$.data.connections[].emailAddresses[].value=>GOOGLESUPER_UPDATE_DRAFT:input:$.recipient_email",
+      "model": "test/dry-run-model",
+      "cacheKey": "9f15808a427a7bf40603b53c9f71967d8dff94ca113dfaef092755dd2086176c",
+      "requestHash": "2ae55764b375d56120af5cc0c5be6d1a3da20a59da15ae6d0b15f026af257f5b",
+      "attempts": 0,
+      "llmRequestsMade": false
+    }
+  },
+  "summary": {
+    "selectedCandidateCount": 22,
+    "terminalResultCount": 22,
+    "completedCount": 0,
+    "cacheHitCount": 0,
+    "dryRunCount": 22,
+    "failedCount": 0,
+    "requestCount": 0,
+    "resumedResultCount": 0
+  }
+}

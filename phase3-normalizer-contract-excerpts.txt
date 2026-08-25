@@ -1,0 +1,648 @@
+===== src/normalize/index.ts :: classifyGoogleService =====
+function classifyGoogleService(
+  tool: RawRecord,
+  slug: string,
+  name: string,
+  description: string,
+  tags: string[],
+): string {
+  const scopeText = asStringArray(tool.scopes)
+    .join(" ")
+    .toLowerCase();
+
+  /*
+   * OAuth scopes are stronger evidence than descriptions.
+   * Descriptions may mention another service only to recommend or reject it.
+   */
+  if (/\/auth\/contacts(?:\.|\b)/.test(scopeText)) {
+    return "people";
+  }
+
+  if (/\/auth\/calendar(?:\.|\b)/.test(scopeText)) {
+    return "calendar";
+  }
+
+  if (/\/auth\/spreadsheets(?:\.|\b)/.test(scopeText)) {
+    return "sheets";
+  }
+
+  if (/\/auth\/documents(?:\.|\b)/.test(scopeText)) {
+    return "docs";
+  }
+
+  if (/\/auth\/presentations(?:\.|\b)/.test(scopeText)) {
+    return "slides";
+  }
+
+  if (/\/auth\/tasks(?:\.|\b)/.test(scopeText)) {
+    return "tasks";
+  }
+
+  if (/\/auth\/meet|meetings\.space/.test(scopeText)) {
+    return "meet";
+  }
+
+  if (/\/auth\/analytics(?:\.|\b)/.test(scopeText)) {
+    return "analytics";
+  }
+
+  if (
+    /mail\.google\.com/.test(scopeText) ||
+    /\/auth\/gmail(?:\.|\b)/.test(scopeText)
+  ) {
+    return "gmail";
+  }
+
+  if (/\/auth\/drive(?:\.|\b)/.test(scopeText)) {
+    return "drive";
+  }
+
+  /*
+   * Slug, name, and tags are stronger than prose descriptions because
+   * descriptions may reference alternative tools from another service.
+   */
+  const primaryText = lowerText(slug, name, ...tags);
+
+  if (/people|contact/.test(primaryText)) return "people";
+  if (/gmail|mailbox|email thread|email message/.test(primaryText)) {
+    return "gmail";
+  }
+  if (/calendar|event/.test(primaryText)) return "calendar";
+  if (/spreadsheet|sheets/.test(primaryText)) return "sheets";
+  if (/google docs|document/.test(primaryText)) return "docs";
+  if (/slides|presentation/.test(primaryText)) return "slides";
+  if (/tasks|task list/.test(primaryText)) return "tasks";
+  if (/google meet|conference/.test(primaryText)) return "meet";
+  if (/analytics/.test(primaryText)) return "analytics";
+  if (/drive|shared drive|folder|file permission/.test(primaryText)) {
+    return "drive";
+  }
+
+  /*
+   * Full descriptions are only a final fallback.
+   */
+  const fallbackText = lowerText(primaryText, description);
+
+  if (/people|contact/.test(fallbackText)) return "people";
+  if (/gmail|mailbox|email thread|email message/.test(fallbackText)) {
+    return "gmail";
+  }
+  if (/calendar|event/.test(fallbackText)) return "calendar";
+  if (/spreadsheet|sheets/.test(fallbackText)) return "sheets";
+  if (/google docs|document/.test(fallbackText)) return "docs";
+  if (/slides|presentation/.test(fallbackText)) return "slides";
+  if (/tasks|task list/.test(fallbackText)) return "tasks";
+  if (/google meet|conference/.test(fallbackText)) return "meet";
+  if (/analytics/.test(fallbackText)) return "analytics";
+  if (/drive|shared drive|folder|file permission/.test(fallbackText)) {
+    return "drive";
+  }
+
+  return "unknown";
+}
+
+===== src/normalize/index.ts :: classifyResourceFamily =====
+function classifyResourceFamily(
+  toolkit: ToolkitSlug,
+  service: string,
+  text: string,
+): string {
+  if (toolkit === "googlesuper") {
+    if (service === "gmail") {
+      if (/thread/.test(text)) return "thread";
+      if (/draft/.test(text)) return "draft";
+      if (/label/.test(text)) return "label";
+      if (/message|email/.test(text)) return "message";
+    }
+
+    if (service === "people") return "contact";
+
+    if (service === "calendar") {
+      if (/calendar list|list calendars|calendar identifier/.test(text)) {
+        return "calendar";
+      }
+      if (/event/.test(text)) return "event";
+      return "calendar";
+    }
+
+    if (service === "drive") {
+      if (/permission/.test(text)) return "permission";
+      return "file";
+    }
+
+    if (service === "sheets") {
+      if (/spreadsheet/.test(text)) return "spreadsheet";
+      if (/sheet/.test(text)) return "sheet";
+    }
+
+    return service === "unknown" ? "unknown" : service;
+  }
+
+  const orderedPatterns: Array<[RegExp, string]> = [
+    [/release asset/, "release_asset"],
+    [/workflow run/, "workflow_run"],
+    [/workflow job|\bjob\b/, "job"],
+    [/workflow/, "workflow"],
+    [/pull request|\bpull\b/, "pull_request"],
+    [/\bissue\b/, "issue"],
+    [/repository content|contents? of (a |the )?repository/, "repository_content"],
+    [/\brelease\b/, "release"],
+    [/\bbranch\b|git ref|reference/, "branch"],
+    [/\bcommit\b/, "commit"],
+    [/organization|\borg\b/, "organization"],
+    [/\bteam\b/, "team"],
+    [/environment/, "environment"],
+    [/projects? v2|projects? classic|\bproject\b/, "project"],
+    [/repository|\brepo\b/, "repository"],
+    [/\buser\b/, "user"],
+  ];
+
+  return orderedPatterns.find(([pattern]) => pattern.test(text))?.[1] ?? "unknown";
+}
+
+===== src/normalize/index.ts :: classifyProtocol =====
+function classifyProtocol(text: string): ProtocolStyle {
+  if (/graphql/.test(text)) return "GRAPHQL";
+  if (/ai[- ]optimized|convenience|helper|primary tool|multi-step/.test(text)) {
+    return "COMPOSIO_CONVENIENCE_HELPER";
+  }
+  return "REST";
+}
+
+===== src/normalize/index.ts :: classifyLifecycle =====
+function classifyLifecycle(
+  tool: RawRecord,
+  text: string,
+): {
+  deprecated: boolean;
+  legacy: boolean;
+  beta: boolean;
+  lifecycle: ApiLifecycle;
+} {
+  const tags = asStringArray(tool.tags).join(" ").toLowerCase();
+  const deprecated =
+    tool.is_deprecated === true ||
+    tool.isDeprecated === true ||
+    /deprecated/.test(`${text} ${tags}`);
+  const legacy = /legacy/.test(`${text} ${tags}`);
+  const beta = /\bbeta\b|preview/.test(`${text} ${tags}`);
+
+  let lifecycle: ApiLifecycle = "CURRENT";
+  if (deprecated) lifecycle = "DEPRECATED";
+  else if (legacy) lifecycle = "LEGACY";
+  else if (beta) lifecycle = "BETA";
+
+  return { deprecated, legacy, beta, lifecycle };
+}
+
+===== src/normalize/index.ts :: entityResourceEvidence =====
+function entityResourceEvidence(
+  entity: CanonicalEntityDefinition,
+  field: NormalizedSchemaField,
+  metadata: NormalizedToolMetadata,
+): string[] {
+  const evidence: string[] = [];
+  const entityTerms = unique([
+    entity.resourceFamily,
+    ...entity.id.split(/[._]/),
+  ]).filter((term) => term.length > 2);
+
+  const pathText = lowerText(
+    field.jsonPath,
+    field.sourceSchemaPath,
+    ...field.refTrace,
+  );
+  const descriptionText = field.description.toLowerCase();
+  const toolText = lowerText(
+    metadata.slug,
+    metadata.name,
+    metadata.description,
+    metadata.resourceFamily,
+  );
+
+  if (metadata.resourceFamily === entity.resourceFamily) {
+    evidence.push(`tool resource family is ${entity.resourceFamily}`);
+  }
+
+  if (entityTerms.some((term) => pathText.includes(term.replace(/_/g, "")) || pathText.includes(term))) {
+    evidence.push("resource-specific field path or reference");
+  }
+
+  if (entityTerms.some((term) => descriptionText.includes(term.replace(/_/g, " ")))) {
+    evidence.push("resource-specific field description");
+  }
+
+  if (entityTerms.some((term) => toolText.includes(term.replace(/_/g, " ")))) {
+    evidence.push("resource-specific tool metadata");
+  }
+
+  return unique(evidence);
+}
+
+===== src/normalize/index.ts :: assignCanonicalEntity =====
+function assignCanonicalEntity(
+  field: NormalizedSchemaField,
+  metadata: NormalizedToolMetadata,
+  ontology: OntologyDocument,
+): void {
+  const fieldName = normalizedName(field.originalFieldName);
+  const description = field.description.toLowerCase();
+  const candidates: Array<{
+    definition: CanonicalEntityDefinition;
+    score: number;
+    evidence: string[];
+    reasonCodes: string[];
+  }> = [];
+
+  for (const definition of ontology.entities) {
+    if (definition.service !== metadata.underlyingService) continue;
+    if (!definition.allowedProtocols.includes(metadata.protocol)) continue;
+
+    const compatibleType = field.jsonTypes.some((type) =>
+      definition.jsonTypes.includes(type),
+    );
+    if (!compatibleType) continue;
+
+    const exactAliases = definition.aliases.exactFieldNames.map(normalizedName);
+    const contextualAliases = definition.aliases.contextualFieldNames.map(normalizedName);
+    const exactMatch = exactAliases.includes(fieldName);
+    const contextualMatch = contextualAliases.includes(fieldName);
+    const descriptionMatches = definition.aliases.descriptionPatterns.filter(
+      (pattern) => description.includes(pattern.toLowerCase()),
+    );
+    const resourceEvidence = entityResourceEvidence(
+      definition,
+      field,
+      metadata,
+    );
+
+    if (!exactMatch && !contextualMatch && descriptionMatches.length === 0) {
+      continue;
+    }
+
+    const ambiguousAlias = new Set([
+      "id",
+      "number",
+      "name",
+      "login",
+      "value",
+      "sha",
+      "ref",
+      "runid",
+    ]).has(fieldName);
+
+    const localResourceEvidence = resourceEvidence.filter((item) =>
+      item === "resource-specific field path or reference" ||
+      item === "resource-specific field description",
+    );
+
+    if (
+      definition.requiresResourceContext &&
+      ((!exactMatch && resourceEvidence.length === 0) ||
+        (ambiguousAlias && localResourceEvidence.length === 0))
+    ) {
+      continue;
+    }
+
+    let score = 2;
+    const evidence = ["compatible JSON type", "compatible service"];
+    const reasonCodes = ["TYPE_COMPATIBLE", "SERVICE_COMPATIBLE"];
+
+    if (exactMatch) {
+      score += 5;
+      evidence.push(`exact field alias: ${field.originalFieldName}`);
+      reasonCodes.push("ENTITY_EXACT_FIELD_ALIAS");
+    }
+
+    if (contextualMatch) {
+      score += 2;
+      evidence.push(`contextual field alias: ${field.originalFieldName}`);
+      reasonCodes.push("ENTITY_CONTEXTUAL_FIELD_ALIAS");
+    }
+
+    if (descriptionMatches.length > 0) {
+      score += 3;
+      evidence.push(`description pattern: ${descriptionMatches[0]}`);
+      reasonCodes.push("ENTITY_DESCRIPTION_MATCH");
+    }
+
+    if (metadata.resourceFamily === definition.resourceFamily) {
+      score += 2;
+      reasonCodes.push("RESOURCE_FAMILY_MATCH");
+    }
+
+    if (resourceEvidence.length > 0) {
+      score += Math.min(3, resourceEvidence.length);
+      evidence.push(...resourceEvidence);
+      reasonCodes.push("RESOURCE_CONTEXT_MATCH");
+    }
+
+    candidates.push({
+      definition,
+      score,
+      evidence: unique(evidence),
+      reasonCodes: unique(reasonCodes),
+    });
+  }
+
+  candidates.sort((left, right) => right.score - left.score);
+  const best = candidates[0];
+  const second = candidates[1];
+
+  if (!best || best.score < 7 || (second && second.score === best.score)) {
+    return;
+  }
+
+  const confidence = best.score >= 10 ? "HIGH" : best.score >= 8 ? "MEDIUM" : "LOW";
+
+  field.canonicalEntity = {
+    entity: best.definition.id,
+    confidence,
+    evidence: best.evidence,
+    reasonCodes: best.reasonCodes,
+  };
+}
+
+===== src/normalize/index.ts :: normalizeTool =====
+function normalizeTool(
+  location: RawToolLocation,
+  ontology: OntologyDocument,
+): NormalizedTool {
+  const { tool, toolkit, rawFile, snapshotFormat, pageIndex, itemIndex } = location;
+  const slug = asString(tool.slug) ?? `UNKNOWN_${pageIndex}_${itemIndex}`;
+  const name = asString(tool.name) ?? slug;
+  const description = asString(tool.description) ?? "";
+  const tags = asStringArray(tool.tags);
+  const classificationText = lowerText(slug, name, description, ...tags);
+
+  const service =
+  toolkit === "github"
+    ? "github"
+    : classifyGoogleService(
+        tool,
+        slug,
+        name,
+        description,
+        tags,
+      );
+
+  const resourceFamily = classifyResourceFamily(
+    toolkit,
+    service,
+    classificationText,
+  );
+  const protocol = classifyProtocol(classificationText);
+  const lifecycle = classifyLifecycle(tool, classificationText);
+
+  const input = schemaLocation(tool, "input_parameters", "inputParameters");
+  const output = schemaLocation(tool, "output_parameters", "outputParameters");
+  const inputWalk = normalizeSchemaFields(slug, "input", input.schema);
+  const outputWalk = normalizeSchemaFields(slug, "output", output.schema);
+
+  const metadata: NormalizedToolMetadata = {
+    slug,
+    name,
+    description,
+    toolkit,
+    toolkitVersion: toolVersion(tool),
+    availableToolkitVersions: asStringArray(
+      tool.available_versions ?? tool.availableVersions,
+    ),
+    underlyingService: service,
+    resourceFamily,
+    actionFamily: classifyActionFamily(classificationText),
+    deprecated: lifecycle.deprecated,
+    legacy: lifecycle.legacy,
+    beta: lifecycle.beta,
+    lifecycle: lifecycle.lifecycle,
+    apiGeneration:
+      asString(tool.api_generation) ??
+      asString(tool.apiGeneration) ??
+      "unknown",
+    apiVariant:
+      asString(tool.api_variant) ?? asString(tool.apiVariant) ?? "default",
+    protocol,
+    abstractionLevel: classifyAbstractionLevel(protocol, classificationText),
+    inputSchemaCompleteness: classifySchemaCompleteness(
+      input.schema,
+      inputWalk,
+    ),
+    outputSchemaCompleteness: classifySchemaCompleteness(
+      output.schema,
+      outputWalk,
+    ),
+    oauthScopes: asStringArray(tool.scopes),
+    resourceScopes: [],
+    tags,
+    rawSource: {
+      rawFile,
+      snapshotFormat,
+      pageIndex,
+      itemIndex,
+      toolSlug: slug,
+    },
+  };
+
+  const warnings: string[] = [];
+  if (metadata.underlyingService === "unknown") warnings.push("UNKNOWN_SERVICE");
+  if (metadata.resourceFamily === "unknown") warnings.push("UNKNOWN_RESOURCE_FAMILY");
+  if (input.location === null) warnings.push("INPUT_SCHEMA_LOCATION_MISSING");
+  if (output.location === null) warnings.push("OUTPUT_SCHEMA_LOCATION_MISSING");
+  if (metadata.toolkitVersion === null) warnings.push("TOOLKIT_VERSION_MISSING");
+
+  const normalized: NormalizedTool = {
+    metadata,
+    inputFields: inputWalk.fields,
+    outputFields: outputWalk.fields,
+    unresolvedReferences: unique([
+      ...inputWalk.unresolvedReferences,
+      ...outputWalk.unresolvedReferences,
+    ]),
+    unsupportedSchemaFeatures: unique([
+      ...inputWalk.unsupportedSchemaFeatures,
+      ...outputWalk.unsupportedSchemaFeatures,
+    ]),
+    warnings,
+  };
+
+  applyFieldSemantics(normalized, ontology);
+  return normalized;
+}
+
+===== tests/normalize.test.ts :: COMPLETE CURRENT FILE =====
+import { describe, expect, test } from "bun:test";
+import type { NormalizedToolCatalog } from "../src/types";
+import { buildNormalizedCatalog } from "../src/normalize/index";
+
+const catalog: NormalizedToolCatalog = await buildNormalizedCatalog();
+
+function tool(slug: string) {
+  const found = catalog.tools.find((candidate) => candidate.metadata.slug === slug);
+  expect(found, `Expected normalized tool ${slug}`).toBeDefined();
+  return found!;
+}
+
+function field(slug: string, direction: "input" | "output", jsonPath: string) {
+  const normalizedTool = tool(slug);
+  const fields = direction === "input"
+    ? normalizedTool.inputFields
+    : normalizedTool.outputFields;
+  const found = fields.find((candidate) => candidate.jsonPath === jsonPath);
+  expect(found, `Expected ${slug} ${direction} field ${jsonPath}`).toBeDefined();
+  return found!;
+}
+
+describe("normalized catalog", () => {
+  test("classifies People search from its Contacts scopes", () => {
+  const peopleSearch = tool("GOOGLESUPER_SEARCH_PEOPLE");
+
+  expect(peopleSearch.metadata.underlyingService).toBe("people");
+  expect(peopleSearch.metadata.resourceFamily).toBe("contact");
+  expect(peopleSearch.metadata.outputSchemaCompleteness).toBe("GENERIC");
+  });
+  test("preserves every verified raw tool", () => {
+    expect(catalog.format).toBe("normalized-tool-catalog-v1");
+    expect(catalog.summary.toolCount).toBe(1360);
+    expect(catalog.summary.toolsByToolkit.googlesuper).toBe(467);
+    expect(catalog.summary.toolsByToolkit.github).toBe(893);
+  });
+
+  test("preserves verified toolkit versions", () => {
+    const google = catalog.sourceFiles.find((source) => source.toolkit === "googlesuper");
+    const github = catalog.sourceFiles.find((source) => source.toolkit === "github");
+
+    expect(google?.toolkitVersion).toBe("20260714_00");
+    expect(github?.toolkitVersion).toBe("20260713_00");
+  });
+
+  test("uses unique exact tool slugs", () => {
+    const slugs = catalog.tools.map((candidate) => candidate.metadata.slug);
+    expect(new Set(slugs).size).toBe(slugs.length);
+  });
+
+  test("uses stable unique field IDs inside each tool", () => {
+    for (const normalizedTool of catalog.tools) {
+      const fields = [...normalizedTool.inputFields, ...normalizedTool.outputFields];
+      const ids = fields.map((candidate) => candidate.fieldId);
+      expect(new Set(ids).size).toBe(ids.length);
+    }
+  });
+
+  test("runtime JSON paths do not contain schema reference markers", () => {
+    for (const normalizedTool of catalog.tools) {
+      for (const normalizedField of [
+        ...normalizedTool.inputFields,
+        ...normalizedTool.outputFields,
+      ]) {
+        expect(normalizedField.jsonPath.includes("$ref")).toBe(false);
+        expect(normalizedField.sourceSchemaPath.length).toBeGreaterThan(0);
+      }
+    }
+  });
+});
+
+describe("representative Google normalization", () => {
+  test("classifies Gmail thread IDs conservatively", () => {
+    const threadId = field(
+      "GOOGLESUPER_LIST_THREADS",
+      "output",
+      "$.data.threads[].id",
+    );
+
+    expect(threadId.canonicalEntity?.entity).toBe("gmail.thread_id");
+    expect(threadId.canonicalEntity?.confidence).toBe("HIGH");
+    expect(threadId.safeForInference).toBe(true);
+    expect(threadId.arrayDepth).toBeGreaterThan(0);
+  });
+
+  test("keeps message and thread identifiers separate", () => {
+    const messageId = field(
+      "GOOGLESUPER_LIST_MESSAGES",
+      "output",
+      "$.data.messages[].id",
+    );
+    const threadId = field(
+      "GOOGLESUPER_LIST_MESSAGES",
+      "output",
+      "$.data.messages[].threadId",
+    );
+
+    expect(messageId.canonicalEntity?.entity).toBe("gmail.message_id");
+    expect(threadId.canonicalEntity?.entity).toBe("gmail.thread_id");
+    expect(messageId.canonicalEntity?.entity).not.toBe(
+      threadId.canonicalEntity?.entity,
+    );
+    expect(tool("GOOGLESUPER_LIST_MESSAGES").metadata.deprecated).toBe(true);
+  });
+
+  test("classifies Calendar event ID separately from calendar ID", () => {
+    const calendarId = field(
+      "GOOGLESUPER_EVENTS_LIST",
+      "input",
+      "$.calendarId",
+    );
+    const eventId = field(
+      "GOOGLESUPER_EVENTS_LIST",
+      "output",
+      "$.data.items[].id",
+    );
+
+    expect(calendarId.canonicalEntity?.entity).toBe("google.calendar_id");
+    expect(eventId.canonicalEntity?.entity).toBe("google.event_id");
+  });
+
+  test("does not treat a generic People result object as a resolved email", () => {
+    const results = field(
+      "GOOGLESUPER_SEARCH_PEOPLE",
+      "output",
+      "$.data.results[]",
+    );
+
+    expect(results.canonicalEntity).toBeUndefined();
+    expect(results.safeForInference).toBe(false);
+  });
+});
+
+describe("representative GitHub normalization", () => {
+  test("keeps workflow run ID and run number distinct when declared", () => {
+    const normalizedTool = tool(
+      "GITHUB_LIST_WORKFLOW_RUNS_FOR_A_REPOSITORY",
+    );
+
+    const runId = normalizedTool.outputFields.find(
+      (candidate) => candidate.canonicalEntity?.entity === "github.workflow_run_id",
+    );
+    const runNumber = normalizedTool.outputFields.find(
+      (candidate) => candidate.canonicalEntity?.entity === "github.workflow_run_number",
+    );
+
+    expect(runId).toBeDefined();
+    expect(runNumber).toBeDefined();
+    expect(runId?.jsonPath).not.toBe(runNumber?.jsonPath);
+  });
+
+  test("preserves composition evidence for repository contents", () => {
+    const normalizedTool = tool("GITHUB_GET_REPOSITORY_CONTENT");
+    const compositionCount = normalizedTool.outputFields.reduce(
+      (total, candidate) => total + candidate.compositions.length,
+      0,
+    );
+
+    expect(compositionCount).toBeGreaterThan(0);
+  });
+
+  test("keeps repository REST IDs and GraphQL node IDs separate", () => {
+    const normalizedTool = tool("GITHUB_FIND_REPOSITORIES");
+    const restId = normalizedTool.outputFields.find(
+      (candidate) => candidate.canonicalEntity?.entity === "github.repository_id",
+    );
+    const nodeId = normalizedTool.outputFields.find(
+      (candidate) => candidate.canonicalEntity?.entity === "github.repository_node_id",
+    );
+
+    expect(restId).toBeDefined();
+    expect(nodeId).toBeDefined();
+    expect(restId?.jsonPath).not.toBe(nodeId?.jsonPath);
+  });
+});
+

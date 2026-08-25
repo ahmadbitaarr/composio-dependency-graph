@@ -1,0 +1,27 @@
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Dependencies
+node_modules/
+
+# Logs and caches
+*.log
+.cache/
+coverage/
+dist/
+
+# OS and editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Temporary implementation files
+APPLY.txt
+VERIFY.txt
+*.zip
+data/candidates.rejected.json
+data/normalized-tools.json
+data/candidates.uncertain.json

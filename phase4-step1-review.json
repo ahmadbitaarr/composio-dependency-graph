@@ -1,0 +1,2850 @@
+{
+  "uncertainArtifactShape": {
+    "topLevelKeys": [
+      "format",
+      "decision",
+      "generatedFrom",
+      "summary",
+      "candidates"
+    ],
+    "generatedFrom": {
+      "catalogFormat": "normalized-tool-catalog-v1",
+      "toolCount": 1360,
+      "toolkitCounts": {
+        "github": 893,
+        "googlesuper": 467
+      },
+      "toolkitVersions": {
+        "github": "20260713_00",
+        "googlesuper": "20260714_00"
+      }
+    },
+    "summary": {
+      "candidateCount": 25151,
+      "reasonCounts": {
+        "LOW_CONFIDENCE_CANONICAL_ENTITY": 760,
+        "COLLECTION_REQUIRES_SELECTION": 23016,
+        "TRANSFORMATION_REQUIRED": 890,
+        "AMBIGUOUS_ISSUE_PULL_REQUEST_NUMBER": 52,
+        "DEPRECATED_PRODUCER": 428,
+        "IDENTITY_RESOLUTION_REQUIRES_DISAMBIGUATION": 5
+      },
+      "selectionRequiredCount": 23073,
+      "transformationRequiredCount": 890,
+      "disambiguationRequiredCount": 25151
+    },
+    "firstCandidateKeys": [
+      "id",
+      "producer",
+      "consumer",
+      "generationReasons",
+      "matchedCanonicalEntity",
+      "hardSeparation",
+      "primaryReason",
+      "reasonCodes",
+      "selectionRequired",
+      "transformationRequired",
+      "disambiguationRequired",
+      "checks"
+    ],
+    "firstProducerKeys": [
+      "toolSlug",
+      "fieldId",
+      "path",
+      "fieldName",
+      "jsonTypes",
+      "canonicalEntity",
+      "canonicalConfidence",
+      "safeForInference",
+      "arrayDepth",
+      "effectivelyRequired",
+      "toolkit",
+      "service",
+      "resourceFamily",
+      "protocol",
+      "deprecated",
+      "schemaCompleteness"
+    ],
+    "firstConsumerKeys": [
+      "toolSlug",
+      "fieldId",
+      "path",
+      "fieldName",
+      "jsonTypes",
+      "canonicalEntity",
+      "canonicalConfidence",
+      "safeForInference",
+      "arrayDepth",
+      "effectivelyRequired",
+      "toolkit",
+      "service",
+      "resourceFamily",
+      "protocol",
+      "deprecated",
+      "schemaCompleteness"
+    ],
+    "firstChecksKeys": [
+      "entityCompatible",
+      "typeCompatible",
+      "serviceCompatible",
+      "protocolIdentityCompatible",
+      "producerSafeForInference",
+      "consumerHasCanonicalEntity",
+      "producerAddsNewInformation",
+      "scopeStatus",
+      "producerScopeEntities",
+      "consumerScopeEntities",
+      "sharedScopeEntities"
+    ]
+  },
+  "representativeCandidates": [
+    {
+      "candidateId": "GOOGLESUPER_ADD_LABEL_TO_EMAIL:output:$.data.labelIds[]=>GOOGLESUPER_DELETE_LABEL:input:$.label_id",
+      "deterministicRecord": {
+        "id": "GOOGLESUPER_ADD_LABEL_TO_EMAIL:output:$.data.labelIds[]=>GOOGLESUPER_DELETE_LABEL:input:$.label_id",
+        "producer": {
+          "toolSlug": "GOOGLESUPER_ADD_LABEL_TO_EMAIL",
+          "fieldId": "GOOGLESUPER_ADD_LABEL_TO_EMAIL:output:$.data.labelIds[]",
+          "path": "$.data.labelIds[]",
+          "fieldName": "labelIds",
+          "jsonTypes": [
+            "string"
+          ],
+          "canonicalEntity": "gmail.label_id",
+          "canonicalConfidence": "HIGH",
+          "safeForInference": true,
+          "arrayDepth": 1,
+          "effectivelyRequired": false,
+          "toolkit": "googlesuper",
+          "service": "gmail",
+          "resourceFamily": "label",
+          "protocol": "REST",
+          "deprecated": false,
+          "schemaCompleteness": "COMPLETE"
+        },
+        "consumer": {
+          "toolSlug": "GOOGLESUPER_DELETE_LABEL",
+          "fieldId": "GOOGLESUPER_DELETE_LABEL:input:$.label_id",
+          "path": "$.label_id",
+          "fieldName": "label_id",
+          "jsonTypes": [
+            "string"
+          ],
+          "canonicalEntity": "gmail.label_id",
+          "canonicalConfidence": "HIGH",
+          "safeForInference": true,
+          "arrayDepth": 0,
+          "effectivelyRequired": true,
+          "toolkit": "googlesuper",
+          "service": "gmail",
+          "resourceFamily": "label",
+          "protocol": "REST",
+          "deprecated": false,
+          "schemaCompleteness": "COMPLETE"
+        },
+        "generationReasons": [
+          "EXACT_CANONICAL_ENTITY"
+        ],
+        "matchedCanonicalEntity": "gmail.label_id",
+        "hardSeparation": null,
+        "primaryReason": "COLLECTION_REQUIRES_SELECTION",
+        "reasonCodes": [
+          "COLLECTION_REQUIRES_SELECTION",
+          "ENTITY_COMPATIBLE",
+          "TYPE_COMPATIBLE",
+          "SERVICE_COMPATIBLE",
+          "PROTOCOL_IDENTITY_COMPATIBLE",
+          "PRODUCER_SAFE_FOR_INFERENCE",
+          "PRODUCER_ADDS_NEW_INFORMATION",
+          "SCOPE_NO_REQUIRED_CONTEXT"
+        ],
+        "selectionRequired": true,
+        "transformationRequired": false,
+        "disambiguationRequired": true,
+        "checks": {
+          "entityCompatible": true,
+          "typeCompatible": true,
+          "serviceCompatible": true,
+          "protocolIdentityCompatible": true,
+          "producerSafeForInference": true,
+          "consumerHasCanonicalEntity": true,
+          "producerAddsNewInformation": true,
+          "scopeStatus": "NO_REQUIRED_CONTEXT",
+          "producerScopeEntities": [
+            "gmail.message_id"
+          ],
+          "consumerScopeEntities": [],
+          "sharedScopeEntities": []
+        }
+      },
+      "producerEvidence": {
+        "exactEndpoint": {
+          "toolSlug": "GOOGLESUPER_ADD_LABEL_TO_EMAIL",
+          "fieldId": "GOOGLESUPER_ADD_LABEL_TO_EMAIL:output:$.data.labelIds[]",
+          "path": "$.data.labelIds[]",
+          "fieldName": "labelIds",
+          "jsonTypes": [
+            "string"
+          ],
+          "canonicalEntity": "gmail.label_id",
+          "canonicalConfidence": "HIGH",
+          "safeForInference": true,
+          "arrayDepth": 1,
+          "effectivelyRequired": false,
+          "toolkit": "googlesuper",
+          "service": "gmail",
+          "resourceFamily": "label",
+          "protocol": "REST",
+          "deprecated": false,
+          "schemaCompleteness": "COMPLETE"
+        },
+        "toolMetadata": {
+          "slug": "GOOGLESUPER_ADD_LABEL_TO_EMAIL",
+          "toolkit": "googlesuper",
+          "toolkitVersion": "20260714_00",
+          "name": "Modify email labels",
+          "description": "Adds and/or removes specified Gmail labels for a message; ensure `message_id` and all `label_ids` are valid (use 'listLabels' for custom label IDs).",
+          "service": "gmail",
+          "resourceFamily": "label",
+          "actionFamily": "update",
+          "protocol": "REST",
+          "apiGeneration": "unknown",
+          "abstractionLevel": "RESOURCE_OPERATION",
+          "deprecated": false,
+          "inputSchemaCompleteness": "COMPLETE",
+          "outputSchemaCompleteness": "COMPLETE"
+        },
+        "normalizedField": {
+          "fieldId": "GOOGLESUPER_ADD_LABEL_TO_EMAIL:output:$.data.labelIds[]",
+          "jsonPath": "$.data.labelIds[]",
+          "sourceSchemaPath": "$.$defs.GmailMessageResponse.properties.labelIds.items",
+          "originalFieldName": "labelIds",
+          "parentPath": "$.data",
+          "jsonTypes": [
+            "string"
+          ],
+          "requiredAtParent": false,
+          "effectivelyRequired": false,
+          "arrayDepth": 1,
+          "description": "",
+          "canonicalEntity": {
+            "entity": "gmail.label_id",
+            "confidence": "HIGH",
+            "evidence": [
+              "compatible JSON type",
+              "compatible service",
+              "exact field alias: labelIds",
+              "tool resource family is label"
+            ],
+            "reasonCodes": [
+              "TYPE_COMPATIBLE",
+              "SERVICE_COMPATIBLE",
+              "ENTITY_EXACT_FIELD_ALIAS",
+              "RESOURCE_FAMILY_MATCH",
+              "RESOURCE_CONTEXT_MATCH"
+            ]
+          },
+          "safeForInference": true,
+          "safetyReasons": [
+            "HIGH_CONFIDENCE_CANONICAL_ENTITY"
+          ],
+          "possibleValueSources": [
+            {
+              "source": "TOOL_OUTPUT",
+              "reason": "The value is declared in this tool's output schema.",
+              "preferred": true
+            }
+          ],
+          "scopes": [
+            {
+              "kind": "account",
+              "requiredForIdentity": false,
+              "evidence": [
+                "Ontology requires account scope.",
+                "Scope supplied by $.user_id."
+              ],
+              "valueSourcePath": "$.user_id"
+            }
+          ],
+          "compositions": []
+        }
+      },
+      "consumerEvidence": {
+        "exactEndpoint": {
+          "toolSlug": "GOOGLESUPER_DELETE_LABEL",
+          "fieldId": "GOOGLESUPER_DELETE_LABEL:input:$.label_id",
+          "path": "$.label_id",
+          "fieldName": "label_id",
+          "jsonTypes": [
+            "string"
+          ],
+          "canonicalEntity": "gmail.label_id",
+          "canonicalConfidence": "HIGH",
+          "safeForInference": true,
+          "arrayDepth": 0,
+          "effectivelyRequired": true,
+          "toolkit": "googlesuper",
+          "service": "gmail",
+          "resourceFamily": "label",
+          "protocol": "REST",
+          "deprecated": false,
+          "schemaCompleteness": "COMPLETE"
+        },
+        "toolMetadata": {
+          "slug": "GOOGLESUPER_DELETE_LABEL",
+          "toolkit": "googlesuper",
+          "toolkitVersion": "20260714_00",
+          "name": "Delete label from account (permanent)",
+          "description": "Permanently DELETES a user-created Gmail label from the account (not from a message). WARNING: This action DELETES the label definition itself, removing it from all messages. System labels (INBOX, SENT, UNREAD, etc.) cannot be deleted. To add/remove labels from specific messages, use GMAIL_ADD_LABEL_TO_EMAIL action instead.",
+          "service": "gmail",
+          "resourceFamily": "label",
+          "actionFamily": "delete",
+          "protocol": "REST",
+          "apiGeneration": "unknown",
+          "abstractionLevel": "RESOURCE_OPERATION",
+          "deprecated": false,
+          "inputSchemaCompleteness": "COMPLETE",
+          "outputSchemaCompleteness": "GENERIC"
+        },
+        "normalizedField": {
+          "fieldId": "GOOGLESUPER_DELETE_LABEL:input:$.label_id",
+          "jsonPath": "$.label_id",
+          "sourceSchemaPath": "$.properties.label_id",
+          "originalFieldName": "label_id",
+          "parentPath": "$",
+          "jsonTypes": [
+            "string"
+          ],
+          "requiredAtParent": true,
+          "effectivelyRequired": true,
+          "arrayDepth": 0,
+          "description": "ID of the user-created label to be permanently DELETED from the account. Must be a custom label ID (format: 'Label_<id>' e.g., 'Label_1', 'Label_42'). System labels (INBOX, SENT, DRAFT, UNREAD, STARRED, IMPORTANT, SPAM, TRASH, CATEGORY_*, etc.) cannot be deleted. WARNING: This action permanently DELETES the label definition from your account - it does NOT remove a label from a message. To add/remove labels from messages, use GMAIL_ADD_LABEL_TO_EMAIL instead.",
+          "canonicalEntity": {
+            "entity": "gmail.label_id",
+            "confidence": "HIGH",
+            "evidence": [
+              "compatible JSON type",
+              "compatible service",
+              "exact field alias: label_id",
+              "description pattern: label id",
+              "tool resource family is label",
+              "resource-specific field description"
+            ],
+            "reasonCodes": [
+              "TYPE_COMPATIBLE",
+              "SERVICE_COMPATIBLE",
+              "ENTITY_EXACT_FIELD_ALIAS",
+              "ENTITY_DESCRIPTION_MATCH",
+              "RESOURCE_FAMILY_MATCH",
+              "RESOURCE_CONTEXT_MATCH"
+            ]
+          },
+          "safeForInference": true,
+          "safetyReasons": [
+            "HIGH_CONFIDENCE_CANONICAL_ENTITY"
+          ],
+          "possibleValueSources": [
+            {
+              "source": "USER",
+              "reason": "The caller may provide the input explicitly.",
+              "preferred": true
+            },
+            {
+              "source": "PRIOR_CONTEXT",
+              "reason": "The value may already exist in trusted workflow context.",
+              "preferred": false
+            },
+            {
+              "source": "TOOL_OUTPUT",
+              "reason": "A prior tool may produce the same canonical entity.",
+              "preferred": false
+            }
+          ],
+          "scopes": [
+            {
+              "kind": "account",
+              "requiredForIdentity": false,
+              "evidence": [
+                "Ontology requires account scope.",
+                "Scope supplied by $.user_id."
+              ],
+              "valueSourcePath": "$.user_id"
+            }
+          ],
+          "compositions": []
+        }
+      }
+    },
+    {
+      "candidateId": "GOOGLESUPER_CALENDAR_LIST_WATCH:output:$.data.id=>GOOGLESUPER_FREE_BUSY_QUERY:input:$.items[].id",
+      "deterministicRecord": {
+        "id": "GOOGLESUPER_CALENDAR_LIST_WATCH:output:$.data.id=>GOOGLESUPER_FREE_BUSY_QUERY:input:$.items[].id",
+        "producer": {
+          "toolSlug": "GOOGLESUPER_CALENDAR_LIST_WATCH",
+          "fieldId": "GOOGLESUPER_CALENDAR_LIST_WATCH:output:$.data.id",
+          "path": "$.data.id",
+          "fieldName": "id",
+          "jsonTypes": [
+            "string"
+          ],
+          "canonicalEntity": "google.calendar_id",
+          "canonicalConfidence": "HIGH",
+          "safeForInference": true,
+          "arrayDepth": 0,
+          "effectivelyRequired": true,
+          "toolkit": "googlesuper",
+          "service": "calendar",
+          "resourceFamily": "calendar",
+          "protocol": "REST",
+          "deprecated": false,
+          "schemaCompleteness": "COMPLETE"
+        },
+        "consumer": {
+          "toolSlug": "GOOGLESUPER_FREE_BUSY_QUERY",
+          "fieldId": "GOOGLESUPER_FREE_BUSY_QUERY:input:$.items[].id",
+          "path": "$.items[].id",
+          "fieldName": "id",
+          "jsonTypes": [
+            "string"
+          ],
+          "canonicalEntity": "google.calendar_id",
+          "canonicalConfidence": "MEDIUM",
+          "safeForInference": false,
+          "arrayDepth": 1,
+          "effectivelyRequired": true,
+          "toolkit": "googlesuper",
+          "service": "calendar",
+          "resourceFamily": "calendar",
+          "protocol": "REST",
+          "deprecated": true,
+          "schemaCompleteness": "COMPLETE"
+        },
+        "generationReasons": [
+          "EXACT_CANONICAL_ENTITY"
+        ],
+        "matchedCanonicalEntity": "google.calendar_id",
+        "hardSeparation": null,
+        "primaryReason": "LOW_CONFIDENCE_CANONICAL_ENTITY",
+        "reasonCodes": [
+          "LOW_CONFIDENCE_CANONICAL_ENTITY",
+          "ENTITY_COMPATIBLE",
+          "TYPE_COMPATIBLE",
+          "SERVICE_COMPATIBLE",
+          "PROTOCOL_IDENTITY_COMPATIBLE",
+          "PRODUCER_SAFE_FOR_INFERENCE",
+          "PRODUCER_ADDS_NEW_INFORMATION",
+          "SCOPE_NO_REQUIRED_CONTEXT"
+        ],
+        "selectionRequired": false,
+        "transformationRequired": false,
+        "disambiguationRequired": true,
+        "checks": {
+          "entityCompatible": true,
+          "typeCompatible": true,
+          "serviceCompatible": true,
+          "protocolIdentityCompatible": true,
+          "producerSafeForInference": true,
+          "consumerHasCanonicalEntity": true,
+          "producerAddsNewInformation": true,
+          "scopeStatus": "NO_REQUIRED_CONTEXT",
+          "producerScopeEntities": [],
+          "consumerScopeEntities": [],
+          "sharedScopeEntities": []
+        }
+      },
+      "producerEvidence": {
+        "exactEndpoint": {
+          "toolSlug": "GOOGLESUPER_CALENDAR_LIST_WATCH",
+          "fieldId": "GOOGLESUPER_CALENDAR_LIST_WATCH:output:$.data.id",
+          "path": "$.data.id",
+          "fieldName": "id",
+          "jsonTypes": [
+            "string"
+          ],
+          "canonicalEntity": "google.calendar_id",
+          "canonicalConfidence": "HIGH",
+          "safeForInference": true,
+          "arrayDepth": 0,
+          "effectivelyRequired": true,
+          "toolkit": "googlesuper",
+          "service": "calendar",
+          "resourceFamily": "calendar",
+          "protocol": "REST",
+          "deprecated": false,
+          "schemaCompleteness": "COMPLETE"
+        },
+        "toolMetadata": {
+          "slug": "GOOGLESUPER_CALENDAR_LIST_WATCH",
+          "toolkit": "googlesuper",
+          "toolkitVersion": "20260714_00",
+          "name": "Watch Calendar List",
+          "description": "Watch for changes to CalendarList resources using push notifications. Use this to receive real-time updates when calendar list entries are modified.",
+          "service": "calendar",
+          "resourceFamily": "calendar",
+          "actionFamily": "list",
+          "protocol": "REST",
+          "apiGeneration": "unknown",
+          "abstractionLevel": "RESOURCE_OPERATION",
+          "deprecated": false,
+          "inputSchemaCompleteness": "COMPLETE",
+          "outputSchemaCompleteness": "COMPLETE"
+        },
+        "normalizedField": {
+          "fieldId": "GOOGLESUPER_CALENDAR_LIST_WATCH:output:$.data.id",
+          "jsonPath": "$.data.id",
+          "sourceSchemaPath": "$.$defs.CalendarListWatchResponse.properties.id",
+          "originalFieldName": "id",
+          "parentPath": "$.data",
+          "jsonTypes": [
+            "string"
+          ],
+          "requiredAtParent": true,
+          "effectivelyRequired": true,
+          "arrayDepth": 0,
+          "description": "A unique string that identifies this channel. Matches the ID provided in the request.",
+          "canonicalEntity": {
+            "entity": "google.calendar_id",
+            "confidence": "HIGH",
+            "evidence": [
+              "compatible JSON type",
+              "compatible service",
+              "contextual field alias: id",
+              "immediate containing resource is calendar",
+              "tool resource family is calendar",
+              "resource-specific field path or reference"
+            ],
+            "reasonCodes": [
+              "TYPE_COMPATIBLE",
+              "SERVICE_COMPATIBLE",
+              "ENTITY_CONTEXTUAL_FIELD_ALIAS",
+              "RESOURCE_FAMILY_MATCH",
+              "LOCAL_RESOURCE_FAMILY_MATCH",
+              "RESOURCE_CONTEXT_MATCH"
+            ]
+          },
+          "safeForInference": true,
+          "safetyReasons": [
+            "HIGH_CONFIDENCE_CANONICAL_ENTITY"
+          ],
+          "possibleValueSources": [
+            {
+              "source": "TOOL_OUTPUT",
+              "reason": "The value is declared in this tool's output schema.",
+              "preferred": true
+            }
+          ],
+          "scopes": [
+            {
+              "kind": "account",
+              "requiredForIdentity": false,
+              "evidence": [
+                "Ontology requires account scope."
+              ]
+            },
+            {
+              "kind": "calendar",
+              "requiredForIdentity": true,
+              "evidence": [
+                "Ontology requires calendar scope."
+              ]
+            }
+          ],
+          "compositions": []
+        }
+      },
+      "consumerEvidence": {
+        "exactEndpoint": {
+          "toolSlug": "GOOGLESUPER_FREE_BUSY_QUERY",
+          "fieldId": "GOOGLESUPER_FREE_BUSY_QUERY:input:$.items[].id",
+          "path": "$.items[].id",
+          "fieldName": "id",
+          "jsonTypes": [
+            "string"
+          ],
+          "canonicalEntity": "google.calendar_id",
+          "canonicalConfidence": "MEDIUM",
+          "safeForInference": false,
+          "arrayDepth": 1,
+          "effectivelyRequired": true,
+          "toolkit": "googlesuper",
+          "service": "calendar",
+          "resourceFamily": "calendar",
+          "protocol": "REST",
+          "deprecated": true,
+          "schemaCompleteness": "COMPLETE"
+        },
+        "toolMetadata": {
+          "slug": "GOOGLESUPER_FREE_BUSY_QUERY",
+          "toolkit": "googlesuper",
+          "toolkitVersion": "20260714_00",
+          "name": "Query Free/Busy Information (Deprecated)",
+          "description": "DEPRECATED: Use GOOGLECALENDAR_FIND_FREE_SLOTS instead (though this tool provides wider secondary/shared calendar coverage). Returns opaque busy intervals only—no event titles or details; use GOOGLECALENDAR_EVENTS_LIST when event details are needed.",
+          "service": "calendar",
+          "resourceFamily": "calendar",
+          "actionFamily": "unknown",
+          "protocol": "REST",
+          "apiGeneration": "unknown",
+          "abstractionLevel": "RESOURCE_OPERATION",
+          "deprecated": true,
+          "inputSchemaCompleteness": "COMPLETE",
+          "outputSchemaCompleteness": "COMPLETE"
+        },
+        "normalizedField": {
+          "fieldId": "GOOGLESUPER_FREE_BUSY_QUERY:input:$.items[].id",
+          "jsonPath": "$.items[].id",
+          "sourceSchemaPath": "$.properties.items.items.properties.id",
+          "originalFieldName": "id",
+          "parentPath": "$.items[]",
+          "jsonTypes": [
+            "string"
+          ],
+          "requiredAtParent": true,
+          "effectivelyRequired": true,
+          "arrayDepth": 1,
+          "description": "The identifier of a calendar or a group.",
+          "canonicalEntity": {
+            "entity": "google.calendar_id",
+            "confidence": "MEDIUM",
+            "evidence": [
+              "compatible JSON type",
+              "compatible service",
+              "contextual field alias: id",
+              "tool resource family is calendar",
+              "resource-specific field description"
+            ],
+            "reasonCodes": [
+              "TYPE_COMPATIBLE",
+              "SERVICE_COMPATIBLE",
+              "ENTITY_CONTEXTUAL_FIELD_ALIAS",
+              "RESOURCE_FAMILY_MATCH",
+              "RESOURCE_CONTEXT_MATCH"
+            ]
+          },
+          "safeForInference": false,
+          "safetyReasons": [
+            "CANONICAL_ENTITY_NOT_HIGH_CONFIDENCE"
+          ],
+          "possibleValueSources": [
+            {
+              "source": "USER",
+              "reason": "The caller may provide the input explicitly.",
+              "preferred": true
+            },
+            {
+              "source": "PRIOR_CONTEXT",
+              "reason": "The value may already exist in trusted workflow context.",
+              "preferred": false
+            },
+            {
+              "source": "TOOL_OUTPUT",
+              "reason": "A prior tool may produce the same canonical entity.",
+              "preferred": false
+            }
+          ],
+          "scopes": [
+            {
+              "kind": "account",
+              "requiredForIdentity": false,
+              "evidence": [
+                "Ontology requires account scope."
+              ]
+            },
+            {
+              "kind": "calendar",
+              "requiredForIdentity": true,
+              "evidence": [
+                "Ontology requires calendar scope.",
+                "Scope supplied by $.items[].id."
+              ],
+              "valueSourcePath": "$.items[].id"
+            }
+          ],
+          "compositions": []
+        }
+      }
+    },
+    {
+      "candidateId": "GOOGLESUPER_CREATE_TEAM_DRIVE:output:$.data.backgroundImageFile.id=>GOOGLESUPER_ADD_FILE_SHARING_PREFERENCE:input:$.file_id",
+      "deterministicRecord": {
+        "id": "GOOGLESUPER_CREATE_TEAM_DRIVE:output:$.data.backgroundImageFile.id=>GOOGLESUPER_ADD_FILE_SHARING_PREFERENCE:input:$.file_id",
+        "producer": {
+          "toolSlug": "GOOGLESUPER_CREATE_TEAM_DRIVE",
+          "fieldId": "GOOGLESUPER_CREATE_TEAM_DRIVE:output:$.data.backgroundImageFile.id",
+          "path": "$.data.backgroundImageFile.id",
+          "fieldName": "id",
+          "jsonTypes": [
+            "string"
+          ],
+          "canonicalEntity": "google.drive_file_id",
+          "canonicalConfidence": "HIGH",
+          "safeForInference": true,
+          "arrayDepth": 0,
+          "effectivelyRequired": false,
+          "toolkit": "googlesuper",
+          "service": "drive",
+          "resourceFamily": "file",
+          "protocol": "REST",
+          "deprecated": true,
+          "schemaCompleteness": "COMPLETE"
+        },
+        "consumer": {
+          "toolSlug": "GOOGLESUPER_ADD_FILE_SHARING_PREFERENCE",
+          "fieldId": "GOOGLESUPER_ADD_FILE_SHARING_PREFERENCE:input:$.file_id",
+          "path": "$.file_id",
+          "fieldName": "file_id",
+          "jsonTypes": [
+            "string"
+          ],
+          "canonicalEntity": "google.drive_file_id",
+          "canonicalConfidence": "HIGH",
+          "safeForInference": true,
+          "arrayDepth": 0,
+          "effectivelyRequired": true,
+          "toolkit": "googlesuper",
+          "service": "drive",
+          "resourceFamily": "file",
+          "protocol": "REST",
+          "deprecated": true,
+          "schemaCompleteness": "COMPLETE"
+        },
+        "generationReasons": [
+          "EXACT_CANONICAL_ENTITY"
+        ],
+        "matchedCanonicalEntity": "google.drive_file_id",
+        "hardSeparation": null,
+        "primaryReason": "DEPRECATED_PRODUCER",
+        "reasonCodes": [
+          "DEPRECATED_PRODUCER",
+          "ENTITY_COMPATIBLE",
+          "TYPE_COMPATIBLE",
+          "SERVICE_COMPATIBLE",
+          "PROTOCOL_IDENTITY_COMPATIBLE",
+          "PRODUCER_SAFE_FOR_INFERENCE",
+          "PRODUCER_ADDS_NEW_INFORMATION",
+          "SCOPE_NO_REQUIRED_CONTEXT"
+        ],
+        "selectionRequired": false,
+        "transformationRequired": false,
+        "disambiguationRequired": true,
+        "checks": {
+          "entityCompatible": true,
+          "typeCompatible": true,
+          "serviceCompatible": true,
+          "protocolIdentityCompatible": true,
+          "producerSafeForInference": true,
+          "consumerHasCanonicalEntity": true,
+          "producerAddsNewInformation": true,
+          "scopeStatus": "NO_REQUIRED_CONTEXT",
+          "producerScopeEntities": [],
+          "consumerScopeEntities": [],
+          "sharedScopeEntities": []
+        }
+      },
+      "producerEvidence": {
+        "exactEndpoint": {
+          "toolSlug": "GOOGLESUPER_CREATE_TEAM_DRIVE",
+          "fieldId": "GOOGLESUPER_CREATE_TEAM_DRIVE:output:$.data.backgroundImageFile.id",
+          "path": "$.data.backgroundImageFile.id",
+          "fieldName": "id",
+          "jsonTypes": [
+            "string"
+          ],
+          "canonicalEntity": "google.drive_file_id",
+          "canonicalConfidence": "HIGH",
+          "safeForInference": true,
+          "arrayDepth": 0,
+          "effectivelyRequired": false,
+          "toolkit": "googlesuper",
+          "service": "drive",
+          "resourceFamily": "file",
+          "protocol": "REST",
+          "deprecated": true,
+          "schemaCompleteness": "COMPLETE"
+        },
+        "toolMetadata": {
+          "slug": "GOOGLESUPER_CREATE_TEAM_DRIVE",
+          "toolkit": "googlesuper",
+          "toolkitVersion": "20260714_00",
+          "name": "Create Team Drive (Deprecated)",
+          "description": "Tool to create a Team Drive. Deprecated: Use drives.create instead. Use when you need to create a Team Drive for collaboration.",
+          "service": "drive",
+          "resourceFamily": "file",
+          "actionFamily": "create",
+          "protocol": "REST",
+          "apiGeneration": "unknown",
+          "abstractionLevel": "RESOURCE_OPERATION",
+          "deprecated": true,
+          "inputSchemaCompleteness": "COMPLETE",
+          "outputSchemaCompleteness": "COMPLETE"
+        },
+        "normalizedField": {
+          "fieldId": "GOOGLESUPER_CREATE_TEAM_DRIVE:output:$.data.backgroundImageFile.id",
+          "jsonPath": "$.data.backgroundImageFile.id",
+          "sourceSchemaPath": "$.$defs.BackgroundImageFile.properties.id",
+          "originalFieldName": "id",
+          "parentPath": "$.data.backgroundImageFile",
+          "jsonTypes": [
+            "string"
+          ],
+          "requiredAtParent": true,
+          "effectivelyRequired": false,
+          "arrayDepth": 0,
+          "description": "The ID of an image file in Google Drive to use for the background.",
+          "canonicalEntity": {
+            "entity": "google.drive_file_id",
+            "confidence": "HIGH",
+            "evidence": [
+              "compatible JSON type",
+              "compatible service",
+              "contextual field alias: id",
+              "immediate containing resource is file",
+              "tool resource family is file",
+              "resource-specific field path or reference",
+              "resource-specific field description"
+            ],
+            "reasonCodes": [
+              "TYPE_COMPATIBLE",
+              "SERVICE_COMPATIBLE",
+              "ENTITY_CONTEXTUAL_FIELD_ALIAS",
+              "RESOURCE_FAMILY_MATCH",
+              "LOCAL_RESOURCE_FAMILY_MATCH",
+              "RESOURCE_CONTEXT_MATCH"
+            ]
+          },
+          "safeForInference": true,
+          "safetyReasons": [
+            "HIGH_CONFIDENCE_CANONICAL_ENTITY"
+          ],
+          "possibleValueSources": [
+            {
+              "source": "TOOL_OUTPUT",
+              "reason": "The value is declared in this tool's output schema.",
+              "preferred": true
+            }
+          ],
+          "scopes": [
+            {
+              "kind": "account",
+              "requiredForIdentity": false,
+              "evidence": [
+                "Ontology requires account scope."
+              ]
+            },
+            {
+              "kind": "shared_drive",
+              "requiredForIdentity": true,
+              "evidence": [
+                "Ontology requires shared_drive scope."
+              ]
+            }
+          ],
+          "compositions": []
+        }
+      },
+      "consumerEvidence": {
+        "exactEndpoint": {
+          "toolSlug": "GOOGLESUPER_ADD_FILE_SHARING_PREFERENCE",
+          "fieldId": "GOOGLESUPER_ADD_FILE_SHARING_PREFERENCE:input:$.file_id",
+          "path": "$.file_id",
+          "fieldName": "file_id",
+          "jsonTypes": [
+            "string"
+          ],
+          "canonicalEntity": "google.drive_file_id",
+          "canonicalConfidence": "HIGH",
+          "safeForInference": true,
+          "arrayDepth": 0,
+          "effectivelyRequired": true,
+          "toolkit": "googlesuper",
+          "service": "drive",
+          "resourceFamily": "file",
+          "protocol": "REST",
+          "deprecated": true,
+          "schemaCompleteness": "COMPLETE"
+        },
+        "toolMetadata": {
+          "slug": "GOOGLESUPER_ADD_FILE_SHARING_PREFERENCE",
+          "toolkit": "googlesuper",
+          "toolkitVersion": "20260714_00",
+          "name": "Add file sharing preference (Deprecated)",
+          "description": "DEPRECATED: Use GOOGLEDRIVE_CREATE_PERMISSION instead; use GOOGLEDRIVE_UPDATE_PERMISSION to modify existing permissions (avoids duplicate entries). Modifies sharing permissions for an existing Google Drive file, granting a specified role to a user, group, domain, or 'anyone'. Bulk calls may trigger 403 rateLimitExceeded (~100 req/100s/user); use jittered exponential backoff.",
+          "service": "drive",
+          "resourceFamily": "file",
+          "actionFamily": "create",
+          "protocol": "REST",
+          "apiGeneration": "unknown",
+          "abstractionLevel": "RESOURCE_OPERATION",
+          "deprecated": true,
+          "inputSchemaCompleteness": "COMPLETE",
+          "outputSchemaCompleteness": "COMPLETE"
+        },
+        "normalizedField": {
+          "fieldId": "GOOGLESUPER_ADD_FILE_SHARING_PREFERENCE:input:$.file_id",
+          "jsonPath": "$.file_id",
+          "sourceSchemaPath": "$.properties.file_id",
+          "originalFieldName": "file_id",
+          "parentPath": "$",
+          "jsonTypes": [
+            "string"
+          ],
+          "requiredAtParent": true,
+          "effectivelyRequired": true,
+          "arrayDepth": 0,
+          "description": "Unique identifier of the file to update sharing settings for. Must be an alphanumeric string containing only letters, numbers, hyphens, and underscores (no slashes, spaces, or other special characters). Use GOOGLEDRIVE_FIND_FILE or GOOGLEDRIVE_LIST_FILES to get valid file IDs from your Google Drive. For shared drive membership, supply the shared drive ID, not an individual document ID.",
+          "canonicalEntity": {
+            "entity": "google.drive_file_id",
+            "confidence": "HIGH",
+            "evidence": [
+              "compatible JSON type",
+              "compatible service",
+              "exact field alias: file_id",
+              "description pattern: file id",
+              "tool resource family is file",
+              "resource-specific field description"
+            ],
+            "reasonCodes": [
+              "TYPE_COMPATIBLE",
+              "SERVICE_COMPATIBLE",
+              "ENTITY_EXACT_FIELD_ALIAS",
+              "ENTITY_DESCRIPTION_MATCH",
+              "RESOURCE_FAMILY_MATCH",
+              "RESOURCE_CONTEXT_MATCH"
+            ]
+          },
+          "safeForInference": true,
+          "safetyReasons": [
+            "HIGH_CONFIDENCE_CANONICAL_ENTITY"
+          ],
+          "possibleValueSources": [
+            {
+              "source": "USER",
+              "reason": "The caller may provide the input explicitly.",
+              "preferred": true
+            },
+            {
+              "source": "PRIOR_CONTEXT",
+              "reason": "The value may already exist in trusted workflow context.",
+              "preferred": false
+            },
+            {
+              "source": "TOOL_OUTPUT",
+              "reason": "A prior tool may produce the same canonical entity.",
+              "preferred": false
+            }
+          ],
+          "scopes": [
+            {
+              "kind": "account",
+              "requiredForIdentity": false,
+              "evidence": [
+                "Ontology requires account scope."
+              ]
+            },
+            {
+              "kind": "shared_drive",
+              "requiredForIdentity": true,
+              "evidence": [
+                "Ontology requires shared_drive scope."
+              ]
+            }
+          ],
+          "compositions": []
+        }
+      }
+    },
+    {
+      "candidateId": "GOOGLESUPER_GET_CONTACTS:output:$.data.connections[].emailAddresses[].value=>GOOGLESUPER_CREATE_EMAIL_DRAFT:input:$.recipient_email",
+      "deterministicRecord": {
+        "id": "GOOGLESUPER_GET_CONTACTS:output:$.data.connections[].emailAddresses[].value=>GOOGLESUPER_CREATE_EMAIL_DRAFT:input:$.recipient_email",
+        "producer": {
+          "toolSlug": "GOOGLESUPER_GET_CONTACTS",
+          "fieldId": "GOOGLESUPER_GET_CONTACTS:output:$.data.connections[].emailAddresses[].value",
+          "path": "$.data.connections[].emailAddresses[].value",
+          "fieldName": "value",
+          "jsonTypes": [
+            "string"
+          ],
+          "canonicalEntity": "google.contact_email",
+          "canonicalConfidence": "HIGH",
+          "safeForInference": true,
+          "arrayDepth": 2,
+          "effectivelyRequired": false,
+          "toolkit": "googlesuper",
+          "service": "people",
+          "resourceFamily": "contact",
+          "protocol": "REST",
+          "deprecated": false,
+          "schemaCompleteness": "COMPLETE"
+        },
+        "consumer": {
+          "toolSlug": "GOOGLESUPER_CREATE_EMAIL_DRAFT",
+          "fieldId": "GOOGLESUPER_CREATE_EMAIL_DRAFT:input:$.recipient_email",
+          "path": "$.recipient_email",
+          "fieldName": "recipient_email",
+          "jsonTypes": [
+            "string"
+          ],
+          "canonicalEntity": null,
+          "canonicalConfidence": null,
+          "safeForInference": false,
+          "arrayDepth": 0,
+          "effectivelyRequired": false,
+          "toolkit": "googlesuper",
+          "service": "gmail",
+          "resourceFamily": "draft",
+          "protocol": "REST",
+          "deprecated": false,
+          "schemaCompleteness": "COMPLETE"
+        },
+        "generationReasons": [
+          "CONTACT_EMAIL_RECIPIENT_DISAMBIGUATION"
+        ],
+        "matchedCanonicalEntity": null,
+        "hardSeparation": null,
+        "primaryReason": "IDENTITY_RESOLUTION_REQUIRES_DISAMBIGUATION",
+        "reasonCodes": [
+          "IDENTITY_RESOLUTION_REQUIRES_DISAMBIGUATION",
+          "ENTITY_NOT_COMPATIBLE",
+          "TYPE_COMPATIBLE",
+          "SERVICE_NOT_COMPATIBLE",
+          "PROTOCOL_IDENTITY_COMPATIBLE",
+          "PRODUCER_SAFE_FOR_INFERENCE",
+          "PRODUCER_ADDS_NEW_INFORMATION",
+          "SCOPE_NO_REQUIRED_CONTEXT"
+        ],
+        "selectionRequired": true,
+        "transformationRequired": false,
+        "disambiguationRequired": true,
+        "checks": {
+          "entityCompatible": false,
+          "typeCompatible": true,
+          "serviceCompatible": false,
+          "protocolIdentityCompatible": true,
+          "producerSafeForInference": true,
+          "consumerHasCanonicalEntity": false,
+          "producerAddsNewInformation": true,
+          "scopeStatus": "NO_REQUIRED_CONTEXT",
+          "producerScopeEntities": [],
+          "consumerScopeEntities": [],
+          "sharedScopeEntities": []
+        }
+      },
+      "producerEvidence": {
+        "exactEndpoint": {
+          "toolSlug": "GOOGLESUPER_GET_CONTACTS",
+          "fieldId": "GOOGLESUPER_GET_CONTACTS:output:$.data.connections[].emailAddresses[].value",
+          "path": "$.data.connections[].emailAddresses[].value",
+          "fieldName": "value",
+          "jsonTypes": [
+            "string"
+          ],
+          "canonicalEntity": "google.contact_email",
+          "canonicalConfidence": "HIGH",
+          "safeForInference": true,
+          "arrayDepth": 2,
+          "effectivelyRequired": false,
+          "toolkit": "googlesuper",
+          "service": "people",
+          "resourceFamily": "contact",
+          "protocol": "REST",
+          "deprecated": false,
+          "schemaCompleteness": "COMPLETE"
+        },
+        "toolMetadata": {
+          "slug": "GOOGLESUPER_GET_CONTACTS",
+          "toolkit": "googlesuper",
+          "toolkitVersion": "20260714_00",
+          "name": "Get contacts",
+          "description": "Fetches contacts (connections) for the authenticated Google account, allowing selection of specific data fields and pagination. Only covers saved contacts and 'Other Contacts'; email-header-only senders are out of scope. Contact records may have sparse data — handle missing fields gracefully. People API shares a per-user QPS quota; HTTP 429 requires exponential backoff (1s, 2s, 4s).",
+          "service": "people",
+          "resourceFamily": "contact",
+          "actionFamily": "get",
+          "protocol": "REST",
+          "apiGeneration": "unknown",
+          "abstractionLevel": "RESOURCE_OPERATION",
+          "deprecated": false,
+          "inputSchemaCompleteness": "COMPLETE",
+          "outputSchemaCompleteness": "COMPLETE"
+        },
+        "normalizedField": {
+          "fieldId": "GOOGLESUPER_GET_CONTACTS:output:$.data.connections[].emailAddresses[].value",
+          "jsonPath": "$.data.connections[].emailAddresses[].value",
+          "sourceSchemaPath": "$.$defs.EmailAddress.properties.value",
+          "originalFieldName": "value",
+          "parentPath": "$.data.connections[].emailAddresses[]",
+          "jsonTypes": [
+            "string"
+          ],
+          "requiredAtParent": true,
+          "effectivelyRequired": false,
+          "arrayDepth": 2,
+          "description": "The email address string",
+          "canonicalEntity": {
+            "entity": "google.contact_email",
+            "confidence": "HIGH",
+            "evidence": [
+              "compatible JSON type",
+              "compatible service",
+              "contextual field alias: value",
+              "description pattern: email address",
+              "tool resource family is contact",
+              "resource-specific field path or reference",
+              "resource-specific field description"
+            ],
+            "reasonCodes": [
+              "TYPE_COMPATIBLE",
+              "SERVICE_COMPATIBLE",
+              "ENTITY_CONTEXTUAL_FIELD_ALIAS",
+              "ENTITY_DESCRIPTION_MATCH",
+              "RESOURCE_FAMILY_MATCH",
+              "RESOURCE_CONTEXT_MATCH"
+            ]
+          },
+          "safeForInference": true,
+          "safetyReasons": [
+            "HIGH_CONFIDENCE_CANONICAL_ENTITY"
+          ],
+          "possibleValueSources": [
+            {
+              "source": "TOOL_OUTPUT",
+              "reason": "The value is declared in this tool's output schema.",
+              "preferred": true
+            }
+          ],
+          "scopes": [
+            {
+              "kind": "account",
+              "requiredForIdentity": false,
+              "evidence": [
+                "Ontology requires account scope."
+              ]
+            }
+          ],
+          "compositions": []
+        }
+      },
+      "consumerEvidence": {
+        "exactEndpoint": {
+          "toolSlug": "GOOGLESUPER_CREATE_EMAIL_DRAFT",
+          "fieldId": "GOOGLESUPER_CREATE_EMAIL_DRAFT:input:$.recipient_email",
+          "path": "$.recipient_email",
+          "fieldName": "recipient_email",
+          "jsonTypes": [
+            "string"
+          ],
+          "canonicalEntity": null,
+          "canonicalConfidence": null,
+          "safeForInference": false,
+          "arrayDepth": 0,
+          "effectivelyRequired": false,
+          "toolkit": "googlesuper",
+          "service": "gmail",
+          "resourceFamily": "draft",
+          "protocol": "REST",
+          "deprecated": false,
+          "schemaCompleteness": "COMPLETE"
+        },
+        "toolMetadata": {
+          "slug": "GOOGLESUPER_CREATE_EMAIL_DRAFT",
+          "toolkit": "googlesuper",
+          "toolkitVersion": "20260714_00",
+          "name": "Create email draft",
+          "description": "Creates a Gmail email draft. While all fields are optional per the Gmail API, practical validation requires at least one of recipient_email, cc, or bcc and at least one of subject or body. Supports To/Cc/Bcc recipients, subject, plain/HTML body (ensure `is_html=True` for HTML), attachments, and threading. Returns a draft_id that must be used as-is with GMAIL_SEND_DRAFT — synthetic or stale IDs will fail. When creating a draft reply to an existing thread (thread_id provided), leave subject empty to stay in the same thread; setting a subject will create a NEW thread instead. HTTP 429 may occur on rapid creation/send sequences; apply exponential backoff.",
+          "service": "gmail",
+          "resourceFamily": "draft",
+          "actionFamily": "create",
+          "protocol": "REST",
+          "apiGeneration": "unknown",
+          "abstractionLevel": "RESOURCE_OPERATION",
+          "deprecated": false,
+          "inputSchemaCompleteness": "COMPLETE",
+          "outputSchemaCompleteness": "COMPLETE"
+        },
+        "normalizedField": {
+          "fieldId": "GOOGLESUPER_CREATE_EMAIL_DRAFT:input:$.recipient_email",
+          "jsonPath": "$.recipient_email",
+          "sourceSchemaPath": "$.properties.recipient_email",
+          "originalFieldName": "recipient_email",
+          "parentPath": "$",
+          "jsonTypes": [
+            "string"
+          ],
+          "requiredAtParent": false,
+          "effectivelyRequired": false,
+          "arrayDepth": 0,
+          "description": "Primary recipient's email address. Must be a valid email address (e.g., 'user@example.com') or display name format (e.g., 'John Doe <user@example.com>'). A plain name without an email address (e.g., 'John Doe') is NOT valid - the '@' symbol and domain are required. Optional for drafts (recipients can be added later before sending). Use extra_recipients if you want to send to multiple recipients.",
+          "canonicalEntity": null,
+          "safeForInference": false,
+          "safetyReasons": [
+            "NO_CANONICAL_ENTITY"
+          ],
+          "possibleValueSources": [
+            {
+              "source": "USER",
+              "reason": "The caller may provide the input explicitly.",
+              "preferred": true
+            },
+            {
+              "source": "PRIOR_CONTEXT",
+              "reason": "The value may already exist in trusted workflow context.",
+              "preferred": false
+            }
+          ],
+          "scopes": [],
+          "compositions": []
+        }
+      }
+    },
+    {
+      "candidateId": "GOOGLESUPER_ADD_LABEL_TO_EMAIL:output:$.data.labelIds[]=>GOOGLESUPER_GET_LABEL:input:$.id",
+      "deterministicRecord": {
+        "id": "GOOGLESUPER_ADD_LABEL_TO_EMAIL:output:$.data.labelIds[]=>GOOGLESUPER_GET_LABEL:input:$.id",
+        "producer": {
+          "toolSlug": "GOOGLESUPER_ADD_LABEL_TO_EMAIL",
+          "fieldId": "GOOGLESUPER_ADD_LABEL_TO_EMAIL:output:$.data.labelIds[]",
+          "path": "$.data.labelIds[]",
+          "fieldName": "labelIds",
+          "jsonTypes": [
+            "string"
+          ],
+          "canonicalEntity": "gmail.label_id",
+          "canonicalConfidence": "HIGH",
+          "safeForInference": true,
+          "arrayDepth": 1,
+          "effectivelyRequired": false,
+          "toolkit": "googlesuper",
+          "service": "gmail",
+          "resourceFamily": "label",
+          "protocol": "REST",
+          "deprecated": false,
+          "schemaCompleteness": "COMPLETE"
+        },
+        "consumer": {
+          "toolSlug": "GOOGLESUPER_GET_LABEL",
+          "fieldId": "GOOGLESUPER_GET_LABEL:input:$.id",
+          "path": "$.id",
+          "fieldName": "id",
+          "jsonTypes": [
+            "string"
+          ],
+          "canonicalEntity": "gmail.label_id",
+          "canonicalConfidence": "HIGH",
+          "safeForInference": true,
+          "arrayDepth": 0,
+          "effectivelyRequired": true,
+          "toolkit": "googlesuper",
+          "service": "gmail",
+          "resourceFamily": "label",
+          "protocol": "REST",
+          "deprecated": false,
+          "schemaCompleteness": "COMPLETE"
+        },
+        "generationReasons": [
+          "EXACT_CANONICAL_ENTITY"
+        ],
+        "matchedCanonicalEntity": "gmail.label_id",
+        "hardSeparation": null,
+        "primaryReason": "COLLECTION_REQUIRES_SELECTION",
+        "reasonCodes": [
+          "COLLECTION_REQUIRES_SELECTION",
+          "ENTITY_COMPATIBLE",
+          "TYPE_COMPATIBLE",
+          "SERVICE_COMPATIBLE",
+          "PROTOCOL_IDENTITY_COMPATIBLE",
+          "PRODUCER_SAFE_FOR_INFERENCE",
+          "PRODUCER_ADDS_NEW_INFORMATION",
+          "SCOPE_NO_REQUIRED_CONTEXT"
+        ],
+        "selectionRequired": true,
+        "transformationRequired": false,
+        "disambiguationRequired": true,
+        "checks": {
+          "entityCompatible": true,
+          "typeCompatible": true,
+          "serviceCompatible": true,
+          "protocolIdentityCompatible": true,
+          "producerSafeForInference": true,
+          "consumerHasCanonicalEntity": true,
+          "producerAddsNewInformation": true,
+          "scopeStatus": "NO_REQUIRED_CONTEXT",
+          "producerScopeEntities": [
+            "gmail.message_id"
+          ],
+          "consumerScopeEntities": [],
+          "sharedScopeEntities": []
+        }
+      },
+      "producerEvidence": {
+        "exactEndpoint": {
+          "toolSlug": "GOOGLESUPER_ADD_LABEL_TO_EMAIL",
+          "fieldId": "GOOGLESUPER_ADD_LABEL_TO_EMAIL:output:$.data.labelIds[]",
+          "path": "$.data.labelIds[]",
+          "fieldName": "labelIds",
+          "jsonTypes": [
+            "string"
+          ],
+          "canonicalEntity": "gmail.label_id",
+          "canonicalConfidence": "HIGH",
+          "safeForInference": true,
+          "arrayDepth": 1,
+          "effectivelyRequired": false,
+          "toolkit": "googlesuper",
+          "service": "gmail",
+          "resourceFamily": "label",
+          "protocol": "REST",
+          "deprecated": false,
+          "schemaCompleteness": "COMPLETE"
+        },
+        "toolMetadata": {
+          "slug": "GOOGLESUPER_ADD_LABEL_TO_EMAIL",
+          "toolkit": "googlesuper",
+          "toolkitVersion": "20260714_00",
+          "name": "Modify email labels",
+          "description": "Adds and/or removes specified Gmail labels for a message; ensure `message_id` and all `label_ids` are valid (use 'listLabels' for custom label IDs).",
+          "service": "gmail",
+          "resourceFamily": "label",
+          "actionFamily": "update",
+          "protocol": "REST",
+          "apiGeneration": "unknown",
+          "abstractionLevel": "RESOURCE_OPERATION",
+          "deprecated": false,
+          "inputSchemaCompleteness": "COMPLETE",
+          "outputSchemaCompleteness": "COMPLETE"
+        },
+        "normalizedField": {
+          "fieldId": "GOOGLESUPER_ADD_LABEL_TO_EMAIL:output:$.data.labelIds[]",
+          "jsonPath": "$.data.labelIds[]",
+          "sourceSchemaPath": "$.$defs.GmailMessageResponse.properties.labelIds.items",
+          "originalFieldName": "labelIds",
+          "parentPath": "$.data",
+          "jsonTypes": [
+            "string"
+          ],
+          "requiredAtParent": false,
+          "effectivelyRequired": false,
+          "arrayDepth": 1,
+          "description": "",
+          "canonicalEntity": {
+            "entity": "gmail.label_id",
+            "confidence": "HIGH",
+            "evidence": [
+              "compatible JSON type",
+              "compatible service",
+              "exact field alias: labelIds",
+              "tool resource family is label"
+            ],
+            "reasonCodes": [
+              "TYPE_COMPATIBLE",
+              "SERVICE_COMPATIBLE",
+              "ENTITY_EXACT_FIELD_ALIAS",
+              "RESOURCE_FAMILY_MATCH",
+              "RESOURCE_CONTEXT_MATCH"
+            ]
+          },
+          "safeForInference": true,
+          "safetyReasons": [
+            "HIGH_CONFIDENCE_CANONICAL_ENTITY"
+          ],
+          "possibleValueSources": [
+            {
+              "source": "TOOL_OUTPUT",
+              "reason": "The value is declared in this tool's output schema.",
+              "preferred": true
+            }
+          ],
+          "scopes": [
+            {
+              "kind": "account",
+              "requiredForIdentity": false,
+              "evidence": [
+                "Ontology requires account scope.",
+                "Scope supplied by $.user_id."
+              ],
+              "valueSourcePath": "$.user_id"
+            }
+          ],
+          "compositions": []
+        }
+      },
+      "consumerEvidence": {
+        "exactEndpoint": {
+          "toolSlug": "GOOGLESUPER_GET_LABEL",
+          "fieldId": "GOOGLESUPER_GET_LABEL:input:$.id",
+          "path": "$.id",
+          "fieldName": "id",
+          "jsonTypes": [
+            "string"
+          ],
+          "canonicalEntity": "gmail.label_id",
+          "canonicalConfidence": "HIGH",
+          "safeForInference": true,
+          "arrayDepth": 0,
+          "effectivelyRequired": true,
+          "toolkit": "googlesuper",
+          "service": "gmail",
+          "resourceFamily": "label",
+          "protocol": "REST",
+          "deprecated": false,
+          "schemaCompleteness": "COMPLETE"
+        },
+        "toolMetadata": {
+          "slug": "GOOGLESUPER_GET_LABEL",
+          "toolkit": "googlesuper",
+          "toolkitVersion": "20260714_00",
+          "name": "Get label details",
+          "description": "Gets details for a specified Gmail label. Use this to retrieve label information including name, type, visibility settings, message/thread counts, and color.",
+          "service": "gmail",
+          "resourceFamily": "label",
+          "actionFamily": "get",
+          "protocol": "REST",
+          "apiGeneration": "unknown",
+          "abstractionLevel": "RESOURCE_OPERATION",
+          "deprecated": false,
+          "inputSchemaCompleteness": "COMPLETE",
+          "outputSchemaCompleteness": "COMPLETE"
+        },
+        "normalizedField": {
+          "fieldId": "GOOGLESUPER_GET_LABEL:input:$.id",
+          "jsonPath": "$.id",
+          "sourceSchemaPath": "$.properties.id",
+          "originalFieldName": "id",
+          "parentPath": "$",
+          "jsonTypes": [
+            "string"
+          ],
+          "requiredAtParent": true,
+          "effectivelyRequired": true,
+          "arrayDepth": 0,
+          "description": "The ID of the label to retrieve. Can be a system label (e.g., INBOX, SENT, DRAFT, UNREAD, STARRED, SPAM, TRASH) or a user-created label ID (e.g., Label_1, Label_42).",
+          "canonicalEntity": {
+            "entity": "gmail.label_id",
+            "confidence": "HIGH",
+            "evidence": [
+              "compatible JSON type",
+              "compatible service",
+              "contextual field alias: id",
+              "description pattern: label id",
+              "tool resource family is label",
+              "resource-specific field description"
+            ],
+            "reasonCodes": [
+              "TYPE_COMPATIBLE",
+              "SERVICE_COMPATIBLE",
+              "ENTITY_CONTEXTUAL_FIELD_ALIAS",
+              "ENTITY_DESCRIPTION_MATCH",
+              "RESOURCE_FAMILY_MATCH",
+              "RESOURCE_CONTEXT_MATCH"
+            ]
+          },
+          "safeForInference": true,
+          "safetyReasons": [
+            "HIGH_CONFIDENCE_CANONICAL_ENTITY"
+          ],
+          "possibleValueSources": [
+            {
+              "source": "USER",
+              "reason": "The caller may provide the input explicitly.",
+              "preferred": true
+            },
+            {
+              "source": "PRIOR_CONTEXT",
+              "reason": "The value may already exist in trusted workflow context.",
+              "preferred": false
+            },
+            {
+              "source": "TOOL_OUTPUT",
+              "reason": "A prior tool may produce the same canonical entity.",
+              "preferred": false
+            }
+          ],
+          "scopes": [
+            {
+              "kind": "account",
+              "requiredForIdentity": false,
+              "evidence": [
+                "Ontology requires account scope.",
+                "Scope supplied by $.user_id."
+              ],
+              "valueSourcePath": "$.user_id"
+            }
+          ],
+          "compositions": []
+        }
+      }
+    },
+    {
+      "candidateId": "GITHUB_ADD_A_REPOSITORY_COLLABORATOR:output:$.data.repository.id=>GITHUB_ADD_REPO_TO_ORG_SECRET_WITH_SELECTED_ACCESS:input:$.repository_id",
+      "deterministicRecord": {
+        "id": "GITHUB_ADD_A_REPOSITORY_COLLABORATOR:output:$.data.repository.id=>GITHUB_ADD_REPO_TO_ORG_SECRET_WITH_SELECTED_ACCESS:input:$.repository_id",
+        "producer": {
+          "toolSlug": "GITHUB_ADD_A_REPOSITORY_COLLABORATOR",
+          "fieldId": "GITHUB_ADD_A_REPOSITORY_COLLABORATOR:output:$.data.repository.id",
+          "path": "$.data.repository.id",
+          "fieldName": "id",
+          "jsonTypes": [
+            "integer"
+          ],
+          "canonicalEntity": "github.repository_id",
+          "canonicalConfidence": "HIGH",
+          "safeForInference": true,
+          "arrayDepth": 0,
+          "effectivelyRequired": true,
+          "toolkit": "github",
+          "service": "github",
+          "resourceFamily": "repository",
+          "protocol": "REST",
+          "deprecated": false,
+          "schemaCompleteness": "COMPLETE"
+        },
+        "consumer": {
+          "toolSlug": "GITHUB_ADD_REPO_TO_ORG_SECRET_WITH_SELECTED_ACCESS",
+          "fieldId": "GITHUB_ADD_REPO_TO_ORG_SECRET_WITH_SELECTED_ACCESS:input:$.repository_id",
+          "path": "$.repository_id",
+          "fieldName": "repository_id",
+          "jsonTypes": [
+            "integer"
+          ],
+          "canonicalEntity": "github.repository_id",
+          "canonicalConfidence": "MEDIUM",
+          "safeForInference": false,
+          "arrayDepth": 0,
+          "effectivelyRequired": true,
+          "toolkit": "github",
+          "service": "github",
+          "resourceFamily": "organization",
+          "protocol": "REST",
+          "deprecated": false,
+          "schemaCompleteness": "COMPLETE"
+        },
+        "generationReasons": [
+          "EXACT_CANONICAL_ENTITY"
+        ],
+        "matchedCanonicalEntity": "github.repository_id",
+        "hardSeparation": null,
+        "primaryReason": "LOW_CONFIDENCE_CANONICAL_ENTITY",
+        "reasonCodes": [
+          "LOW_CONFIDENCE_CANONICAL_ENTITY",
+          "ENTITY_COMPATIBLE",
+          "TYPE_COMPATIBLE",
+          "SERVICE_COMPATIBLE",
+          "PROTOCOL_IDENTITY_COMPATIBLE",
+          "PRODUCER_SAFE_FOR_INFERENCE",
+          "PRODUCER_ADDS_NEW_INFORMATION",
+          "SCOPE_CONTEXT_NOT_SHARED"
+        ],
+        "selectionRequired": false,
+        "transformationRequired": false,
+        "disambiguationRequired": true,
+        "checks": {
+          "entityCompatible": true,
+          "typeCompatible": true,
+          "serviceCompatible": true,
+          "protocolIdentityCompatible": true,
+          "producerSafeForInference": true,
+          "consumerHasCanonicalEntity": true,
+          "producerAddsNewInformation": true,
+          "scopeStatus": "CONTEXT_NOT_SHARED",
+          "producerScopeEntities": [
+            "github.owner",
+            "github.repository_name"
+          ],
+          "consumerScopeEntities": [
+            "github.organization"
+          ],
+          "sharedScopeEntities": []
+        }
+      },
+      "producerEvidence": {
+        "exactEndpoint": {
+          "toolSlug": "GITHUB_ADD_A_REPOSITORY_COLLABORATOR",
+          "fieldId": "GITHUB_ADD_A_REPOSITORY_COLLABORATOR:output:$.data.repository.id",
+          "path": "$.data.repository.id",
+          "fieldName": "id",
+          "jsonTypes": [
+            "integer"
+          ],
+          "canonicalEntity": "github.repository_id",
+          "canonicalConfidence": "HIGH",
+          "safeForInference": true,
+          "arrayDepth": 0,
+          "effectivelyRequired": true,
+          "toolkit": "github",
+          "service": "github",
+          "resourceFamily": "repository",
+          "protocol": "REST",
+          "deprecated": false,
+          "schemaCompleteness": "COMPLETE"
+        },
+        "toolMetadata": {
+          "slug": "GITHUB_ADD_A_REPOSITORY_COLLABORATOR",
+          "toolkit": "github",
+          "toolkitVersion": "20260713_00",
+          "name": "Add a repository collaborator",
+          "description": "Adds a GitHub user as a repository collaborator, or updates their permission if already a collaborator; `permission` applies to organization-owned repositories (personal ones default to 'push' and ignore this field), and an invitation may be created or permissions updated directly.",
+          "service": "github",
+          "resourceFamily": "repository",
+          "actionFamily": "create",
+          "protocol": "REST",
+          "apiGeneration": "unknown",
+          "abstractionLevel": "RESOURCE_OPERATION",
+          "deprecated": false,
+          "inputSchemaCompleteness": "COMPLETE",
+          "outputSchemaCompleteness": "COMPLETE"
+        },
+        "normalizedField": {
+          "fieldId": "GITHUB_ADD_A_REPOSITORY_COLLABORATOR:output:$.data.repository.id",
+          "jsonPath": "$.data.repository.id",
+          "sourceSchemaPath": "$.$defs.MinimalRepository.properties.id",
+          "originalFieldName": "id",
+          "parentPath": "$.data.repository",
+          "jsonTypes": [
+            "integer"
+          ],
+          "requiredAtParent": true,
+          "effectivelyRequired": true,
+          "arrayDepth": 0,
+          "description": "Unique identifier of the repository.",
+          "canonicalEntity": {
+            "entity": "github.repository_id",
+            "confidence": "HIGH",
+            "evidence": [
+              "compatible JSON type",
+              "compatible service",
+              "contextual field alias: id",
+              "immediate containing resource is repository",
+              "tool resource family is repository",
+              "resource-specific field path or reference",
+              "resource-specific field description"
+            ],
+            "reasonCodes": [
+              "TYPE_COMPATIBLE",
+              "SERVICE_COMPATIBLE",
+              "ENTITY_CONTEXTUAL_FIELD_ALIAS",
+              "RESOURCE_FAMILY_MATCH",
+              "LOCAL_RESOURCE_FAMILY_MATCH",
+              "RESOURCE_CONTEXT_MATCH"
+            ]
+          },
+          "safeForInference": true,
+          "safetyReasons": [
+            "HIGH_CONFIDENCE_CANONICAL_ENTITY"
+          ],
+          "possibleValueSources": [
+            {
+              "source": "TOOL_OUTPUT",
+              "reason": "The value is declared in this tool's output schema.",
+              "preferred": true
+            }
+          ],
+          "scopes": [
+            {
+              "kind": "repository",
+              "requiredForIdentity": true,
+              "evidence": [
+                "Ontology requires repository scope.",
+                "Scope supplied by $.repo."
+              ],
+              "valueSourcePath": "$.repo"
+            }
+          ],
+          "compositions": []
+        }
+      },
+      "consumerEvidence": {
+        "exactEndpoint": {
+          "toolSlug": "GITHUB_ADD_REPO_TO_ORG_SECRET_WITH_SELECTED_ACCESS",
+          "fieldId": "GITHUB_ADD_REPO_TO_ORG_SECRET_WITH_SELECTED_ACCESS:input:$.repository_id",
+          "path": "$.repository_id",
+          "fieldName": "repository_id",
+          "jsonTypes": [
+            "integer"
+          ],
+          "canonicalEntity": "github.repository_id",
+          "canonicalConfidence": "MEDIUM",
+          "safeForInference": false,
+          "arrayDepth": 0,
+          "effectivelyRequired": true,
+          "toolkit": "github",
+          "service": "github",
+          "resourceFamily": "organization",
+          "protocol": "REST",
+          "deprecated": false,
+          "schemaCompleteness": "COMPLETE"
+        },
+        "toolMetadata": {
+          "slug": "GITHUB_ADD_REPO_TO_ORG_SECRET_WITH_SELECTED_ACCESS",
+          "toolkit": "github",
+          "toolkitVersion": "20260713_00",
+          "name": "Add repo to org secret with selected access",
+          "description": "Adds a repository to an existing organization-level GitHub Actions secret that is configured for 'selected' repository access.",
+          "service": "github",
+          "resourceFamily": "organization",
+          "actionFamily": "create",
+          "protocol": "REST",
+          "apiGeneration": "unknown",
+          "abstractionLevel": "RESOURCE_OPERATION",
+          "deprecated": false,
+          "inputSchemaCompleteness": "COMPLETE",
+          "outputSchemaCompleteness": "COMPLETE"
+        },
+        "normalizedField": {
+          "fieldId": "GITHUB_ADD_REPO_TO_ORG_SECRET_WITH_SELECTED_ACCESS:input:$.repository_id",
+          "jsonPath": "$.repository_id",
+          "sourceSchemaPath": "$.properties.repository_id",
+          "originalFieldName": "repository_id",
+          "parentPath": "$",
+          "jsonTypes": [
+            "integer"
+          ],
+          "requiredAtParent": true,
+          "effectivelyRequired": true,
+          "arrayDepth": 0,
+          "description": "The unique identifier of the repository to be granted access to the organization secret.",
+          "canonicalEntity": {
+            "entity": "github.repository_id",
+            "confidence": "MEDIUM",
+            "evidence": [
+              "compatible JSON type",
+              "compatible service",
+              "exact field alias: repository_id",
+              "resource-specific field description"
+            ],
+            "reasonCodes": [
+              "TYPE_COMPATIBLE",
+              "SERVICE_COMPATIBLE",
+              "ENTITY_EXACT_FIELD_ALIAS",
+              "RESOURCE_CONTEXT_MATCH"
+            ]
+          },
+          "safeForInference": false,
+          "safetyReasons": [
+            "CANONICAL_ENTITY_NOT_HIGH_CONFIDENCE"
+          ],
+          "possibleValueSources": [
+            {
+              "source": "USER",
+              "reason": "The caller may provide the input explicitly.",
+              "preferred": true
+            },
+            {
+              "source": "PRIOR_CONTEXT",
+              "reason": "The value may already exist in trusted workflow context.",
+              "preferred": false
+            },
+            {
+              "source": "TOOL_OUTPUT",
+              "reason": "A prior tool may produce the same canonical entity.",
+              "preferred": false
+            }
+          ],
+          "scopes": [
+            {
+              "kind": "repository",
+              "requiredForIdentity": true,
+              "evidence": [
+                "Ontology requires repository scope.",
+                "Scope supplied by $.repository_id."
+              ],
+              "valueSourcePath": "$.repository_id"
+            }
+          ],
+          "compositions": []
+        }
+      }
+    },
+    {
+      "candidateId": "GITHUB_CREATE_A_CHECK_RUN:output:$.data.pull_requests[].number=>GITHUB_CHECK_IF_PULL_REQUEST_HAS_BEEN_MERGED:input:$.pull_number",
+      "deterministicRecord": {
+        "id": "GITHUB_CREATE_A_CHECK_RUN:output:$.data.pull_requests[].number=>GITHUB_CHECK_IF_PULL_REQUEST_HAS_BEEN_MERGED:input:$.pull_number",
+        "producer": {
+          "toolSlug": "GITHUB_CREATE_A_CHECK_RUN",
+          "fieldId": "GITHUB_CREATE_A_CHECK_RUN:output:$.data.pull_requests[].number",
+          "path": "$.data.pull_requests[].number",
+          "fieldName": "number",
+          "jsonTypes": [
+            "integer"
+          ],
+          "canonicalEntity": "github.pull_request_number",
+          "canonicalConfidence": "HIGH",
+          "safeForInference": true,
+          "arrayDepth": 1,
+          "effectivelyRequired": false,
+          "toolkit": "github",
+          "service": "github",
+          "resourceFamily": "commit",
+          "protocol": "REST",
+          "deprecated": false,
+          "schemaCompleteness": "COMPLETE"
+        },
+        "consumer": {
+          "toolSlug": "GITHUB_CHECK_IF_PULL_REQUEST_HAS_BEEN_MERGED",
+          "fieldId": "GITHUB_CHECK_IF_PULL_REQUEST_HAS_BEEN_MERGED:input:$.pull_number",
+          "path": "$.pull_number",
+          "fieldName": "pull_number",
+          "jsonTypes": [
+            "integer"
+          ],
+          "canonicalEntity": "github.pull_request_number",
+          "canonicalConfidence": "HIGH",
+          "safeForInference": true,
+          "arrayDepth": 0,
+          "effectivelyRequired": true,
+          "toolkit": "github",
+          "service": "github",
+          "resourceFamily": "pull_request",
+          "protocol": "REST",
+          "deprecated": false,
+          "schemaCompleteness": "COMPLETE"
+        },
+        "generationReasons": [
+          "EXACT_CANONICAL_ENTITY"
+        ],
+        "matchedCanonicalEntity": "github.pull_request_number",
+        "hardSeparation": null,
+        "primaryReason": "COLLECTION_REQUIRES_SELECTION",
+        "reasonCodes": [
+          "COLLECTION_REQUIRES_SELECTION",
+          "ENTITY_COMPATIBLE",
+          "TYPE_COMPATIBLE",
+          "SERVICE_COMPATIBLE",
+          "PROTOCOL_IDENTITY_COMPATIBLE",
+          "PRODUCER_SAFE_FOR_INFERENCE",
+          "PRODUCER_ADDS_NEW_INFORMATION",
+          "SCOPE_SHARED_REQUIRED_CONTEXT"
+        ],
+        "selectionRequired": true,
+        "transformationRequired": false,
+        "disambiguationRequired": true,
+        "checks": {
+          "entityCompatible": true,
+          "typeCompatible": true,
+          "serviceCompatible": true,
+          "protocolIdentityCompatible": true,
+          "producerSafeForInference": true,
+          "consumerHasCanonicalEntity": true,
+          "producerAddsNewInformation": true,
+          "scopeStatus": "SHARED_REQUIRED_CONTEXT",
+          "producerScopeEntities": [
+            "github.commit_sha",
+            "github.owner",
+            "github.repository_name"
+          ],
+          "consumerScopeEntities": [
+            "github.owner",
+            "github.repository_name"
+          ],
+          "sharedScopeEntities": [
+            "github.owner",
+            "github.repository_name"
+          ]
+        }
+      },
+      "producerEvidence": {
+        "exactEndpoint": {
+          "toolSlug": "GITHUB_CREATE_A_CHECK_RUN",
+          "fieldId": "GITHUB_CREATE_A_CHECK_RUN:output:$.data.pull_requests[].number",
+          "path": "$.data.pull_requests[].number",
+          "fieldName": "number",
+          "jsonTypes": [
+            "integer"
+          ],
+          "canonicalEntity": "github.pull_request_number",
+          "canonicalConfidence": "HIGH",
+          "safeForInference": true,
+          "arrayDepth": 1,
+          "effectivelyRequired": false,
+          "toolkit": "github",
+          "service": "github",
+          "resourceFamily": "commit",
+          "protocol": "REST",
+          "deprecated": false,
+          "schemaCompleteness": "COMPLETE"
+        },
+        "toolMetadata": {
+          "slug": "GITHUB_CREATE_A_CHECK_RUN",
+          "toolkit": "github",
+          "toolkitVersion": "20260713_00",
+          "name": "Create a check run",
+          "description": "Creates a new check run for a specific commit in a repository, used by external services to report status, detailed feedback, annotations, and images directly within the GitHub UI. NOTE: This endpoint requires GitHub App authentication - OAuth tokens and personal access tokens cannot create check runs.",
+          "service": "github",
+          "resourceFamily": "commit",
+          "actionFamily": "create",
+          "protocol": "REST",
+          "apiGeneration": "unknown",
+          "abstractionLevel": "RESOURCE_OPERATION",
+          "deprecated": false,
+          "inputSchemaCompleteness": "COMPLETE",
+          "outputSchemaCompleteness": "COMPLETE"
+        },
+        "normalizedField": {
+          "fieldId": "GITHUB_CREATE_A_CHECK_RUN:output:$.data.pull_requests[].number",
+          "jsonPath": "$.data.pull_requests[].number",
+          "sourceSchemaPath": "$.$defs.PullRequestReference.properties.number",
+          "originalFieldName": "number",
+          "parentPath": "$.data.pull_requests[]",
+          "jsonTypes": [
+            "integer"
+          ],
+          "requiredAtParent": false,
+          "effectivelyRequired": false,
+          "arrayDepth": 1,
+          "description": "Pull request number.",
+          "canonicalEntity": {
+            "entity": "github.pull_request_number",
+            "confidence": "HIGH",
+            "evidence": [
+              "compatible JSON type",
+              "compatible service",
+              "contextual field alias: number",
+              "description pattern: pull request number",
+              "immediate containing resource is pull_request",
+              "resource-specific field path or reference",
+              "resource-specific field description"
+            ],
+            "reasonCodes": [
+              "TYPE_COMPATIBLE",
+              "SERVICE_COMPATIBLE",
+              "ENTITY_CONTEXTUAL_FIELD_ALIAS",
+              "ENTITY_DESCRIPTION_MATCH",
+              "LOCAL_RESOURCE_FAMILY_MATCH",
+              "RESOURCE_CONTEXT_MATCH"
+            ]
+          },
+          "safeForInference": true,
+          "safetyReasons": [
+            "HIGH_CONFIDENCE_CANONICAL_ENTITY"
+          ],
+          "possibleValueSources": [
+            {
+              "source": "TOOL_OUTPUT",
+              "reason": "The value is declared in this tool's output schema.",
+              "preferred": true
+            }
+          ],
+          "scopes": [
+            {
+              "kind": "owner",
+              "requiredForIdentity": true,
+              "evidence": [
+                "Ontology requires owner scope.",
+                "Scope supplied by $.owner."
+              ],
+              "valueSourcePath": "$.owner"
+            },
+            {
+              "kind": "repository",
+              "requiredForIdentity": true,
+              "evidence": [
+                "Ontology requires repository scope.",
+                "Scope supplied by $.repo."
+              ],
+              "valueSourcePath": "$.repo"
+            }
+          ],
+          "compositions": []
+        }
+      },
+      "consumerEvidence": {
+        "exactEndpoint": {
+          "toolSlug": "GITHUB_CHECK_IF_PULL_REQUEST_HAS_BEEN_MERGED",
+          "fieldId": "GITHUB_CHECK_IF_PULL_REQUEST_HAS_BEEN_MERGED:input:$.pull_number",
+          "path": "$.pull_number",
+          "fieldName": "pull_number",
+          "jsonTypes": [
+            "integer"
+          ],
+          "canonicalEntity": "github.pull_request_number",
+          "canonicalConfidence": "HIGH",
+          "safeForInference": true,
+          "arrayDepth": 0,
+          "effectivelyRequired": true,
+          "toolkit": "github",
+          "service": "github",
+          "resourceFamily": "pull_request",
+          "protocol": "REST",
+          "deprecated": false,
+          "schemaCompleteness": "COMPLETE"
+        },
+        "toolMetadata": {
+          "slug": "GITHUB_CHECK_IF_PULL_REQUEST_HAS_BEEN_MERGED",
+          "toolkit": "github",
+          "toolkitVersion": "20260713_00",
+          "name": "Check if pull request merged",
+          "description": "Checks if a specified GitHub pull request has been merged, indicated by a 204 HTTP status (merged) or 404 (not merged/found).",
+          "service": "github",
+          "resourceFamily": "pull_request",
+          "actionFamily": "unknown",
+          "protocol": "REST",
+          "apiGeneration": "unknown",
+          "abstractionLevel": "RESOURCE_OPERATION",
+          "deprecated": false,
+          "inputSchemaCompleteness": "COMPLETE",
+          "outputSchemaCompleteness": "COMPLETE"
+        },
+        "normalizedField": {
+          "fieldId": "GITHUB_CHECK_IF_PULL_REQUEST_HAS_BEEN_MERGED:input:$.pull_number",
+          "jsonPath": "$.pull_number",
+          "sourceSchemaPath": "$.properties.pull_number",
+          "originalFieldName": "pull_number",
+          "parentPath": "$",
+          "jsonTypes": [
+            "integer"
+          ],
+          "requiredAtParent": true,
+          "effectivelyRequired": true,
+          "arrayDepth": 0,
+          "description": "The number that identifies the pull request.",
+          "canonicalEntity": {
+            "entity": "github.pull_request_number",
+            "confidence": "HIGH",
+            "evidence": [
+              "compatible JSON type",
+              "compatible service",
+              "exact field alias: pull_number",
+              "tool resource family is pull_request",
+              "resource-specific field description"
+            ],
+            "reasonCodes": [
+              "TYPE_COMPATIBLE",
+              "SERVICE_COMPATIBLE",
+              "ENTITY_EXACT_FIELD_ALIAS",
+              "RESOURCE_FAMILY_MATCH",
+              "RESOURCE_CONTEXT_MATCH"
+            ]
+          },
+          "safeForInference": true,
+          "safetyReasons": [
+            "HIGH_CONFIDENCE_CANONICAL_ENTITY"
+          ],
+          "possibleValueSources": [
+            {
+              "source": "USER",
+              "reason": "The caller may provide the input explicitly.",
+              "preferred": true
+            },
+            {
+              "source": "PRIOR_CONTEXT",
+              "reason": "The value may already exist in trusted workflow context.",
+              "preferred": false
+            },
+            {
+              "source": "TOOL_OUTPUT",
+              "reason": "A prior tool may produce the same canonical entity.",
+              "preferred": false
+            }
+          ],
+          "scopes": [
+            {
+              "kind": "owner",
+              "requiredForIdentity": true,
+              "evidence": [
+                "Ontology requires owner scope.",
+                "Scope supplied by $.owner."
+              ],
+              "valueSourcePath": "$.owner"
+            },
+            {
+              "kind": "repository",
+              "requiredForIdentity": true,
+              "evidence": [
+                "Ontology requires repository scope.",
+                "Scope supplied by $.repo."
+              ],
+              "valueSourcePath": "$.repo"
+            }
+          ],
+          "compositions": []
+        }
+      }
+    },
+    {
+      "candidateId": "GITHUB_FIND_REPOSITORIES:output:$.data.items[].full_name=>GITHUB_ADD_APP_ACCESS_RESTRICTIONS:input:$.owner",
+      "deterministicRecord": {
+        "id": "GITHUB_FIND_REPOSITORIES:output:$.data.items[].full_name=>GITHUB_ADD_APP_ACCESS_RESTRICTIONS:input:$.owner",
+        "producer": {
+          "toolSlug": "GITHUB_FIND_REPOSITORIES",
+          "fieldId": "GITHUB_FIND_REPOSITORIES:output:$.data.items[].full_name",
+          "path": "$.data.items[].full_name",
+          "fieldName": "full_name",
+          "jsonTypes": [
+            "string"
+          ],
+          "canonicalEntity": null,
+          "canonicalConfidence": null,
+          "safeForInference": false,
+          "arrayDepth": 1,
+          "effectivelyRequired": true,
+          "toolkit": "github",
+          "service": "github",
+          "resourceFamily": "repository",
+          "protocol": "COMPOSIO_CONVENIENCE_HELPER",
+          "deprecated": false,
+          "schemaCompleteness": "COMPLETE"
+        },
+        "consumer": {
+          "toolSlug": "GITHUB_ADD_APP_ACCESS_RESTRICTIONS",
+          "fieldId": "GITHUB_ADD_APP_ACCESS_RESTRICTIONS:input:$.owner",
+          "path": "$.owner",
+          "fieldName": "owner",
+          "jsonTypes": [
+            "string"
+          ],
+          "canonicalEntity": "github.owner",
+          "canonicalConfidence": "MEDIUM",
+          "safeForInference": false,
+          "arrayDepth": 0,
+          "effectivelyRequired": true,
+          "toolkit": "github",
+          "service": "github",
+          "resourceFamily": "branch",
+          "protocol": "REST",
+          "deprecated": false,
+          "schemaCompleteness": "COMPLETE"
+        },
+        "generationReasons": [
+          "REPOSITORY_FULL_NAME_TRANSFORMATION"
+        ],
+        "matchedCanonicalEntity": null,
+        "hardSeparation": null,
+        "primaryReason": "TRANSFORMATION_REQUIRED",
+        "reasonCodes": [
+          "TRANSFORMATION_REQUIRED",
+          "ENTITY_NOT_COMPATIBLE",
+          "TYPE_COMPATIBLE",
+          "SERVICE_COMPATIBLE",
+          "PROTOCOL_IDENTITY_COMPATIBLE",
+          "PRODUCER_NOT_SAFE_FOR_INFERENCE",
+          "PRODUCER_ADDS_NEW_INFORMATION",
+          "SCOPE_NO_REQUIRED_CONTEXT"
+        ],
+        "selectionRequired": false,
+        "transformationRequired": true,
+        "disambiguationRequired": true,
+        "checks": {
+          "entityCompatible": false,
+          "typeCompatible": true,
+          "serviceCompatible": true,
+          "protocolIdentityCompatible": true,
+          "producerSafeForInference": false,
+          "consumerHasCanonicalEntity": true,
+          "producerAddsNewInformation": true,
+          "scopeStatus": "NO_REQUIRED_CONTEXT",
+          "producerScopeEntities": [],
+          "consumerScopeEntities": [
+            "github.branch_ref",
+            "github.repository_name"
+          ],
+          "sharedScopeEntities": []
+        }
+      },
+      "producerEvidence": {
+        "exactEndpoint": {
+          "toolSlug": "GITHUB_FIND_REPOSITORIES",
+          "fieldId": "GITHUB_FIND_REPOSITORIES:output:$.data.items[].full_name",
+          "path": "$.data.items[].full_name",
+          "fieldName": "full_name",
+          "jsonTypes": [
+            "string"
+          ],
+          "canonicalEntity": null,
+          "canonicalConfidence": null,
+          "safeForInference": false,
+          "arrayDepth": 1,
+          "effectivelyRequired": true,
+          "toolkit": "github",
+          "service": "github",
+          "resourceFamily": "repository",
+          "protocol": "COMPOSIO_CONVENIENCE_HELPER",
+          "deprecated": false,
+          "schemaCompleteness": "COMPLETE"
+        },
+        "toolMetadata": {
+          "slug": "GITHUB_FIND_REPOSITORIES",
+          "toolkit": "github",
+          "toolkitVersion": "20260713_00",
+          "name": "Find Repositories",
+          "description": "AI-optimized repository search with smart filtering by language, stars, topics, and ownership. Builds intelligent search queries and returns clean, actionable repository data. Check `incomplete_results` in the response — when true, results are non-exhaustive. Search endpoints are rate-limited to ~30 requests/minute (vs. 5000/hour for general REST); apply backoff on 403/429. Total results are capped at ~1000 per query regardless of pagination.",
+          "service": "github",
+          "resourceFamily": "repository",
+          "actionFamily": "search",
+          "protocol": "COMPOSIO_CONVENIENCE_HELPER",
+          "apiGeneration": "unknown",
+          "abstractionLevel": "CONVENIENCE_WORKFLOW",
+          "deprecated": false,
+          "inputSchemaCompleteness": "COMPLETE",
+          "outputSchemaCompleteness": "COMPLETE"
+        },
+        "normalizedField": {
+          "fieldId": "GITHUB_FIND_REPOSITORIES:output:$.data.items[].full_name",
+          "jsonPath": "$.data.items[].full_name",
+          "sourceSchemaPath": "$.$defs.Repository.properties.full_name",
+          "originalFieldName": "full_name",
+          "parentPath": "$.data.items[]",
+          "jsonTypes": [
+            "string"
+          ],
+          "requiredAtParent": true,
+          "effectivelyRequired": true,
+          "arrayDepth": 1,
+          "description": "Owner/repository name format",
+          "canonicalEntity": null,
+          "safeForInference": false,
+          "safetyReasons": [
+            "NO_CANONICAL_ENTITY"
+          ],
+          "possibleValueSources": [
+            {
+              "source": "TOOL_OUTPUT",
+              "reason": "The value is declared in this tool's output schema.",
+              "preferred": true
+            }
+          ],
+          "scopes": [],
+          "compositions": []
+        }
+      },
+      "consumerEvidence": {
+        "exactEndpoint": {
+          "toolSlug": "GITHUB_ADD_APP_ACCESS_RESTRICTIONS",
+          "fieldId": "GITHUB_ADD_APP_ACCESS_RESTRICTIONS:input:$.owner",
+          "path": "$.owner",
+          "fieldName": "owner",
+          "jsonTypes": [
+            "string"
+          ],
+          "canonicalEntity": "github.owner",
+          "canonicalConfidence": "MEDIUM",
+          "safeForInference": false,
+          "arrayDepth": 0,
+          "effectivelyRequired": true,
+          "toolkit": "github",
+          "service": "github",
+          "resourceFamily": "branch",
+          "protocol": "REST",
+          "deprecated": false,
+          "schemaCompleteness": "COMPLETE"
+        },
+        "toolMetadata": {
+          "slug": "GITHUB_ADD_APP_ACCESS_RESTRICTIONS",
+          "toolkit": "github",
+          "toolkitVersion": "20260713_00",
+          "name": "Add app access restrictions",
+          "description": "Adds GitHub Apps to the list of apps allowed to push to a protected branch. The branch must already have protection rules with restrictions enabled. This endpoint only works for organization repositories, not personal repositories. Apps must be installed on the repository with 'contents' write permissions.",
+          "service": "github",
+          "resourceFamily": "branch",
+          "actionFamily": "create",
+          "protocol": "REST",
+          "apiGeneration": "unknown",
+          "abstractionLevel": "RESOURCE_OPERATION",
+          "deprecated": false,
+          "inputSchemaCompleteness": "COMPLETE",
+          "outputSchemaCompleteness": "COMPLETE"
+        },
+        "normalizedField": {
+          "fieldId": "GITHUB_ADD_APP_ACCESS_RESTRICTIONS:input:$.owner",
+          "jsonPath": "$.owner",
+          "sourceSchemaPath": "$.properties.owner",
+          "originalFieldName": "owner",
+          "parentPath": "$",
+          "jsonTypes": [
+            "string"
+          ],
+          "requiredAtParent": true,
+          "effectivelyRequired": true,
+          "arrayDepth": 0,
+          "description": "The organization name that owns the repository. This field is not case-sensitive. Note: This endpoint only works for organization-owned repositories.",
+          "canonicalEntity": {
+            "entity": "github.owner",
+            "confidence": "MEDIUM",
+            "evidence": [
+              "compatible JSON type",
+              "compatible service",
+              "exact field alias: owner",
+              "resource-specific field description"
+            ],
+            "reasonCodes": [
+              "TYPE_COMPATIBLE",
+              "SERVICE_COMPATIBLE",
+              "ENTITY_EXACT_FIELD_ALIAS",
+              "RESOURCE_CONTEXT_MATCH"
+            ]
+          },
+          "safeForInference": false,
+          "safetyReasons": [
+            "CANONICAL_ENTITY_NOT_HIGH_CONFIDENCE"
+          ],
+          "possibleValueSources": [
+            {
+              "source": "USER",
+              "reason": "The caller may provide the input explicitly.",
+              "preferred": true
+            },
+            {
+              "source": "PRIOR_CONTEXT",
+              "reason": "The value may already exist in trusted workflow context.",
+              "preferred": false
+            },
+            {
+              "source": "TOOL_OUTPUT",
+              "reason": "A prior tool may produce the same canonical entity.",
+              "preferred": false
+            }
+          ],
+          "scopes": [
+            {
+              "kind": "owner",
+              "requiredForIdentity": true,
+              "evidence": [
+                "Ontology requires owner scope.",
+                "Scope supplied by $.owner."
+              ],
+              "valueSourcePath": "$.owner"
+            }
+          ],
+          "compositions": []
+        }
+      }
+    },
+    {
+      "candidateId": "GITHUB_SEARCH_ISSUES_AND_PULL_REQUESTS:output:$.data.items[].number=>GITHUB_ADD_ASSIGNEES_TO_AN_ISSUE:input:$.issue_number",
+      "deterministicRecord": {
+        "id": "GITHUB_SEARCH_ISSUES_AND_PULL_REQUESTS:output:$.data.items[].number=>GITHUB_ADD_ASSIGNEES_TO_AN_ISSUE:input:$.issue_number",
+        "producer": {
+          "toolSlug": "GITHUB_SEARCH_ISSUES_AND_PULL_REQUESTS",
+          "fieldId": "GITHUB_SEARCH_ISSUES_AND_PULL_REQUESTS:output:$.data.items[].number",
+          "path": "$.data.items[].number",
+          "fieldName": "number",
+          "jsonTypes": [
+            "integer"
+          ],
+          "canonicalEntity": null,
+          "canonicalConfidence": null,
+          "safeForInference": false,
+          "arrayDepth": 1,
+          "effectivelyRequired": true,
+          "toolkit": "github",
+          "service": "github",
+          "resourceFamily": "pull_request",
+          "protocol": "REST",
+          "deprecated": false,
+          "schemaCompleteness": "COMPLETE"
+        },
+        "consumer": {
+          "toolSlug": "GITHUB_ADD_ASSIGNEES_TO_AN_ISSUE",
+          "fieldId": "GITHUB_ADD_ASSIGNEES_TO_AN_ISSUE:input:$.issue_number",
+          "path": "$.issue_number",
+          "fieldName": "issue_number",
+          "jsonTypes": [
+            "integer"
+          ],
+          "canonicalEntity": "github.issue_number",
+          "canonicalConfidence": "HIGH",
+          "safeForInference": true,
+          "arrayDepth": 0,
+          "effectivelyRequired": true,
+          "toolkit": "github",
+          "service": "github",
+          "resourceFamily": "issue",
+          "protocol": "REST",
+          "deprecated": false,
+          "schemaCompleteness": "COMPLETE"
+        },
+        "generationReasons": [
+          "ISSUE_PULL_REQUEST_NUMBER_AMBIGUITY"
+        ],
+        "matchedCanonicalEntity": null,
+        "hardSeparation": null,
+        "primaryReason": "AMBIGUOUS_ISSUE_PULL_REQUEST_NUMBER",
+        "reasonCodes": [
+          "AMBIGUOUS_ISSUE_PULL_REQUEST_NUMBER",
+          "ENTITY_NOT_COMPATIBLE",
+          "TYPE_COMPATIBLE",
+          "SERVICE_COMPATIBLE",
+          "PROTOCOL_IDENTITY_COMPATIBLE",
+          "PRODUCER_NOT_SAFE_FOR_INFERENCE",
+          "PRODUCER_ADDS_NEW_INFORMATION",
+          "SCOPE_NO_REQUIRED_CONTEXT"
+        ],
+        "selectionRequired": true,
+        "transformationRequired": false,
+        "disambiguationRequired": true,
+        "checks": {
+          "entityCompatible": false,
+          "typeCompatible": true,
+          "serviceCompatible": true,
+          "protocolIdentityCompatible": true,
+          "producerSafeForInference": false,
+          "consumerHasCanonicalEntity": true,
+          "producerAddsNewInformation": true,
+          "scopeStatus": "NO_REQUIRED_CONTEXT",
+          "producerScopeEntities": [],
+          "consumerScopeEntities": [
+            "github.owner",
+            "github.repository_name"
+          ],
+          "sharedScopeEntities": []
+        }
+      },
+      "producerEvidence": {
+        "exactEndpoint": {
+          "toolSlug": "GITHUB_SEARCH_ISSUES_AND_PULL_REQUESTS",
+          "fieldId": "GITHUB_SEARCH_ISSUES_AND_PULL_REQUESTS:output:$.data.items[].number",
+          "path": "$.data.items[].number",
+          "fieldName": "number",
+          "jsonTypes": [
+            "integer"
+          ],
+          "canonicalEntity": null,
+          "canonicalConfidence": null,
+          "safeForInference": false,
+          "arrayDepth": 1,
+          "effectivelyRequired": true,
+          "toolkit": "github",
+          "service": "github",
+          "resourceFamily": "pull_request",
+          "protocol": "REST",
+          "deprecated": false,
+          "schemaCompleteness": "COMPLETE"
+        },
+        "toolMetadata": {
+          "slug": "GITHUB_SEARCH_ISSUES_AND_PULL_REQUESTS",
+          "toolkit": "github",
+          "toolkitVersion": "20260713_00",
+          "name": "Search issues and pull requests",
+          "description": "Searches GitHub for issues and pull requests. Supports keywords, qualifiers (repo:, org:, user:, state:, label:, author:, assignee:, mentions:, etc.), and type filters (is:issue, is:pr). Type filters cannot be used alone - they must be combined with at least one keyword or other qualifier. All other qualifiers work independently. The @me shorthand (e.g., assignee:@me, mentions:@me) is automatically resolved to your username. Logical operators (AND, OR, NOT) are supported but limited to a maximum of 5 operators total per query.",
+          "service": "github",
+          "resourceFamily": "pull_request",
+          "actionFamily": "search",
+          "protocol": "REST",
+          "apiGeneration": "unknown",
+          "abstractionLevel": "RESOURCE_OPERATION",
+          "deprecated": false,
+          "inputSchemaCompleteness": "COMPLETE",
+          "outputSchemaCompleteness": "COMPLETE"
+        },
+        "normalizedField": {
+          "fieldId": "GITHUB_SEARCH_ISSUES_AND_PULL_REQUESTS:output:$.data.items[].number",
+          "jsonPath": "$.data.items[].number",
+          "sourceSchemaPath": "$.$defs.Issue.properties.number",
+          "originalFieldName": "number",
+          "parentPath": "$.data.items[]",
+          "jsonTypes": [
+            "integer"
+          ],
+          "requiredAtParent": true,
+          "effectivelyRequired": true,
+          "arrayDepth": 1,
+          "description": "Issue or pull request number within the repository",
+          "canonicalEntity": null,
+          "safeForInference": false,
+          "safetyReasons": [
+            "NO_CANONICAL_ENTITY"
+          ],
+          "possibleValueSources": [
+            {
+              "source": "TOOL_OUTPUT",
+              "reason": "The value is declared in this tool's output schema.",
+              "preferred": true
+            }
+          ],
+          "scopes": [],
+          "compositions": []
+        }
+      },
+      "consumerEvidence": {
+        "exactEndpoint": {
+          "toolSlug": "GITHUB_ADD_ASSIGNEES_TO_AN_ISSUE",
+          "fieldId": "GITHUB_ADD_ASSIGNEES_TO_AN_ISSUE:input:$.issue_number",
+          "path": "$.issue_number",
+          "fieldName": "issue_number",
+          "jsonTypes": [
+            "integer"
+          ],
+          "canonicalEntity": "github.issue_number",
+          "canonicalConfidence": "HIGH",
+          "safeForInference": true,
+          "arrayDepth": 0,
+          "effectivelyRequired": true,
+          "toolkit": "github",
+          "service": "github",
+          "resourceFamily": "issue",
+          "protocol": "REST",
+          "deprecated": false,
+          "schemaCompleteness": "COMPLETE"
+        },
+        "toolMetadata": {
+          "slug": "GITHUB_ADD_ASSIGNEES_TO_AN_ISSUE",
+          "toolkit": "github",
+          "toolkitVersion": "20260713_00",
+          "name": "Add assignees to an issue",
+          "description": "Adds assignees to a GitHub issue. This action only adds users - it does not remove existing assignees. Changes are silently ignored if the authenticated user lacks push access to the repository.",
+          "service": "github",
+          "resourceFamily": "issue",
+          "actionFamily": "create",
+          "protocol": "REST",
+          "apiGeneration": "unknown",
+          "abstractionLevel": "RESOURCE_OPERATION",
+          "deprecated": false,
+          "inputSchemaCompleteness": "COMPLETE",
+          "outputSchemaCompleteness": "COMPLETE"
+        },
+        "normalizedField": {
+          "fieldId": "GITHUB_ADD_ASSIGNEES_TO_AN_ISSUE:input:$.issue_number",
+          "jsonPath": "$.issue_number",
+          "sourceSchemaPath": "$.properties.issue_number",
+          "originalFieldName": "issue_number",
+          "parentPath": "$",
+          "jsonTypes": [
+            "integer"
+          ],
+          "requiredAtParent": true,
+          "effectivelyRequired": true,
+          "arrayDepth": 0,
+          "description": "The unique number identifying the issue within the repository. Must be a positive integer (GitHub issue numbers start at 1).",
+          "canonicalEntity": {
+            "entity": "github.issue_number",
+            "confidence": "HIGH",
+            "evidence": [
+              "compatible JSON type",
+              "compatible service",
+              "exact field alias: issue_number",
+              "description pattern: issue number",
+              "tool resource family is issue",
+              "resource-specific field description"
+            ],
+            "reasonCodes": [
+              "TYPE_COMPATIBLE",
+              "SERVICE_COMPATIBLE",
+              "ENTITY_EXACT_FIELD_ALIAS",
+              "ENTITY_DESCRIPTION_MATCH",
+              "RESOURCE_FAMILY_MATCH",
+              "RESOURCE_CONTEXT_MATCH"
+            ]
+          },
+          "safeForInference": true,
+          "safetyReasons": [
+            "HIGH_CONFIDENCE_CANONICAL_ENTITY"
+          ],
+          "possibleValueSources": [
+            {
+              "source": "USER",
+              "reason": "The caller may provide the input explicitly.",
+              "preferred": true
+            },
+            {
+              "source": "PRIOR_CONTEXT",
+              "reason": "The value may already exist in trusted workflow context.",
+              "preferred": false
+            },
+            {
+              "source": "TOOL_OUTPUT",
+              "reason": "A prior tool may produce the same canonical entity.",
+              "preferred": false
+            }
+          ],
+          "scopes": [
+            {
+              "kind": "owner",
+              "requiredForIdentity": true,
+              "evidence": [
+                "Ontology requires owner scope.",
+                "Scope supplied by $.owner."
+              ],
+              "valueSourcePath": "$.owner"
+            },
+            {
+              "kind": "repository",
+              "requiredForIdentity": true,
+              "evidence": [
+                "Ontology requires repository scope.",
+                "Scope supplied by $.repo."
+              ],
+              "valueSourcePath": "$.repo"
+            }
+          ],
+          "compositions": []
+        }
+      }
+    },
+    {
+      "candidateId": "GITHUB_ADD_A_REPOSITORY_COLLABORATOR:output:$.data.repository.id=>GITHUB_ADD_REPO_TO_ORG_SECRET_WITH_SELECTED_VISIBILITY:input:$.repository_id",
+      "deterministicRecord": {
+        "id": "GITHUB_ADD_A_REPOSITORY_COLLABORATOR:output:$.data.repository.id=>GITHUB_ADD_REPO_TO_ORG_SECRET_WITH_SELECTED_VISIBILITY:input:$.repository_id",
+        "producer": {
+          "toolSlug": "GITHUB_ADD_A_REPOSITORY_COLLABORATOR",
+          "fieldId": "GITHUB_ADD_A_REPOSITORY_COLLABORATOR:output:$.data.repository.id",
+          "path": "$.data.repository.id",
+          "fieldName": "id",
+          "jsonTypes": [
+            "integer"
+          ],
+          "canonicalEntity": "github.repository_id",
+          "canonicalConfidence": "HIGH",
+          "safeForInference": true,
+          "arrayDepth": 0,
+          "effectivelyRequired": true,
+          "toolkit": "github",
+          "service": "github",
+          "resourceFamily": "repository",
+          "protocol": "REST",
+          "deprecated": false,
+          "schemaCompleteness": "COMPLETE"
+        },
+        "consumer": {
+          "toolSlug": "GITHUB_ADD_REPO_TO_ORG_SECRET_WITH_SELECTED_VISIBILITY",
+          "fieldId": "GITHUB_ADD_REPO_TO_ORG_SECRET_WITH_SELECTED_VISIBILITY:input:$.repository_id",
+          "path": "$.repository_id",
+          "fieldName": "repository_id",
+          "jsonTypes": [
+            "integer"
+          ],
+          "canonicalEntity": "github.repository_id",
+          "canonicalConfidence": "MEDIUM",
+          "safeForInference": false,
+          "arrayDepth": 0,
+          "effectivelyRequired": true,
+          "toolkit": "github",
+          "service": "github",
+          "resourceFamily": "organization",
+          "protocol": "REST",
+          "deprecated": false,
+          "schemaCompleteness": "COMPLETE"
+        },
+        "generationReasons": [
+          "EXACT_CANONICAL_ENTITY"
+        ],
+        "matchedCanonicalEntity": "github.repository_id",
+        "hardSeparation": null,
+        "primaryReason": "LOW_CONFIDENCE_CANONICAL_ENTITY",
+        "reasonCodes": [
+          "LOW_CONFIDENCE_CANONICAL_ENTITY",
+          "ENTITY_COMPATIBLE",
+          "TYPE_COMPATIBLE",
+          "SERVICE_COMPATIBLE",
+          "PROTOCOL_IDENTITY_COMPATIBLE",
+          "PRODUCER_SAFE_FOR_INFERENCE",
+          "PRODUCER_ADDS_NEW_INFORMATION",
+          "SCOPE_CONTEXT_NOT_SHARED"
+        ],
+        "selectionRequired": false,
+        "transformationRequired": false,
+        "disambiguationRequired": true,
+        "checks": {
+          "entityCompatible": true,
+          "typeCompatible": true,
+          "serviceCompatible": true,
+          "protocolIdentityCompatible": true,
+          "producerSafeForInference": true,
+          "consumerHasCanonicalEntity": true,
+          "producerAddsNewInformation": true,
+          "scopeStatus": "CONTEXT_NOT_SHARED",
+          "producerScopeEntities": [
+            "github.owner",
+            "github.repository_name"
+          ],
+          "consumerScopeEntities": [
+            "github.organization"
+          ],
+          "sharedScopeEntities": []
+        }
+      },
+      "producerEvidence": {
+        "exactEndpoint": {
+          "toolSlug": "GITHUB_ADD_A_REPOSITORY_COLLABORATOR",
+          "fieldId": "GITHUB_ADD_A_REPOSITORY_COLLABORATOR:output:$.data.repository.id",
+          "path": "$.data.repository.id",
+          "fieldName": "id",
+          "jsonTypes": [
+            "integer"
+          ],
+          "canonicalEntity": "github.repository_id",
+          "canonicalConfidence": "HIGH",
+          "safeForInference": true,
+          "arrayDepth": 0,
+          "effectivelyRequired": true,
+          "toolkit": "github",
+          "service": "github",
+          "resourceFamily": "repository",
+          "protocol": "REST",
+          "deprecated": false,
+          "schemaCompleteness": "COMPLETE"
+        },
+        "toolMetadata": {
+          "slug": "GITHUB_ADD_A_REPOSITORY_COLLABORATOR",
+          "toolkit": "github",
+          "toolkitVersion": "20260713_00",
+          "name": "Add a repository collaborator",
+          "description": "Adds a GitHub user as a repository collaborator, or updates their permission if already a collaborator; `permission` applies to organization-owned repositories (personal ones default to 'push' and ignore this field), and an invitation may be created or permissions updated directly.",
+          "service": "github",
+          "resourceFamily": "repository",
+          "actionFamily": "create",
+          "protocol": "REST",
+          "apiGeneration": "unknown",
+          "abstractionLevel": "RESOURCE_OPERATION",
+          "deprecated": false,
+          "inputSchemaCompleteness": "COMPLETE",
+          "outputSchemaCompleteness": "COMPLETE"
+        },
+        "normalizedField": {
+          "fieldId": "GITHUB_ADD_A_REPOSITORY_COLLABORATOR:output:$.data.repository.id",
+          "jsonPath": "$.data.repository.id",
+          "sourceSchemaPath": "$.$defs.MinimalRepository.properties.id",
+          "originalFieldName": "id",
+          "parentPath": "$.data.repository",
+          "jsonTypes": [
+            "integer"
+          ],
+          "requiredAtParent": true,
+          "effectivelyRequired": true,
+          "arrayDepth": 0,
+          "description": "Unique identifier of the repository.",
+          "canonicalEntity": {
+            "entity": "github.repository_id",
+            "confidence": "HIGH",
+            "evidence": [
+              "compatible JSON type",
+              "compatible service",
+              "contextual field alias: id",
+              "immediate containing resource is repository",
+              "tool resource family is repository",
+              "resource-specific field path or reference",
+              "resource-specific field description"
+            ],
+            "reasonCodes": [
+              "TYPE_COMPATIBLE",
+              "SERVICE_COMPATIBLE",
+              "ENTITY_CONTEXTUAL_FIELD_ALIAS",
+              "RESOURCE_FAMILY_MATCH",
+              "LOCAL_RESOURCE_FAMILY_MATCH",
+              "RESOURCE_CONTEXT_MATCH"
+            ]
+          },
+          "safeForInference": true,
+          "safetyReasons": [
+            "HIGH_CONFIDENCE_CANONICAL_ENTITY"
+          ],
+          "possibleValueSources": [
+            {
+              "source": "TOOL_OUTPUT",
+              "reason": "The value is declared in this tool's output schema.",
+              "preferred": true
+            }
+          ],
+          "scopes": [
+            {
+              "kind": "repository",
+              "requiredForIdentity": true,
+              "evidence": [
+                "Ontology requires repository scope.",
+                "Scope supplied by $.repo."
+              ],
+              "valueSourcePath": "$.repo"
+            }
+          ],
+          "compositions": []
+        }
+      },
+      "consumerEvidence": {
+        "exactEndpoint": {
+          "toolSlug": "GITHUB_ADD_REPO_TO_ORG_SECRET_WITH_SELECTED_VISIBILITY",
+          "fieldId": "GITHUB_ADD_REPO_TO_ORG_SECRET_WITH_SELECTED_VISIBILITY:input:$.repository_id",
+          "path": "$.repository_id",
+          "fieldName": "repository_id",
+          "jsonTypes": [
+            "integer"
+          ],
+          "canonicalEntity": "github.repository_id",
+          "canonicalConfidence": "MEDIUM",
+          "safeForInference": false,
+          "arrayDepth": 0,
+          "effectivelyRequired": true,
+          "toolkit": "github",
+          "service": "github",
+          "resourceFamily": "organization",
+          "protocol": "REST",
+          "deprecated": false,
+          "schemaCompleteness": "COMPLETE"
+        },
+        "toolMetadata": {
+          "slug": "GITHUB_ADD_REPO_TO_ORG_SECRET_WITH_SELECTED_VISIBILITY",
+          "toolkit": "github",
+          "toolkitVersion": "20260713_00",
+          "name": "Add selected repo to org secret",
+          "description": "Grants an existing repository access to an existing organization-level Dependabot secret when the secret's visibility is set to 'selected'; the repository must belong to the organization, and the call succeeds without change if access already exists.",
+          "service": "github",
+          "resourceFamily": "organization",
+          "actionFamily": "create",
+          "protocol": "REST",
+          "apiGeneration": "unknown",
+          "abstractionLevel": "RESOURCE_OPERATION",
+          "deprecated": false,
+          "inputSchemaCompleteness": "COMPLETE",
+          "outputSchemaCompleteness": "GENERIC"
+        },
+        "normalizedField": {
+          "fieldId": "GITHUB_ADD_REPO_TO_ORG_SECRET_WITH_SELECTED_VISIBILITY:input:$.repository_id",
+          "jsonPath": "$.repository_id",
+          "sourceSchemaPath": "$.properties.repository_id",
+          "originalFieldName": "repository_id",
+          "parentPath": "$",
+          "jsonTypes": [
+            "integer"
+          ],
+          "requiredAtParent": true,
+          "effectivelyRequired": true,
+          "arrayDepth": 0,
+          "description": "Unique ID of the repository to be granted access to the secret.",
+          "canonicalEntity": {
+            "entity": "github.repository_id",
+            "confidence": "MEDIUM",
+            "evidence": [
+              "compatible JSON type",
+              "compatible service",
+              "exact field alias: repository_id",
+              "resource-specific field description"
+            ],
+            "reasonCodes": [
+              "TYPE_COMPATIBLE",
+              "SERVICE_COMPATIBLE",
+              "ENTITY_EXACT_FIELD_ALIAS",
+              "RESOURCE_CONTEXT_MATCH"
+            ]
+          },
+          "safeForInference": false,
+          "safetyReasons": [
+            "CANONICAL_ENTITY_NOT_HIGH_CONFIDENCE"
+          ],
+          "possibleValueSources": [
+            {
+              "source": "USER",
+              "reason": "The caller may provide the input explicitly.",
+              "preferred": true
+            },
+            {
+              "source": "PRIOR_CONTEXT",
+              "reason": "The value may already exist in trusted workflow context.",
+              "preferred": false
+            },
+            {
+              "source": "TOOL_OUTPUT",
+              "reason": "A prior tool may produce the same canonical entity.",
+              "preferred": false
+            }
+          ],
+          "scopes": [
+            {
+              "kind": "repository",
+              "requiredForIdentity": true,
+              "evidence": [
+                "Ontology requires repository scope.",
+                "Scope supplied by $.repository_id."
+              ],
+              "valueSourcePath": "$.repository_id"
+            }
+          ],
+          "compositions": []
+        }
+      }
+    }
+  ]
+}

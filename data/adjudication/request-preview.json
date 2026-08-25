@@ -1,0 +1,625 @@
+{
+  "format": "adjudication-request-v1",
+  "promptVersion": "dependency-adjudication-v1",
+  "candidateId": "GITHUB_ADD_A_REPOSITORY_COLLABORATOR:output:$.data.repository.id=>GITHUB_ADD_REPO_TO_ORG_SECRET_WITH_SELECTED_ACCESS:input:$.repository_id",
+  "source": {
+    "uncertainArtifactFormat": "dependency-candidate-decisions-v1",
+    "catalogFormat": "normalized-tool-catalog-v1",
+    "toolkitVersions": {
+      "github": "20260713_00",
+      "googlesuper": "20260714_00"
+    }
+  },
+  "deterministicPriority": {
+    "score": 2,
+    "scale": "ORDINAL_REVIEW_PRIORITY_1_TO_3",
+    "basis": [
+      "SEMANTIC_OR_SCOPE_REVIEW"
+    ],
+    "isProbability": false,
+    "includedInModelPrompt": false
+  },
+  "deterministicAnalysis": {
+    "primaryReason": "LOW_CONFIDENCE_CANONICAL_ENTITY",
+    "generationReasons": [
+      "EXACT_CANONICAL_ENTITY"
+    ],
+    "matchedCanonicalEntity": "github.repository_id",
+    "reasonCodes": [
+      "LOW_CONFIDENCE_CANONICAL_ENTITY",
+      "ENTITY_COMPATIBLE",
+      "TYPE_COMPATIBLE",
+      "SERVICE_COMPATIBLE",
+      "PROTOCOL_IDENTITY_COMPATIBLE",
+      "PRODUCER_SAFE_FOR_INFERENCE",
+      "PRODUCER_ADDS_NEW_INFORMATION",
+      "SCOPE_CONTEXT_NOT_SHARED"
+    ],
+    "selectionRequired": false,
+    "disambiguationRequired": true,
+    "transformationRequired": false,
+    "checks": {
+      "entityCompatible": true,
+      "typeCompatible": true,
+      "serviceCompatible": true,
+      "protocolIdentityCompatible": true,
+      "producerSafeForInference": true,
+      "consumerHasCanonicalEntity": true,
+      "producerAddsNewInformation": true,
+      "scopeStatus": "CONTEXT_NOT_SHARED",
+      "producerScopeEntities": [
+        "github.owner",
+        "github.repository_name"
+      ],
+      "consumerScopeEntities": [
+        "github.organization"
+      ],
+      "sharedScopeEntities": []
+    }
+  },
+  "eligibility": {
+    "reasonCodes": [
+      "LOW_CONFIDENCE_ENTITY_REVIEWABLE"
+    ],
+    "explanation": "Both endpoints contain plausible semantic evidence, but at least one canonical assignment is not high confidence.",
+    "resolvableQuestions": [
+      "Can the producer and consumer meanings be disambiguated using only the supplied evidence?",
+      "Does the stored evidence establish compatible resource scope?"
+    ],
+    "semanticCluster": "f5c08d046967d2f95b28c94571b31fcdbd02902db965cb6693c679a27b635b50"
+  },
+  "producer": {
+    "tool": {
+      "slug": "GITHUB_ADD_A_REPOSITORY_COLLABORATOR",
+      "name": "Add a repository collaborator",
+      "description": "Adds a GitHub user as a repository collaborator, or updates their permission if already a collaborator; `permission` applies to organization-owned repositories (personal ones default to 'push' and ignore this field), and an invitation may be created or permissions updated directly.",
+      "toolkit": "github",
+      "toolkitVersion": "20260713_00",
+      "service": "github",
+      "resourceFamily": "repository",
+      "actionFamily": "create",
+      "protocol": "REST",
+      "apiVariant": "default",
+      "abstractionLevel": "RESOURCE_OPERATION",
+      "deprecated": false,
+      "schemaCompleteness": "COMPLETE"
+    },
+    "field": {
+      "fieldId": "GITHUB_ADD_A_REPOSITORY_COLLABORATOR:output:$.data.repository.id",
+      "path": "$.data.repository.id",
+      "sourceSchemaPath": "$.$defs.MinimalRepository.properties.id",
+      "name": "id",
+      "jsonTypes": [
+        "integer"
+      ],
+      "required": true,
+      "arrayDepth": 0,
+      "description": "Unique identifier of the repository.",
+      "canonicalEntity": {
+        "entity": "github.repository_id",
+        "confidence": "HIGH",
+        "evidence": [
+          "compatible JSON type",
+          "compatible service",
+          "contextual field alias: id",
+          "immediate containing resource is repository",
+          "tool resource family is repository",
+          "resource-specific field path or reference",
+          "resource-specific field description"
+        ],
+        "reasonCodes": [
+          "TYPE_COMPATIBLE",
+          "SERVICE_COMPATIBLE",
+          "ENTITY_CONTEXTUAL_FIELD_ALIAS",
+          "RESOURCE_FAMILY_MATCH",
+          "LOCAL_RESOURCE_FAMILY_MATCH",
+          "RESOURCE_CONTEXT_MATCH"
+        ]
+      },
+      "safeForInference": true,
+      "safetyReasons": [
+        "HIGH_CONFIDENCE_CANONICAL_ENTITY"
+      ],
+      "possibleValueSources": [
+        {
+          "source": "TOOL_OUTPUT",
+          "reason": "The value is declared in this tool's output schema.",
+          "preferred": true
+        }
+      ],
+      "scopes": [
+        {
+          "kind": "repository",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires repository scope.",
+            "Scope supplied by $.repo."
+          ],
+          "valueSourcePath": "$.repo"
+        }
+      ],
+      "compositions": []
+    }
+  },
+  "consumer": {
+    "tool": {
+      "slug": "GITHUB_ADD_REPO_TO_ORG_SECRET_WITH_SELECTED_ACCESS",
+      "name": "Add repo to org secret with selected access",
+      "description": "Adds a repository to an existing organization-level GitHub Actions secret that is configured for 'selected' repository access.",
+      "toolkit": "github",
+      "toolkitVersion": "20260713_00",
+      "service": "github",
+      "resourceFamily": "organization",
+      "actionFamily": "create",
+      "protocol": "REST",
+      "apiVariant": "default",
+      "abstractionLevel": "RESOURCE_OPERATION",
+      "deprecated": false,
+      "schemaCompleteness": "COMPLETE"
+    },
+    "field": {
+      "fieldId": "GITHUB_ADD_REPO_TO_ORG_SECRET_WITH_SELECTED_ACCESS:input:$.repository_id",
+      "path": "$.repository_id",
+      "sourceSchemaPath": "$.properties.repository_id",
+      "name": "repository_id",
+      "jsonTypes": [
+        "integer"
+      ],
+      "required": true,
+      "arrayDepth": 0,
+      "description": "The unique identifier of the repository to be granted access to the organization secret.",
+      "canonicalEntity": {
+        "entity": "github.repository_id",
+        "confidence": "MEDIUM",
+        "evidence": [
+          "compatible JSON type",
+          "compatible service",
+          "exact field alias: repository_id",
+          "resource-specific field description"
+        ],
+        "reasonCodes": [
+          "TYPE_COMPATIBLE",
+          "SERVICE_COMPATIBLE",
+          "ENTITY_EXACT_FIELD_ALIAS",
+          "RESOURCE_CONTEXT_MATCH"
+        ]
+      },
+      "safeForInference": false,
+      "safetyReasons": [
+        "CANONICAL_ENTITY_NOT_HIGH_CONFIDENCE"
+      ],
+      "possibleValueSources": [
+        {
+          "source": "USER",
+          "reason": "The caller may provide the input explicitly.",
+          "preferred": true
+        },
+        {
+          "source": "PRIOR_CONTEXT",
+          "reason": "The value may already exist in trusted workflow context.",
+          "preferred": false
+        },
+        {
+          "source": "TOOL_OUTPUT",
+          "reason": "A prior tool may produce the same canonical entity.",
+          "preferred": false
+        }
+      ],
+      "scopes": [
+        {
+          "kind": "repository",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires repository scope.",
+            "Scope supplied by $.repository_id."
+          ],
+          "valueSourcePath": "$.repository_id"
+        }
+      ],
+      "compositions": []
+    }
+  },
+  "evidence": [
+    {
+      "reference": "candidate.primaryReason",
+      "value": "LOW_CONFIDENCE_CANONICAL_ENTITY"
+    },
+    {
+      "reference": "candidate.generationReasons",
+      "value": [
+        "EXACT_CANONICAL_ENTITY"
+      ]
+    },
+    {
+      "reference": "candidate.matchedCanonicalEntity",
+      "value": "github.repository_id"
+    },
+    {
+      "reference": "candidate.reasonCodes",
+      "value": [
+        "LOW_CONFIDENCE_CANONICAL_ENTITY",
+        "ENTITY_COMPATIBLE",
+        "TYPE_COMPATIBLE",
+        "SERVICE_COMPATIBLE",
+        "PROTOCOL_IDENTITY_COMPATIBLE",
+        "PRODUCER_SAFE_FOR_INFERENCE",
+        "PRODUCER_ADDS_NEW_INFORMATION",
+        "SCOPE_CONTEXT_NOT_SHARED"
+      ]
+    },
+    {
+      "reference": "candidate.flags.selectionRequired",
+      "value": false
+    },
+    {
+      "reference": "candidate.flags.disambiguationRequired",
+      "value": true
+    },
+    {
+      "reference": "candidate.flags.transformationRequired",
+      "value": false
+    },
+    {
+      "reference": "candidate.checks",
+      "value": {
+        "entityCompatible": true,
+        "typeCompatible": true,
+        "serviceCompatible": true,
+        "protocolIdentityCompatible": true,
+        "producerSafeForInference": true,
+        "consumerHasCanonicalEntity": true,
+        "producerAddsNewInformation": true,
+        "scopeStatus": "CONTEXT_NOT_SHARED",
+        "producerScopeEntities": [
+          "github.owner",
+          "github.repository_name"
+        ],
+        "consumerScopeEntities": [
+          "github.organization"
+        ],
+        "sharedScopeEntities": []
+      }
+    },
+    {
+      "reference": "producer.tool.slug",
+      "value": "GITHUB_ADD_A_REPOSITORY_COLLABORATOR"
+    },
+    {
+      "reference": "producer.tool.name",
+      "value": "Add a repository collaborator"
+    },
+    {
+      "reference": "producer.tool.description",
+      "value": "Adds a GitHub user as a repository collaborator, or updates their permission if already a collaborator; `permission` applies to organization-owned repositories (personal ones default to 'push' and ignore this field), and an invitation may be created or permissions updated directly."
+    },
+    {
+      "reference": "producer.tool.service",
+      "value": "github"
+    },
+    {
+      "reference": "producer.tool.resourceFamily",
+      "value": "repository"
+    },
+    {
+      "reference": "producer.tool.actionFamily",
+      "value": "create"
+    },
+    {
+      "reference": "producer.tool.protocol",
+      "value": "REST"
+    },
+    {
+      "reference": "producer.tool.apiVariant",
+      "value": "default"
+    },
+    {
+      "reference": "producer.tool.abstractionLevel",
+      "value": "RESOURCE_OPERATION"
+    },
+    {
+      "reference": "producer.tool.deprecated",
+      "value": false
+    },
+    {
+      "reference": "producer.tool.schemaCompleteness",
+      "value": "COMPLETE"
+    },
+    {
+      "reference": "producer.field.fieldId",
+      "value": "GITHUB_ADD_A_REPOSITORY_COLLABORATOR:output:$.data.repository.id"
+    },
+    {
+      "reference": "producer.field.path",
+      "value": "$.data.repository.id"
+    },
+    {
+      "reference": "producer.field.sourceSchemaPath",
+      "value": "$.$defs.MinimalRepository.properties.id"
+    },
+    {
+      "reference": "producer.field.name",
+      "value": "id"
+    },
+    {
+      "reference": "producer.field.jsonTypes",
+      "value": [
+        "integer"
+      ]
+    },
+    {
+      "reference": "producer.field.required",
+      "value": true
+    },
+    {
+      "reference": "producer.field.arrayDepth",
+      "value": 0
+    },
+    {
+      "reference": "producer.field.description",
+      "value": "Unique identifier of the repository."
+    },
+    {
+      "reference": "producer.field.canonicalEntity",
+      "value": {
+        "entity": "github.repository_id",
+        "confidence": "HIGH",
+        "evidence": [
+          "compatible JSON type",
+          "compatible service",
+          "contextual field alias: id",
+          "immediate containing resource is repository",
+          "tool resource family is repository",
+          "resource-specific field path or reference",
+          "resource-specific field description"
+        ],
+        "reasonCodes": [
+          "TYPE_COMPATIBLE",
+          "SERVICE_COMPATIBLE",
+          "ENTITY_CONTEXTUAL_FIELD_ALIAS",
+          "RESOURCE_FAMILY_MATCH",
+          "LOCAL_RESOURCE_FAMILY_MATCH",
+          "RESOURCE_CONTEXT_MATCH"
+        ]
+      }
+    },
+    {
+      "reference": "producer.field.safety",
+      "value": {
+        "safeForInference": true,
+        "safetyReasons": [
+          "HIGH_CONFIDENCE_CANONICAL_ENTITY"
+        ]
+      }
+    },
+    {
+      "reference": "producer.field.valueSources",
+      "value": [
+        {
+          "source": "TOOL_OUTPUT",
+          "reason": "The value is declared in this tool's output schema.",
+          "preferred": true
+        }
+      ]
+    },
+    {
+      "reference": "producer.field.scopes",
+      "value": [
+        {
+          "kind": "repository",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires repository scope.",
+            "Scope supplied by $.repo."
+          ],
+          "valueSourcePath": "$.repo"
+        }
+      ]
+    },
+    {
+      "reference": "producer.field.compositions",
+      "value": []
+    },
+    {
+      "reference": "consumer.tool.slug",
+      "value": "GITHUB_ADD_REPO_TO_ORG_SECRET_WITH_SELECTED_ACCESS"
+    },
+    {
+      "reference": "consumer.tool.name",
+      "value": "Add repo to org secret with selected access"
+    },
+    {
+      "reference": "consumer.tool.description",
+      "value": "Adds a repository to an existing organization-level GitHub Actions secret that is configured for 'selected' repository access."
+    },
+    {
+      "reference": "consumer.tool.service",
+      "value": "github"
+    },
+    {
+      "reference": "consumer.tool.resourceFamily",
+      "value": "organization"
+    },
+    {
+      "reference": "consumer.tool.actionFamily",
+      "value": "create"
+    },
+    {
+      "reference": "consumer.tool.protocol",
+      "value": "REST"
+    },
+    {
+      "reference": "consumer.tool.apiVariant",
+      "value": "default"
+    },
+    {
+      "reference": "consumer.tool.abstractionLevel",
+      "value": "RESOURCE_OPERATION"
+    },
+    {
+      "reference": "consumer.tool.deprecated",
+      "value": false
+    },
+    {
+      "reference": "consumer.tool.schemaCompleteness",
+      "value": "COMPLETE"
+    },
+    {
+      "reference": "consumer.field.fieldId",
+      "value": "GITHUB_ADD_REPO_TO_ORG_SECRET_WITH_SELECTED_ACCESS:input:$.repository_id"
+    },
+    {
+      "reference": "consumer.field.path",
+      "value": "$.repository_id"
+    },
+    {
+      "reference": "consumer.field.sourceSchemaPath",
+      "value": "$.properties.repository_id"
+    },
+    {
+      "reference": "consumer.field.name",
+      "value": "repository_id"
+    },
+    {
+      "reference": "consumer.field.jsonTypes",
+      "value": [
+        "integer"
+      ]
+    },
+    {
+      "reference": "consumer.field.required",
+      "value": true
+    },
+    {
+      "reference": "consumer.field.arrayDepth",
+      "value": 0
+    },
+    {
+      "reference": "consumer.field.description",
+      "value": "The unique identifier of the repository to be granted access to the organization secret."
+    },
+    {
+      "reference": "consumer.field.canonicalEntity",
+      "value": {
+        "entity": "github.repository_id",
+        "confidence": "MEDIUM",
+        "evidence": [
+          "compatible JSON type",
+          "compatible service",
+          "exact field alias: repository_id",
+          "resource-specific field description"
+        ],
+        "reasonCodes": [
+          "TYPE_COMPATIBLE",
+          "SERVICE_COMPATIBLE",
+          "ENTITY_EXACT_FIELD_ALIAS",
+          "RESOURCE_CONTEXT_MATCH"
+        ]
+      }
+    },
+    {
+      "reference": "consumer.field.safety",
+      "value": {
+        "safeForInference": false,
+        "safetyReasons": [
+          "CANONICAL_ENTITY_NOT_HIGH_CONFIDENCE"
+        ]
+      }
+    },
+    {
+      "reference": "consumer.field.valueSources",
+      "value": [
+        {
+          "source": "USER",
+          "reason": "The caller may provide the input explicitly.",
+          "preferred": true
+        },
+        {
+          "source": "PRIOR_CONTEXT",
+          "reason": "The value may already exist in trusted workflow context.",
+          "preferred": false
+        },
+        {
+          "source": "TOOL_OUTPUT",
+          "reason": "A prior tool may produce the same canonical entity.",
+          "preferred": false
+        }
+      ]
+    },
+    {
+      "reference": "consumer.field.scopes",
+      "value": [
+        {
+          "kind": "repository",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires repository scope.",
+            "Scope supplied by $.repository_id."
+          ],
+          "valueSourcePath": "$.repository_id"
+        }
+      ]
+    },
+    {
+      "reference": "consumer.field.compositions",
+      "value": []
+    }
+  ],
+  "allowedEvidenceReferences": [
+    "candidate.primaryReason",
+    "candidate.generationReasons",
+    "candidate.matchedCanonicalEntity",
+    "candidate.reasonCodes",
+    "candidate.flags.selectionRequired",
+    "candidate.flags.disambiguationRequired",
+    "candidate.flags.transformationRequired",
+    "candidate.checks",
+    "producer.tool.slug",
+    "producer.tool.name",
+    "producer.tool.description",
+    "producer.tool.service",
+    "producer.tool.resourceFamily",
+    "producer.tool.actionFamily",
+    "producer.tool.protocol",
+    "producer.tool.apiVariant",
+    "producer.tool.abstractionLevel",
+    "producer.tool.deprecated",
+    "producer.tool.schemaCompleteness",
+    "producer.field.fieldId",
+    "producer.field.path",
+    "producer.field.sourceSchemaPath",
+    "producer.field.name",
+    "producer.field.jsonTypes",
+    "producer.field.required",
+    "producer.field.arrayDepth",
+    "producer.field.description",
+    "producer.field.canonicalEntity",
+    "producer.field.safety",
+    "producer.field.valueSources",
+    "producer.field.scopes",
+    "producer.field.compositions",
+    "consumer.tool.slug",
+    "consumer.tool.name",
+    "consumer.tool.description",
+    "consumer.tool.service",
+    "consumer.tool.resourceFamily",
+    "consumer.tool.actionFamily",
+    "consumer.tool.protocol",
+    "consumer.tool.apiVariant",
+    "consumer.tool.abstractionLevel",
+    "consumer.tool.deprecated",
+    "consumer.tool.schemaCompleteness",
+    "consumer.field.fieldId",
+    "consumer.field.path",
+    "consumer.field.sourceSchemaPath",
+    "consumer.field.name",
+    "consumer.field.jsonTypes",
+    "consumer.field.required",
+    "consumer.field.arrayDepth",
+    "consumer.field.description",
+    "consumer.field.canonicalEntity",
+    "consumer.field.safety",
+    "consumer.field.valueSources",
+    "consumer.field.scopes",
+    "consumer.field.compositions"
+  ]
+}

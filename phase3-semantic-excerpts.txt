@@ -1,0 +1,179 @@
+===== MATCHED FUNCTION NAMES =====
+classifyAbstractionLevel
+scopeSourcePath
+applyFieldSemantics
+uniqueScopeObjects
+
+===== classifyAbstractionLevel =====
+function classifyAbstractionLevel(
+  protocol: ProtocolStyle,
+  slugText: string,
+): AbstractionLevel {
+  if (protocol === "COMPOSIO_CONVENIENCE_HELPER") {
+    return "CONVENIENCE_WORKFLOW";
+  }
+
+  if (/blob|git tree|git object|git reference|raw git|low.level/.test(slugText)) {
+    return "PRIMITIVE";
+  }
+
+  return "RESOURCE_OPERATION";
+}
+
+===== scopeSourcePath =====
+function scopeSourcePath(
+  kind: ScopeKind,
+  inputFields: NormalizedSchemaField[],
+): string | undefined {
+  const canonicalByScope: Partial<Record<ScopeKind, string[]>> = {
+    account: ["gmail.user_id"],
+    owner: ["github.owner"],
+    repository: ["github.repository_name", "github.repository_id"],
+    workflow: ["github.workflow_id"],
+    calendar: ["google.calendar_id"],
+    spreadsheet: ["google.spreadsheet_id"],
+    environment: ["github.environment_name"],
+    organization: ["github.organization"],
+    team: ["github.team_slug"],
+  };
+
+  const canonical = canonicalByScope[kind] ?? [];
+  const byCanonical = inputFields.find((field) =>
+    canonical.includes(field.canonicalEntity?.entity ?? ""),
+  );
+  if (byCanonical) return byCanonical.jsonPath;
+
+  const namesByScope: Partial<Record<ScopeKind, string[]>> = {
+    account: ["user_id", "account_id"],
+    owner: ["owner", "repository_owner", "repo_owner"],
+    repository: ["repo", "repository", "repository_name", "repo_name"],
+    workflow: ["workflow_id"],
+    calendar: ["calendar_id", "calendarid"],
+    spreadsheet: ["spreadsheet_id", "spreadsheetid"],
+    shared_drive: ["drive_id", "shared_drive_id"],
+    environment: ["environment_name"],
+    organization: ["organization", "org"],
+    team: ["team_slug"],
+  };
+
+  const acceptedNames = (namesByScope[kind] ?? []).map(normalizedName);
+  return inputFields.find((field) =>
+    acceptedNames.includes(normalizedName(field.originalFieldName)),
+  )?.jsonPath;
+}
+
+===== applyFieldSemantics =====
+function applyFieldSemantics(
+  tool: NormalizedTool,
+  ontology: OntologyDocument,
+): void {
+  const allFields = [...tool.inputFields, ...tool.outputFields];
+
+  for (const field of allFields) {
+    assignCanonicalEntity(field, tool.metadata, ontology);
+  }
+
+  const definitions = new Map(
+    ontology.entities.map((definition) => [definition.id, definition]),
+  );
+
+  for (const field of allFields) {
+    if (field.direction === "input") {
+      field.possibleValueSources = [
+        {
+          source: "USER",
+          reason: "The caller may provide the input explicitly.",
+          preferred: true,
+        },
+        {
+          source: "PRIOR_CONTEXT",
+          reason: "The value may already exist in trusted workflow context.",
+          preferred: false,
+        },
+      ];
+
+      if (field.canonicalEntity) {
+        field.possibleValueSources.push({
+          source: "TOOL_OUTPUT",
+          reason: "A prior tool may produce the same canonical entity.",
+          preferred: false,
+        });
+      }
+    } else {
+      field.possibleValueSources = [
+        {
+          source: "TOOL_OUTPUT",
+          reason: "The value is declared in this tool's output schema.",
+          preferred: true,
+        },
+      ];
+    }
+
+    const definition = field.canonicalEntity
+      ? definitions.get(field.canonicalEntity.entity)
+      : undefined;
+
+    field.scopes = (definition?.scopeKinds ?? []).map((kind) => {
+      const valueSourcePath = scopeSourcePath(kind, tool.inputFields);
+      const evidence = [`Ontology requires ${kind} scope.`];
+      if (valueSourcePath) evidence.push(`Scope supplied by ${valueSourcePath}.`);
+
+      const scope: ResourceScope = {
+        kind,
+        requiredForIdentity: !["account", "global", "unknown"].includes(kind),
+        evidence,
+      };
+
+      if (valueSourcePath) scope.valueSourcePath = valueSourcePath;
+      return scope;
+    });
+
+    const safetyReasons: string[] = [];
+    const schemaCompleteness =
+      field.direction === "input"
+        ? tool.metadata.inputSchemaCompleteness
+        : tool.metadata.outputSchemaCompleteness;
+
+    if (!field.canonicalEntity) {
+      safetyReasons.push("NO_CANONICAL_ENTITY");
+    } else if (field.canonicalEntity.confidence !== "HIGH") {
+      safetyReasons.push("CANONICAL_ENTITY_NOT_HIGH_CONFIDENCE");
+    }
+
+    if (schemaCompleteness === "GENERIC") safetyReasons.push("SCHEMA_GENERIC");
+    if (schemaCompleteness === "MISSING") safetyReasons.push("SCHEMA_MISSING");
+    if (field.ref && !field.refResolved) safetyReasons.push("UNRESOLVED_REFERENCE");
+    if (INTERNAL_FIELD_PATTERN.test(field.originalFieldName)) {
+      safetyReasons.push("INTERNAL_COMPOSIO_FIELD");
+    }
+    if (field.jsonTypes.some((type) => ["object", "array", "unknown"].includes(type))) {
+      safetyReasons.push("NON_SCALAR_FIELD");
+    }
+
+    field.safeForInference = safetyReasons.length === 0;
+    field.safetyReasons =
+      safetyReasons.length > 0
+        ? safetyReasons
+        : ["HIGH_CONFIDENCE_CANONICAL_ENTITY"];
+  }
+
+  tool.metadata.resourceScopes = uniqueScopeObjects(
+    allFields.flatMap((field) => field.scopes),
+  );
+}
+
+===== uniqueScopeObjects =====
+function uniqueScopeObjects(scopes: ResourceScope[]): ResourceScope[] {
+  const seen = new Set<string>();
+  const result: ResourceScope[] = [];
+
+  for (const scope of scopes) {
+    const key = `${scope.kind}:${scope.valueSourcePath ?? ""}:${scope.value ?? ""}`;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    result.push(scope);
+  }
+
+  return result;
+}
+

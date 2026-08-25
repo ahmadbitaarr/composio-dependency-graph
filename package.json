@@ -1,0 +1,32 @@
+{
+  "scripts": {
+    "fetch:tools": "bun run src/fetch-tools.ts",
+    "normalize": "bun run src/normalize/index.ts",
+    "test:normalize": "bun test tests/normalize.test.ts",
+    "adjudication:eligibility": "bun run src/adjudication/write-eligibility-report.ts",
+    "adjudication:preview": "bun run src/adjudication/write-request-preview.ts",
+    "adjudication:pilot": "bun run src/adjudication/run-pilot.ts",
+    "adjudication:audit-holdout": "bun run src/adjudication/write-holdout-eligibility-audit.ts",
+    "adjudication:build-pilot-manifest": "bun run src/adjudication/write-holdout-pilot-manifest.ts",
+    "adjudication:holdout-pilot": "bun run src/adjudication/run-holdout-pilot.ts",
+    "adjudication:score-holdout-pilot": "bun run src/adjudication/write-holdout-pilot-score.ts",
+    "test:adjudication": "bun test tests/adjudication-holdout.test.ts tests/adjudication-eligibility.test.ts tests/adjudication-contract.test.ts tests/adjudication-validation.test.ts tests/adjudication-client.test.ts tests/adjudication-runner.test.ts tests/adjudication-scoring.test.ts tests/adjudication-pilot-cli.test.ts tests/adjudication-holdout-eligibility.test.ts tests/adjudication-holdout-pilot.test.ts tests/adjudication-holdout-pilot-cli.test.ts tests/adjudication-holdout-pilot-scoring.test.ts",
+    "typecheck": "tsc --noEmit",
+    "graph:build": "bun run src/graph/write-graph.ts",
+    "test:graph": "bun test tests/graph-assembly.test.ts tests/graph-requirements.test.ts tests/graph-planning.test.ts tests/graph-workflows.test.ts tests/graph-visualization.test.ts",
+    "graph:requirements": "bun run src/graph/write-requirements.ts",
+    "graph:planning": "bun run src/graph/write-planning.ts",
+    "graph:visualize": "bun run src/graph/write-visualization.ts"
+  },
+  "dependencies": {
+    "@anthropic-ai/claude-agent-sdk": "^0.2.87",
+    "@composio/core": "^0.14.0",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.4.10",
+    "@types/bun": "^1.3.11",
+    "@types/node": "^26.1.1",
+    "typescript": "^7.0.2"
+  }
+}

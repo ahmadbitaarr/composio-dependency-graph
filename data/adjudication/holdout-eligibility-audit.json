@@ -1,0 +1,461 @@
+{
+  "format": "adjudication-holdout-eligibility-audit-v1",
+  "holdoutFormat": "adjudication-holdout-v1",
+  "eligibilityFormat": "adjudication-eligibility-report-v1",
+  "totalCases": 40,
+  "retainedEligibleCount": 22,
+  "notRetainedCount": 18,
+  "missingAssessmentCount": 0,
+  "categoryCounts": {
+    "ELIGIBLE": 22,
+    "INELIGIBLE_LOW_VALUE": 13,
+    "INELIGIBLE_INSUFFICIENT_EVIDENCE": 5
+  },
+  "invariants": {
+    "allCasesHaveAssessment": true,
+    "retainedCasesAreEligible": true,
+    "eligibleCasesAreRetained": true
+  },
+  "cases": [
+    {
+      "id": "H01",
+      "candidateId": "GITHUB_COMMIT_MULTIPLE_FILES:output:$.data.commit.sha=>GITHUB_CREATE_A_COMMIT_STATUS:input:$.sha",
+      "toolkit": "github",
+      "retained": true,
+      "category": "ELIGIBLE",
+      "reasonCodes": [
+        "LOW_CONFIDENCE_ENTITY_REVIEWABLE"
+      ],
+      "explanation": "Both endpoints contain plausible semantic evidence, but at least one canonical assignment is not high confidence."
+    },
+    {
+      "id": "H02",
+      "candidateId": "GITHUB_CREATE_AN_ORGANIZATION_REPOSITORY:output:$.data.name=>GITHUB_SYNC_FORK_BRANCH_WITH_UPSTREAM:input:$.repo",
+      "toolkit": "github",
+      "retained": true,
+      "category": "ELIGIBLE",
+      "reasonCodes": [
+        "LOW_CONFIDENCE_ENTITY_REVIEWABLE"
+      ],
+      "explanation": "Both endpoints contain plausible semantic evidence, but at least one canonical assignment is not high confidence."
+    },
+    {
+      "id": "H03",
+      "candidateId": "GITHUB_CREATE_A_GITHUB_PAGES_SITE:output:$.data.source.branch=>GITHUB_CREATE_A_DEPLOYMENT_BRANCH_POLICY:input:$.name",
+      "toolkit": "github",
+      "retained": true,
+      "category": "ELIGIBLE",
+      "reasonCodes": [
+        "LOW_CONFIDENCE_ENTITY_REVIEWABLE"
+      ],
+      "explanation": "Both endpoints contain plausible semantic evidence, but at least one canonical assignment is not high confidence."
+    },
+    {
+      "id": "H04",
+      "candidateId": "GITHUB_FIND_REPOSITORIES:output:$.data.items[].full_name=>GITHUB_ADD_APP_ACCESS_RESTRICTIONS:input:$.repo",
+      "toolkit": "github",
+      "retained": true,
+      "category": "ELIGIBLE",
+      "reasonCodes": [
+        "REPOSITORY_TRANSFORMATION_REVIEWABLE"
+      ],
+      "explanation": "The stored evidence explicitly describes an owner/repository value that may support a reviewed transformation."
+    },
+    {
+      "id": "H05",
+      "candidateId": "GITHUB_FIND_REPOSITORIES:output:$.data.items[].full_name=>GITHUB_CREATE_A_DEPLOYMENT:input:$.owner",
+      "toolkit": "github",
+      "retained": true,
+      "category": "ELIGIBLE",
+      "reasonCodes": [
+        "REPOSITORY_TRANSFORMATION_REVIEWABLE"
+      ],
+      "explanation": "The stored evidence explicitly describes an owner/repository value that may support a reviewed transformation."
+    },
+    {
+      "id": "H06",
+      "candidateId": "GITHUB_GET_COMMIT_COMMENT:output:$.data.commit_id=>GITHUB_GET_A_COMMIT:input:$.ref",
+      "toolkit": "github",
+      "retained": true,
+      "category": "ELIGIBLE",
+      "reasonCodes": [
+        "LOW_CONFIDENCE_ENTITY_REVIEWABLE"
+      ],
+      "explanation": "Both endpoints contain plausible semantic evidence, but at least one canonical assignment is not high confidence."
+    },
+    {
+      "id": "H07",
+      "candidateId": "GITHUB_LIST_ATTESTATION_REPOSITORIES:output:$.data.repositories[].name=>GITHUB_CREATE_A_DEPLOYMENT:input:$.repo",
+      "toolkit": "github",
+      "retained": true,
+      "category": "ELIGIBLE",
+      "reasonCodes": [
+        "COLLECTION_SCOPE_REVIEWABLE"
+      ],
+      "explanation": "The canonical entity is plausible, but collection selection and resource scope require constrained review."
+    },
+    {
+      "id": "H08",
+      "candidateId": "GITHUB_LIST_BRANCHES:output:$.data.branches[].name=>GITHUB_ADD_STATUS_CHECK_CONTEXTS:input:$.branch",
+      "toolkit": "github",
+      "retained": false,
+      "category": "INELIGIBLE_LOW_VALUE",
+      "reasonCodes": [
+        "PURE_COLLECTION_SELECTION_ALREADY_DETERMINISTIC"
+      ],
+      "explanation": "The deterministic matcher already proves the semantic edge and preserves the required collection selection; an LLM would add no new evidence."
+    },
+    {
+      "id": "H09",
+      "candidateId": "GITHUB_LIST_BRANCHES_FOR_HEAD_COMMIT:output:$.data.branches[].name=>GITHUB_ADD_APP_ACCESS_RESTRICTIONS:input:$.branch",
+      "toolkit": "github",
+      "retained": false,
+      "category": "INELIGIBLE_LOW_VALUE",
+      "reasonCodes": [
+        "PURE_COLLECTION_SELECTION_ALREADY_DETERMINISTIC"
+      ],
+      "explanation": "The deterministic matcher already proves the semantic edge and preserves the required collection selection; an LLM would add no new evidence."
+    },
+    {
+      "id": "H10",
+      "candidateId": "GITHUB_LIST_CHECK_RUNS_FOR_A_REF:output:$.data.check_runs[].head_sha=>GITHUB_UPLOAD_SARIF_ANALYSIS:input:$.commit_sha",
+      "toolkit": "github",
+      "retained": false,
+      "category": "INELIGIBLE_LOW_VALUE",
+      "reasonCodes": [
+        "PURE_COLLECTION_SELECTION_ALREADY_DETERMINISTIC"
+      ],
+      "explanation": "The deterministic matcher already proves the semantic edge and preserves the required collection selection; an LLM would add no new evidence."
+    },
+    {
+      "id": "H11",
+      "candidateId": "GITHUB_LIST_ENVIRONMENTS:output:$.data.environments[].name=>GITHUB_CREATE_A_DEPLOYMENT_BRANCH_POLICY:input:$.environment_name",
+      "toolkit": "github",
+      "retained": false,
+      "category": "INELIGIBLE_INSUFFICIENT_EVIDENCE",
+      "reasonCodes": [
+        "UNCERTAINTY_NOT_RESOLVABLE_FROM_STORED_EVIDENCE"
+      ],
+      "explanation": "The uncertainty is not represented by a question that the supplied static evidence can safely resolve."
+    },
+    {
+      "id": "H12",
+      "candidateId": "GITHUB_LIST_PUBLIC_REPOSITORIES:output:$.data.repositories[].owner.login=>GITHUB_CREATE_AN_AUTOLINK_REFERENCE_FOR_A_REPOSITORY:input:$.owner",
+      "toolkit": "github",
+      "retained": false,
+      "category": "INELIGIBLE_LOW_VALUE",
+      "reasonCodes": [
+        "PURE_COLLECTION_SELECTION_ALREADY_DETERMINISTIC"
+      ],
+      "explanation": "The deterministic matcher already proves the semantic edge and preserves the required collection selection; an LLM would add no new evidence."
+    },
+    {
+      "id": "H13",
+      "candidateId": "GITHUB_LIST_REPO_ACCESS_BY_TOKEN:output:$.data.repositories[].owner.login=>GITHUB_ADD_STATUS_CHECK_CONTEXTS:input:$.owner",
+      "toolkit": "github",
+      "retained": true,
+      "category": "ELIGIBLE",
+      "reasonCodes": [
+        "COLLECTION_SCOPE_REVIEWABLE"
+      ],
+      "explanation": "The canonical entity is plausible, but collection selection and resource scope require constrained review."
+    },
+    {
+      "id": "H14",
+      "candidateId": "GITHUB_SEARCH_CODE:output:$.data.items[].repository.name=>GITHUB_ADD_STATUS_CHECK_CONTEXTS:input:$.repo",
+      "toolkit": "github",
+      "retained": false,
+      "category": "INELIGIBLE_LOW_VALUE",
+      "reasonCodes": [
+        "PURE_COLLECTION_SELECTION_ALREADY_DETERMINISTIC"
+      ],
+      "explanation": "The deterministic matcher already proves the semantic edge and preserves the required collection selection; an LLM would add no new evidence."
+    },
+    {
+      "id": "H15",
+      "candidateId": "GITHUB_SEARCH_CODE_ALL_PAGES:output:$.data.items[].repository.name=>GITHUB_CREATE_AN_AUTOLINK_REFERENCE_FOR_A_REPOSITORY:input:$.repo",
+      "toolkit": "github",
+      "retained": false,
+      "category": "INELIGIBLE_LOW_VALUE",
+      "reasonCodes": [
+        "PURE_COLLECTION_SELECTION_ALREADY_DETERMINISTIC"
+      ],
+      "explanation": "The deterministic matcher already proves the semantic edge and preserves the required collection selection; an LLM would add no new evidence."
+    },
+    {
+      "id": "H16",
+      "candidateId": "GITHUB_SEARCH_COMMITS_BY_AUTHOR:output:$.data.items[].repository_owner=>GITHUB_ADD_APP_ACCESS_RESTRICTIONS:input:$.owner",
+      "toolkit": "github",
+      "retained": false,
+      "category": "INELIGIBLE_INSUFFICIENT_EVIDENCE",
+      "reasonCodes": [
+        "UNCERTAINTY_NOT_RESOLVABLE_FROM_STORED_EVIDENCE"
+      ],
+      "explanation": "The uncertainty is not represented by a question that the supplied static evidence can safely resolve."
+    },
+    {
+      "id": "H17",
+      "candidateId": "GITHUB_SEARCH_ISSUES_AND_PULL_REQUESTS:output:$.data.items[].number=>GITHUB_ADD_ASSIGNEES_TO_AN_ISSUE:input:$.issue_number",
+      "toolkit": "github",
+      "retained": true,
+      "category": "ELIGIBLE",
+      "reasonCodes": [
+        "ISSUE_PULL_REQUEST_AMBIGUITY_REVIEWABLE"
+      ],
+      "explanation": "The producer explicitly returns issue-or-pull-request numbers and requires evidence-bound disambiguation."
+    },
+    {
+      "id": "H18",
+      "candidateId": "GITHUB_SEARCH_ISSUES_AND_PULL_REQUESTS:output:$.data.items[].number=>GITHUB_DELETE_ISSUE_REACTION:input:$.issue_number",
+      "toolkit": "github",
+      "retained": true,
+      "category": "ELIGIBLE",
+      "reasonCodes": [
+        "ISSUE_PULL_REQUEST_AMBIGUITY_REVIEWABLE"
+      ],
+      "explanation": "The producer explicitly returns issue-or-pull-request numbers and requires evidence-bound disambiguation."
+    },
+    {
+      "id": "H19",
+      "candidateId": "GITHUB_UPDATE_A_CHECK_RUN:output:$.data.head_sha=>GITHUB_GET_COMMIT_STATUSES:input:$.ref",
+      "toolkit": "github",
+      "retained": true,
+      "category": "ELIGIBLE",
+      "reasonCodes": [
+        "LOW_CONFIDENCE_ENTITY_REVIEWABLE"
+      ],
+      "explanation": "Both endpoints contain plausible semantic evidence, but at least one canonical assignment is not high confidence."
+    },
+    {
+      "id": "H20",
+      "candidateId": "GITHUB_UPDATE_A_COMMIT_COMMENT:output:$.data.commit_id=>GITHUB_COMPARE_TWO_COMMITS:input:$.basehead",
+      "toolkit": "github",
+      "retained": true,
+      "category": "ELIGIBLE",
+      "reasonCodes": [
+        "LOW_CONFIDENCE_ENTITY_REVIEWABLE"
+      ],
+      "explanation": "Both endpoints contain plausible semantic evidence, but at least one canonical assignment is not high confidence."
+    },
+    {
+      "id": "H21",
+      "candidateId": "GOOGLESUPER_ADD_LABEL_TO_EMAIL:output:$.data.labelIds[]=>GOOGLESUPER_DELETE_LABEL:input:$.label_id",
+      "toolkit": "googlesuper",
+      "retained": false,
+      "category": "INELIGIBLE_LOW_VALUE",
+      "reasonCodes": [
+        "PURE_COLLECTION_SELECTION_ALREADY_DETERMINISTIC"
+      ],
+      "explanation": "The deterministic matcher already proves the semantic edge and preserves the required collection selection; an LLM would add no new evidence."
+    },
+    {
+      "id": "H22",
+      "candidateId": "GOOGLESUPER_CREATE_CALENDAR:output:$.data.id=>GOOGLESUPER_FREE_BUSY_QUERY:input:$.items[].id",
+      "toolkit": "googlesuper",
+      "retained": true,
+      "category": "ELIGIBLE",
+      "reasonCodes": [
+        "LOW_CONFIDENCE_ENTITY_REVIEWABLE"
+      ],
+      "explanation": "Both endpoints contain plausible semantic evidence, but at least one canonical assignment is not high confidence."
+    },
+    {
+      "id": "H23",
+      "candidateId": "GOOGLESUPER_CREATE_DRIVE:output:$.data.backgroundImageFile.id=>GOOGLESUPER_CREATE_SHORTCUT_TO_FILE:input:$.target_id",
+      "toolkit": "googlesuper",
+      "retained": true,
+      "category": "ELIGIBLE",
+      "reasonCodes": [
+        "LOW_CONFIDENCE_ENTITY_REVIEWABLE"
+      ],
+      "explanation": "Both endpoints contain plausible semantic evidence, but at least one canonical assignment is not high confidence."
+    },
+    {
+      "id": "H24",
+      "candidateId": "GOOGLESUPER_CREATE_FILE:output:$.data.id=>GOOGLESUPER_DELETE_COMMENT:input:$.comment_id",
+      "toolkit": "googlesuper",
+      "retained": true,
+      "category": "ELIGIBLE",
+      "reasonCodes": [
+        "LOW_CONFIDENCE_ENTITY_REVIEWABLE"
+      ],
+      "explanation": "Both endpoints contain plausible semantic evidence, but at least one canonical assignment is not high confidence."
+    },
+    {
+      "id": "H25",
+      "candidateId": "GOOGLESUPER_CREATE_FILE_FROM_TEXT:output:$.data.id=>GOOGLESUPER_ADD_PARENT:input:$.id",
+      "toolkit": "googlesuper",
+      "retained": true,
+      "category": "ELIGIBLE",
+      "reasonCodes": [
+        "LOW_CONFIDENCE_ENTITY_REVIEWABLE"
+      ],
+      "explanation": "Both endpoints contain plausible semantic evidence, but at least one canonical assignment is not high confidence."
+    },
+    {
+      "id": "H26",
+      "candidateId": "GOOGLESUPER_CREATE_FOLDER:output:$.data.id=>GOOGLESUPER_INSERT_CHILD:input:$.id",
+      "toolkit": "googlesuper",
+      "retained": true,
+      "category": "ELIGIBLE",
+      "reasonCodes": [
+        "LOW_CONFIDENCE_ENTITY_REVIEWABLE"
+      ],
+      "explanation": "Both endpoints contain plausible semantic evidence, but at least one canonical assignment is not high confidence."
+    },
+    {
+      "id": "H27",
+      "candidateId": "GOOGLESUPER_CREATE_TEAM_DRIVE:output:$.data.backgroundImageFile.id=>GOOGLESUPER_CREATE_COMMENT:input:$.file_id",
+      "toolkit": "googlesuper",
+      "retained": true,
+      "category": "ELIGIBLE",
+      "reasonCodes": [
+        "DEPRECATED_PRODUCER_REVIEWABLE"
+      ],
+      "explanation": "The producer is deprecated but the stored schema and descriptions may still support a valid dependency."
+    },
+    {
+      "id": "H28",
+      "candidateId": "GOOGLESUPER_EVENTS_LIST_ALL_CALENDARS:output:$.data.calendars_queried[].id=>GOOGLESUPER_ACL_DELETE:input:$.calendar_id",
+      "toolkit": "googlesuper",
+      "retained": false,
+      "category": "INELIGIBLE_LOW_VALUE",
+      "reasonCodes": [
+        "PURE_COLLECTION_SELECTION_ALREADY_DETERMINISTIC"
+      ],
+      "explanation": "The deterministic matcher already proves the semantic edge and preserves the required collection selection; an LLM would add no new evidence."
+    },
+    {
+      "id": "H29",
+      "candidateId": "GOOGLESUPER_EVENTS_LIST_ALL_CALENDARS:output:$.data.events[].event.id=>GOOGLESUPER_REMOVE_ATTENDEE:input:$.event_id",
+      "toolkit": "googlesuper",
+      "retained": false,
+      "category": "INELIGIBLE_LOW_VALUE",
+      "reasonCodes": [
+        "PURE_COLLECTION_SELECTION_ALREADY_DETERMINISTIC"
+      ],
+      "explanation": "The deterministic matcher already proves the semantic edge and preserves the required collection selection; an LLM would add no new evidence."
+    },
+    {
+      "id": "H30",
+      "candidateId": "GOOGLESUPER_EVENTS_LIST_ALL_CALENDARS:output:$.data.summary_view[].event_id=>GOOGLESUPER_EVENTS_GET:input:$.event_id",
+      "toolkit": "googlesuper",
+      "retained": false,
+      "category": "INELIGIBLE_LOW_VALUE",
+      "reasonCodes": [
+        "PURE_COLLECTION_SELECTION_ALREADY_DETERMINISTIC"
+      ],
+      "explanation": "The deterministic matcher already proves the semantic edge and preserves the required collection selection; an LLM would add no new evidence."
+    },
+    {
+      "id": "H31",
+      "candidateId": "GOOGLESUPER_FIND_EVENT:output:$.data.event_data.event_data[].id=>GOOGLESUPER_EVENTS_INSTANCES:input:$.eventId",
+      "toolkit": "googlesuper",
+      "retained": false,
+      "category": "INELIGIBLE_LOW_VALUE",
+      "reasonCodes": [
+        "PURE_COLLECTION_SELECTION_ALREADY_DETERMINISTIC"
+      ],
+      "explanation": "The deterministic matcher already proves the semantic edge and preserves the required collection selection; an LLM would add no new evidence."
+    },
+    {
+      "id": "H32",
+      "candidateId": "GOOGLESUPER_FIND_EVENT:output:$.data.items[].id=>GOOGLESUPER_EVENTS_MOVE:input:$.event_id",
+      "toolkit": "googlesuper",
+      "retained": false,
+      "category": "INELIGIBLE_LOW_VALUE",
+      "reasonCodes": [
+        "PURE_COLLECTION_SELECTION_ALREADY_DETERMINISTIC"
+      ],
+      "explanation": "The deterministic matcher already proves the semantic edge and preserves the required collection selection; an LLM would add no new evidence."
+    },
+    {
+      "id": "H33",
+      "candidateId": "GOOGLESUPER_FIND_FILE:output:$.data.files[].id=>GOOGLESUPER_ADD_FILE_SHARING_PREFERENCE:input:$.file_id",
+      "toolkit": "googlesuper",
+      "retained": false,
+      "category": "INELIGIBLE_INSUFFICIENT_EVIDENCE",
+      "reasonCodes": [
+        "UNCERTAINTY_NOT_RESOLVABLE_FROM_STORED_EVIDENCE"
+      ],
+      "explanation": "The uncertainty is not represented by a question that the supplied static evidence can safely resolve."
+    },
+    {
+      "id": "H34",
+      "candidateId": "GOOGLESUPER_GET_CALENDAR_PROFILE:output:$.data.id=>GOOGLESUPER_CALENDARS_DELETE:input:$.calendar_id",
+      "toolkit": "googlesuper",
+      "retained": true,
+      "category": "ELIGIBLE",
+      "reasonCodes": [
+        "DEPRECATED_PRODUCER_REVIEWABLE"
+      ],
+      "explanation": "The producer is deprecated but the stored schema and descriptions may still support a valid dependency."
+    },
+    {
+      "id": "H35",
+      "candidateId": "GOOGLESUPER_GET_CHANGE:output:$.data.drive.backgroundImageFile.id=>GOOGLESUPER_CREATE_REPLY:input:$.file_id",
+      "toolkit": "googlesuper",
+      "retained": true,
+      "category": "ELIGIBLE",
+      "reasonCodes": [
+        "DEPRECATED_PRODUCER_REVIEWABLE"
+      ],
+      "explanation": "The producer is deprecated but the stored schema and descriptions may still support a valid dependency."
+    },
+    {
+      "id": "H36",
+      "candidateId": "GOOGLESUPER_GET_CONTACTS:output:$.data.connections[].emailAddresses[].value=>GOOGLESUPER_CREATE_EMAIL_DRAFT:input:$.recipient_email",
+      "toolkit": "googlesuper",
+      "retained": true,
+      "category": "ELIGIBLE",
+      "reasonCodes": [
+        "CONTACT_DISAMBIGUATION_REVIEWABLE"
+      ],
+      "explanation": "The stored contact and recipient descriptions can support a constrained resolver decision while preserving explicit selection."
+    },
+    {
+      "id": "H37",
+      "candidateId": "GOOGLESUPER_GET_CONTACTS:output:$.data.connections[].emailAddresses[].value=>GOOGLESUPER_UPDATE_DRAFT:input:$.recipient_email",
+      "toolkit": "googlesuper",
+      "retained": true,
+      "category": "ELIGIBLE",
+      "reasonCodes": [
+        "CONTACT_DISAMBIGUATION_REVIEWABLE"
+      ],
+      "explanation": "The stored contact and recipient descriptions can support a constrained resolver decision while preserving explicit selection."
+    },
+    {
+      "id": "H38",
+      "candidateId": "GOOGLESUPER_LIST_CALENDARS:output:$.data.calendars[].id=>GOOGLESUPER_ACL_INSERT:input:$.calendar_id",
+      "toolkit": "googlesuper",
+      "retained": false,
+      "category": "INELIGIBLE_LOW_VALUE",
+      "reasonCodes": [
+        "PURE_COLLECTION_SELECTION_ALREADY_DETERMINISTIC"
+      ],
+      "explanation": "The deterministic matcher already proves the semantic edge and preserves the required collection selection; an LLM would add no new evidence."
+    },
+    {
+      "id": "H39",
+      "candidateId": "GOOGLESUPER_SYNC_EVENTS:output:$.data.event_data.event_data[].id=>GOOGLESUPER_PATCH_EVENT:input:$.event_id",
+      "toolkit": "googlesuper",
+      "retained": false,
+      "category": "INELIGIBLE_INSUFFICIENT_EVIDENCE",
+      "reasonCodes": [
+        "UNCERTAINTY_NOT_RESOLVABLE_FROM_STORED_EVIDENCE"
+      ],
+      "explanation": "The uncertainty is not represented by a question that the supplied static evidence can safely resolve."
+    },
+    {
+      "id": "H40",
+      "candidateId": "GOOGLESUPER_SYNC_EVENTS:output:$.data.items[].id=>GOOGLESUPER_UPDATE_EVENT:input:$.event_id",
+      "toolkit": "googlesuper",
+      "retained": false,
+      "category": "INELIGIBLE_INSUFFICIENT_EVIDENCE",
+      "reasonCodes": [
+        "UNCERTAINTY_NOT_RESOLVABLE_FROM_STORED_EVIDENCE"
+      ],
+      "explanation": "The uncertainty is not represented by a question that the supplied static evidence can safely resolve."
+    }
+  ]
+}

@@ -1,0 +1,844 @@
+{
+  "format": "dependency-ontology-v1",
+  "version": "1.0.0",
+  "description": "Conservative canonical-entity ontology for normalized Google Super and GitHub tool schemas.",
+  "genericFieldPolicy": {
+    "blockedWithoutContext": [
+      "id",
+      "ids",
+      "number",
+      "numbers",
+      "name",
+      "key",
+      "token",
+      "ref",
+      "reference",
+      "sha",
+      "value",
+      "values"
+    ],
+    "requiredEvidence": [
+      "compatible toolkit and underlying service",
+      "compatible resource family",
+      "resource-specific field path or reference definition",
+      "resource-specific field description",
+      "compatible JSON type",
+      "compatible protocol identity kind",
+      "sufficient scope evidence"
+    ]
+  },
+  "entities": [
+    {
+      "id": "gmail.thread_id",
+      "service": "gmail",
+      "resourceFamily": "thread",
+      "identityKind": "ID",
+      "jsonTypes": ["string"],
+      "aliases": {
+        "exactFieldNames": ["thread_id", "threadId"],
+        "contextualFieldNames": ["id"],
+        "descriptionPatterns": [
+          "thread id",
+          "identifier of the thread",
+          "unique identifier of the thread"
+        ]
+      },
+      "scopeKinds": ["account"],
+      "allowedProtocols": ["REST", "COMPOSIO_CONVENIENCE_HELPER", "UNKNOWN"],
+      "requiresResourceContext": true,
+      "incompatibleEntities": [
+        "gmail.message_id",
+        "gmail.draft_id",
+        "gmail.label_id"
+      ],
+      "notes": [
+        "A generic id is a thread ID only when the containing resource is a Gmail thread."
+      ]
+    },
+    {
+      "id": "gmail.message_id",
+      "service": "gmail",
+      "resourceFamily": "message",
+      "identityKind": "ID",
+      "jsonTypes": ["string"],
+      "aliases": {
+        "exactFieldNames": ["message_id", "messageId"],
+        "contextualFieldNames": ["id"],
+        "descriptionPatterns": [
+          "message id",
+          "immutable id of the message",
+          "identifier of the message"
+        ]
+      },
+      "scopeKinds": ["account"],
+      "allowedProtocols": ["REST", "COMPOSIO_CONVENIENCE_HELPER", "UNKNOWN"],
+      "requiresResourceContext": true,
+      "incompatibleEntities": [
+        "gmail.thread_id",
+        "gmail.draft_id",
+        "gmail.label_id"
+      ],
+      "notes": [
+        "Message IDs and thread IDs are distinct even when returned by the same message object."
+      ]
+    },
+    {
+      "id": "gmail.draft_id",
+      "service": "gmail",
+      "resourceFamily": "draft",
+      "identityKind": "ID",
+      "jsonTypes": ["string"],
+      "aliases": {
+        "exactFieldNames": ["draft_id", "draftId"],
+        "contextualFieldNames": ["id"],
+        "descriptionPatterns": [
+          "draft id",
+          "identifier of the draft"
+        ]
+      },
+      "scopeKinds": ["account"],
+      "allowedProtocols": ["REST", "COMPOSIO_CONVENIENCE_HELPER", "UNKNOWN"],
+      "requiresResourceContext": true,
+      "incompatibleEntities": [
+        "gmail.thread_id",
+        "gmail.message_id",
+        "gmail.label_id"
+      ],
+      "notes": []
+    },
+    {
+      "id": "gmail.label_id",
+      "service": "gmail",
+      "resourceFamily": "label",
+      "identityKind": "ID",
+      "jsonTypes": ["string"],
+      "aliases": {
+        "exactFieldNames": ["label_id", "labelId", "label_ids", "labelIds"],
+        "contextualFieldNames": ["id"],
+        "descriptionPatterns": [
+          "label id",
+          "identifier of the label"
+        ]
+      },
+      "scopeKinds": ["account"],
+      "allowedProtocols": ["REST", "COMPOSIO_CONVENIENCE_HELPER", "UNKNOWN"],
+      "requiresResourceContext": true,
+      "incompatibleEntities": [
+        "gmail.thread_id",
+        "gmail.message_id",
+        "gmail.draft_id"
+      ],
+      "notes": []
+    },
+    {
+      "id": "google.contact_email",
+      "service": "people",
+      "resourceFamily": "contact",
+      "identityKind": "EMAIL",
+      "jsonTypes": ["string"],
+      "aliases": {
+        "exactFieldNames": [
+          "email",
+          "email_address",
+          "emailAddress",
+          "email_addresses",
+          "emailAddresses"
+        ],
+        "contextualFieldNames": [
+          "value",
+          "recipient",
+          "recipients",
+          "to"
+        ],
+        "descriptionPatterns": [
+          "email address",
+          "contact email",
+          "recipient email"
+        ]
+      },
+      "scopeKinds": ["account"],
+      "allowedProtocols": ["REST", "COMPOSIO_CONVENIENCE_HELPER", "UNKNOWN"],
+      "requiresResourceContext": true,
+      "incompatibleEntities": [],
+      "notes": [
+        "A People search result must expose an actual email field before this entity can be assigned.",
+        "A generic result object is not enough."
+      ]
+    },
+    {
+      "id": "google.calendar_id",
+      "service": "calendar",
+      "resourceFamily": "calendar",
+      "identityKind": "ID",
+      "jsonTypes": ["string"],
+      "aliases": {
+        "exactFieldNames": ["calendar_id", "calendarId"],
+        "contextualFieldNames": ["id"],
+        "descriptionPatterns": [
+          "calendar identifier",
+          "calendar id",
+          "identifier of the calendar"
+        ]
+      },
+      "scopeKinds": ["account", "calendar"],
+      "allowedProtocols": ["REST", "COMPOSIO_CONVENIENCE_HELPER", "UNKNOWN"],
+      "requiresResourceContext": true,
+      "incompatibleEntities": ["google.event_id"],
+      "notes": [
+        "The literal primary may be accepted by some consumers but is not an event ID."
+      ]
+    },
+    {
+      "id": "google.event_id",
+      "service": "calendar",
+      "resourceFamily": "event",
+      "identityKind": "ID",
+      "jsonTypes": ["string"],
+      "aliases": {
+        "exactFieldNames": ["event_id", "eventId"],
+        "contextualFieldNames": ["id"],
+        "descriptionPatterns": [
+          "event id",
+          "identifier of the event",
+          "opaque identifier of the event"
+        ]
+      },
+      "scopeKinds": ["account", "calendar"],
+      "allowedProtocols": ["REST", "COMPOSIO_CONVENIENCE_HELPER", "UNKNOWN"],
+      "requiresResourceContext": true,
+      "incompatibleEntities": ["google.calendar_id"],
+      "notes": [
+        "iCalUID is not automatically interchangeable with the Calendar API event id."
+      ]
+    },
+    {
+      "id": "google.drive_file_id",
+      "service": "drive",
+      "resourceFamily": "file",
+      "identityKind": "ID",
+      "jsonTypes": ["string"],
+      "aliases": {
+        "exactFieldNames": ["file_id", "fileId"],
+        "contextualFieldNames": ["id"],
+        "descriptionPatterns": [
+          "file id",
+          "id of the file",
+          "identifier of the file"
+        ]
+      },
+      "scopeKinds": ["account", "shared_drive"],
+      "allowedProtocols": ["REST", "COMPOSIO_CONVENIENCE_HELPER", "UNKNOWN"],
+      "requiresResourceContext": true,
+      "incompatibleEntities": [
+        "gmail.message_id",
+        "google.calendar_id",
+        "google.event_id"
+      ],
+      "notes": [
+        "Folder resources are represented by Drive file IDs but still require Drive resource evidence."
+      ]
+    },
+    {
+      "id": "google.spreadsheet_id",
+      "service": "sheets",
+      "resourceFamily": "spreadsheet",
+      "identityKind": "ID",
+      "jsonTypes": ["string"],
+      "aliases": {
+        "exactFieldNames": ["spreadsheet_id", "spreadsheetId"],
+        "contextualFieldNames": ["id"],
+        "descriptionPatterns": [
+          "spreadsheet id",
+          "identifier of the spreadsheet"
+        ]
+      },
+      "scopeKinds": ["account", "spreadsheet"],
+      "allowedProtocols": ["REST", "COMPOSIO_CONVENIENCE_HELPER", "UNKNOWN"],
+      "requiresResourceContext": true,
+      "incompatibleEntities": ["google.sheet_id"],
+      "notes": []
+    },
+    {
+      "id": "google.sheet_id",
+      "service": "sheets",
+      "resourceFamily": "sheet",
+      "identityKind": "ID",
+      "jsonTypes": ["integer", "string"],
+      "aliases": {
+        "exactFieldNames": ["sheet_id", "sheetId"],
+        "contextualFieldNames": ["id"],
+        "descriptionPatterns": [
+          "sheet id",
+          "identifier of the sheet"
+        ]
+      },
+      "scopeKinds": ["account", "spreadsheet"],
+      "allowedProtocols": ["REST", "COMPOSIO_CONVENIENCE_HELPER", "UNKNOWN"],
+      "requiresResourceContext": true,
+      "incompatibleEntities": ["google.spreadsheet_id"],
+      "notes": []
+    },
+    {
+      "id": "github.owner",
+      "service": "github",
+      "resourceFamily": "repository",
+      "identityKind": "NAME",
+      "jsonTypes": ["string"],
+      "aliases": {
+        "exactFieldNames": ["owner", "repository_owner", "repo_owner"],
+        "contextualFieldNames": ["login"],
+        "descriptionPatterns": [
+          "repository owner",
+          "account owner",
+          "username or organization name that owns the repository"
+        ]
+      },
+      "scopeKinds": ["owner"],
+      "allowedProtocols": [
+        "REST",
+        "GRAPHQL",
+        "COMPOSIO_CONVENIENCE_HELPER",
+        "UNKNOWN"
+      ],
+      "requiresResourceContext": true,
+      "incompatibleEntities": ["github.organization"],
+      "notes": [
+        "An owner may be either a user or organization.",
+        "A generic user login is not automatically a repository owner."
+      ]
+    },
+    {
+      "id": "github.repository_name",
+      "service": "github",
+      "resourceFamily": "repository",
+      "identityKind": "NAME",
+      "jsonTypes": ["string"],
+      "aliases": {
+        "exactFieldNames": [
+          "repo",
+          "repository",
+          "repository_name",
+          "repo_name"
+        ],
+        "contextualFieldNames": ["name"],
+        "descriptionPatterns": [
+          "repository name",
+          "name of the repository",
+          "repo name"
+        ]
+      },
+      "scopeKinds": ["owner", "repository"],
+      "allowedProtocols": [
+        "REST",
+        "GRAPHQL",
+        "COMPOSIO_CONVENIENCE_HELPER",
+        "UNKNOWN"
+      ],
+      "requiresResourceContext": true,
+      "incompatibleEntities": [
+        "github.repository_id",
+        "github.repository_node_id"
+      ],
+      "notes": [
+        "Repository names are scoped by owner."
+      ]
+    },
+    {
+      "id": "github.repository_id",
+      "service": "github",
+      "resourceFamily": "repository",
+      "identityKind": "REST_ID",
+      "jsonTypes": ["integer"],
+      "aliases": {
+        "exactFieldNames": ["repository_id", "repo_id"],
+        "contextualFieldNames": ["id"],
+        "descriptionPatterns": [
+          "repository id",
+          "unique identifier for the repository"
+        ]
+      },
+      "scopeKinds": ["repository"],
+      "allowedProtocols": [
+        "REST",
+        "COMPOSIO_CONVENIENCE_HELPER",
+        "UNKNOWN"
+      ],
+      "requiresResourceContext": true,
+      "incompatibleEntities": [
+        "github.repository_name",
+        "github.repository_node_id"
+      ],
+      "notes": [
+        "This is the numeric REST repository ID."
+      ]
+    },
+    {
+      "id": "github.repository_node_id",
+      "service": "github",
+      "resourceFamily": "repository",
+      "identityKind": "GRAPHQL_NODE_ID",
+      "jsonTypes": ["string"],
+      "aliases": {
+        "exactFieldNames": ["repository_node_id", "repo_node_id"],
+        "contextualFieldNames": ["node_id", "nodeId"],
+        "descriptionPatterns": [
+          "repository graphql node id",
+          "graphql node identifier for the repository"
+        ]
+      },
+      "scopeKinds": ["repository"],
+      "allowedProtocols": [
+        "REST",
+        "GRAPHQL",
+        "COMPOSIO_CONVENIENCE_HELPER",
+        "UNKNOWN"
+      ],
+      "requiresResourceContext": true,
+      "incompatibleEntities": [
+        "github.repository_name",
+        "github.repository_id"
+      ],
+      "notes": [
+        "A REST response may expose this GraphQL identifier.",
+        "It is not interchangeable with the numeric REST repository ID."
+      ]
+    },
+    {
+      "id": "github.issue_number",
+      "service": "github",
+      "resourceFamily": "issue",
+      "identityKind": "NUMBER",
+      "jsonTypes": ["integer"],
+      "aliases": {
+        "exactFieldNames": ["issue_number", "issueNumber"],
+        "contextualFieldNames": ["number"],
+        "descriptionPatterns": [
+          "issue number",
+          "number within the repository"
+        ]
+      },
+      "scopeKinds": ["owner", "repository"],
+      "allowedProtocols": [
+        "REST",
+        "GRAPHQL",
+        "COMPOSIO_CONVENIENCE_HELPER",
+        "UNKNOWN"
+      ],
+      "requiresResourceContext": true,
+      "incompatibleEntities": [
+        "github.pull_request_number",
+        "github.workflow_run_number"
+      ],
+      "notes": [
+        "Issue numbers and pull-request numbers share a repository number space but retain different semantics."
+      ]
+    },
+    {
+      "id": "github.pull_request_number",
+      "service": "github",
+      "resourceFamily": "pull_request",
+      "identityKind": "NUMBER",
+      "jsonTypes": ["integer"],
+      "aliases": {
+        "exactFieldNames": [
+          "pull_number",
+          "pull_request_number",
+          "pullRequestNumber"
+        ],
+        "contextualFieldNames": ["number"],
+        "descriptionPatterns": [
+          "pull request number",
+          "number identifier within the repository"
+        ]
+      },
+      "scopeKinds": ["owner", "repository"],
+      "allowedProtocols": [
+        "REST",
+        "GRAPHQL",
+        "COMPOSIO_CONVENIENCE_HELPER",
+        "UNKNOWN"
+      ],
+      "requiresResourceContext": true,
+      "incompatibleEntities": [
+        "github.issue_number",
+        "github.workflow_run_number"
+      ],
+      "notes": []
+    },
+    {
+      "id": "github.workflow_id",
+      "service": "github",
+      "resourceFamily": "workflow",
+      "identityKind": "REST_ID",
+      "jsonTypes": ["integer", "string"],
+      "aliases": {
+        "exactFieldNames": ["workflow_id", "workflowId"],
+        "contextualFieldNames": ["id"],
+        "descriptionPatterns": [
+          "workflow id",
+          "identifier for the workflow",
+          "unique identifier for the workflow"
+        ]
+      },
+      "scopeKinds": ["owner", "repository", "workflow"],
+      "allowedProtocols": [
+        "REST",
+        "COMPOSIO_CONVENIENCE_HELPER",
+        "UNKNOWN"
+      ],
+      "requiresResourceContext": true,
+      "incompatibleEntities": [
+        "github.workflow_run_id",
+        "github.workflow_run_number",
+        "github.job_id"
+      ],
+      "notes": [
+        "Some GitHub endpoints accept a workflow file name instead of a numeric workflow ID; that requires separate evidence."
+      ]
+    },
+    {
+      "id": "github.workflow_run_id",
+      "service": "github",
+      "resourceFamily": "workflow_run",
+      "identityKind": "REST_ID",
+      "jsonTypes": ["integer"],
+      "aliases": {
+        "exactFieldNames": ["workflow_run_id", "run_id", "workflowRunId"],
+        "contextualFieldNames": ["id"],
+        "descriptionPatterns": [
+          "workflow run id",
+          "identifier for the workflow run",
+          "unique identifier for the workflow run"
+        ]
+      },
+      "scopeKinds": ["owner", "repository", "workflow"],
+      "allowedProtocols": [
+        "REST",
+        "COMPOSIO_CONVENIENCE_HELPER",
+        "UNKNOWN"
+      ],
+      "requiresResourceContext": true,
+      "incompatibleEntities": [
+        "github.workflow_id",
+        "github.workflow_run_number",
+        "github.job_id"
+      ],
+      "notes": [
+        "The workflow-run ID is not the sequential run number."
+      ]
+    },
+    {
+      "id": "github.workflow_run_number",
+      "service": "github",
+      "resourceFamily": "workflow_run",
+      "identityKind": "NUMBER",
+      "jsonTypes": ["integer"],
+      "aliases": {
+        "exactFieldNames": ["run_number", "workflow_run_number"],
+        "contextualFieldNames": ["number"],
+        "descriptionPatterns": [
+          "sequential run number",
+          "workflow run number"
+        ]
+      },
+      "scopeKinds": ["owner", "repository", "workflow"],
+      "allowedProtocols": [
+        "REST",
+        "COMPOSIO_CONVENIENCE_HELPER",
+        "UNKNOWN"
+      ],
+      "requiresResourceContext": true,
+      "incompatibleEntities": [
+        "github.workflow_id",
+        "github.workflow_run_id",
+        "github.issue_number",
+        "github.pull_request_number"
+      ],
+      "notes": [
+        "This is a sequential number and is not the workflow-run REST ID."
+      ]
+    },
+    {
+      "id": "github.job_id",
+      "service": "github",
+      "resourceFamily": "job",
+      "identityKind": "REST_ID",
+      "jsonTypes": ["integer"],
+      "aliases": {
+        "exactFieldNames": ["job_id", "workflow_job_id"],
+        "contextualFieldNames": ["id"],
+        "descriptionPatterns": [
+          "job id",
+          "workflow job identifier"
+        ]
+      },
+      "scopeKinds": ["owner", "repository", "workflow"],
+      "allowedProtocols": [
+        "REST",
+        "COMPOSIO_CONVENIENCE_HELPER",
+        "UNKNOWN"
+      ],
+      "requiresResourceContext": true,
+      "incompatibleEntities": [
+        "github.workflow_id",
+        "github.workflow_run_id"
+      ],
+      "notes": []
+    },
+    {
+      "id": "github.commit_sha",
+      "service": "github",
+      "resourceFamily": "commit",
+      "identityKind": "SHA",
+      "jsonTypes": ["string"],
+      "aliases": {
+        "exactFieldNames": [
+          "commit_sha",
+          "head_sha",
+          "merge_commit_sha"
+        ],
+        "contextualFieldNames": ["sha", "id"],
+        "descriptionPatterns": [
+          "commit sha",
+          "sha hash identifier of the commit",
+          "sha of the commit"
+        ]
+      },
+      "scopeKinds": ["owner", "repository"],
+      "allowedProtocols": [
+        "REST",
+        "GRAPHQL",
+        "COMPOSIO_CONVENIENCE_HELPER",
+        "UNKNOWN"
+      ],
+      "requiresResourceContext": true,
+      "incompatibleEntities": ["github.branch_ref"],
+      "notes": [
+        "Blob, tree, and content SHAs must not be classified as commit SHAs without commit-specific evidence."
+      ]
+    },
+    {
+      "id": "github.branch_ref",
+      "service": "github",
+      "resourceFamily": "branch",
+      "identityKind": "REF",
+      "jsonTypes": ["string"],
+      "aliases": {
+        "exactFieldNames": [
+          "branch",
+          "branch_ref",
+          "head_ref",
+          "base_ref"
+        ],
+        "contextualFieldNames": ["ref", "name"],
+        "descriptionPatterns": [
+          "branch name",
+          "branch ref",
+          "name of the branch"
+        ]
+      },
+      "scopeKinds": ["owner", "repository"],
+      "allowedProtocols": [
+        "REST",
+        "GRAPHQL",
+        "COMPOSIO_CONVENIENCE_HELPER",
+        "UNKNOWN"
+      ],
+      "requiresResourceContext": true,
+      "incompatibleEntities": ["github.commit_sha"],
+      "notes": [
+        "A branch ref is not a commit SHA, even when both may be accepted by some Git endpoints."
+      ]
+    },
+    {
+      "id": "github.release_id",
+      "service": "github",
+      "resourceFamily": "release",
+      "identityKind": "REST_ID",
+      "jsonTypes": ["integer"],
+      "aliases": {
+        "exactFieldNames": ["release_id", "releaseId"],
+        "contextualFieldNames": ["id"],
+        "descriptionPatterns": [
+          "release id",
+          "identifier of the release"
+        ]
+      },
+      "scopeKinds": ["owner", "repository"],
+      "allowedProtocols": [
+        "REST",
+        "COMPOSIO_CONVENIENCE_HELPER",
+        "UNKNOWN"
+      ],
+      "requiresResourceContext": true,
+      "incompatibleEntities": ["github.release_asset_id"],
+      "notes": []
+    },
+    {
+      "id": "github.release_asset_id",
+      "service": "github",
+      "resourceFamily": "release_asset",
+      "identityKind": "REST_ID",
+      "jsonTypes": ["integer"],
+      "aliases": {
+        "exactFieldNames": [
+          "asset_id",
+          "release_asset_id",
+          "releaseAssetId"
+        ],
+        "contextualFieldNames": ["id"],
+        "descriptionPatterns": [
+          "release asset id",
+          "identifier of the release asset"
+        ]
+      },
+      "scopeKinds": ["owner", "repository"],
+      "allowedProtocols": [
+        "REST",
+        "COMPOSIO_CONVENIENCE_HELPER",
+        "UNKNOWN"
+      ],
+      "requiresResourceContext": true,
+      "incompatibleEntities": ["github.release_id"],
+      "notes": []
+    },
+    {
+      "id": "github.environment_name",
+      "service": "github",
+      "resourceFamily": "environment",
+      "identityKind": "NAME",
+      "jsonTypes": ["string"],
+      "aliases": {
+        "exactFieldNames": ["environment_name", "environmentName"],
+        "contextualFieldNames": ["name"],
+        "descriptionPatterns": [
+          "environment name",
+          "name of the environment"
+        ]
+      },
+      "scopeKinds": ["owner", "repository", "environment"],
+      "allowedProtocols": [
+        "REST",
+        "GRAPHQL",
+        "COMPOSIO_CONVENIENCE_HELPER",
+        "UNKNOWN"
+      ],
+      "requiresResourceContext": true,
+      "incompatibleEntities": [],
+      "notes": []
+    },
+    {
+      "id": "github.organization",
+      "service": "github",
+      "resourceFamily": "organization",
+      "identityKind": "NAME",
+      "jsonTypes": ["string"],
+      "aliases": {
+        "exactFieldNames": [
+          "organization",
+          "organization_name",
+          "org"
+        ],
+        "contextualFieldNames": ["login", "name"],
+        "descriptionPatterns": [
+          "organization name",
+          "github organization"
+        ]
+      },
+      "scopeKinds": ["organization"],
+      "allowedProtocols": [
+        "REST",
+        "GRAPHQL",
+        "COMPOSIO_CONVENIENCE_HELPER",
+        "UNKNOWN"
+      ],
+      "requiresResourceContext": true,
+      "incompatibleEntities": ["github.owner"],
+      "notes": [
+        "An organization can act as a repository owner, but the semantic role must remain explicit."
+      ]
+    },
+    {
+      "id": "github.team_slug",
+      "service": "github",
+      "resourceFamily": "team",
+      "identityKind": "SLUG",
+      "jsonTypes": ["string"],
+      "aliases": {
+        "exactFieldNames": ["team_slug", "teamSlug"],
+        "contextualFieldNames": ["slug"],
+        "descriptionPatterns": [
+          "team slug",
+          "slug of the team"
+        ]
+      },
+      "scopeKinds": ["organization", "team"],
+      "allowedProtocols": [
+        "REST",
+        "GRAPHQL",
+        "COMPOSIO_CONVENIENCE_HELPER",
+        "UNKNOWN"
+      ],
+      "requiresResourceContext": true,
+      "incompatibleEntities": [],
+      "notes": []
+    }
+  ],
+  "hardSeparations": [
+    {
+      "left": "gmail.thread_id",
+      "right": "gmail.message_id",
+      "reason": "Thread and message resources have different identifiers even when returned together."
+    },
+    {
+      "left": "gmail.label_id",
+      "right": "gmail.thread_id",
+      "reason": "A label identifier cannot satisfy a thread identifier input."
+    },
+    {
+      "left": "google.calendar_id",
+      "right": "google.event_id",
+      "reason": "A calendar identifies a container while an event identifies an item within a calendar."
+    },
+    {
+      "left": "google.drive_file_id",
+      "right": "gmail.message_id",
+      "reason": "The identifiers belong to different Google services and resources."
+    },
+    {
+      "left": "github.issue_number",
+      "right": "github.pull_request_number",
+      "reason": "Issues and pull requests may share numbering infrastructure but retain distinct resource semantics."
+    },
+    {
+      "left": "github.workflow_id",
+      "right": "github.workflow_run_id",
+      "reason": "A workflow definition and an execution of that workflow are different resources."
+    },
+    {
+      "left": "github.workflow_run_id",
+      "right": "github.workflow_run_number",
+      "reason": "The REST ID and sequential run number are not interchangeable."
+    },
+    {
+      "left": "github.workflow_run_id",
+      "right": "github.job_id",
+      "reason": "A workflow run contains jobs, but the run ID is not a job ID."
+    },
+    {
+      "left": "github.repository_id",
+      "right": "github.repository_node_id",
+      "reason": "The numeric REST repository ID and GraphQL node ID use different identity systems."
+    },
+    {
+      "left": "github.release_id",
+      "right": "github.release_asset_id",
+      "reason": "A release and an asset attached to a release are separate resources."
+    },
+    {
+      "left": "github.commit_sha",
+      "right": "github.branch_ref",
+      "reason": "A commit SHA identifies an immutable object while a branch ref is a movable name."
+    }
+  ]
+}

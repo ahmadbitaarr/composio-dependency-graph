@@ -1,0 +1,184 @@
+{
+  "format": "adjudication-holdout-pilot-manifest-v1",
+  "generatedFrom": {
+    "holdoutFormat": "adjudication-holdout-v1",
+    "eligibilityAuditFormat": "adjudication-holdout-eligibility-audit-v1"
+  },
+  "selectionPolicy": {
+    "description": "Select every frozen holdout candidate retained as ELIGIBLE by the current eligibility report.",
+    "retainedEligibleOnly": true,
+    "expectedLabelsIncluded": false,
+    "rationalesIncluded": false
+  },
+  "summary": {
+    "totalSelected": 22,
+    "github": 12,
+    "googlesuper": 10,
+    "primaryReasonCounts": {
+      "LOW_CONFIDENCE_CANONICAL_ENTITY": 11,
+      "TRANSFORMATION_REQUIRED": 2,
+      "COLLECTION_REQUIRES_SELECTION": 2,
+      "AMBIGUOUS_ISSUE_PULL_REQUEST_NUMBER": 2,
+      "DEPRECATED_PRODUCER": 3,
+      "IDENTITY_RESOLUTION_REQUIRES_DISAMBIGUATION": 2
+    }
+  },
+  "candidateIds": [
+    "GITHUB_COMMIT_MULTIPLE_FILES:output:$.data.commit.sha=>GITHUB_CREATE_A_COMMIT_STATUS:input:$.sha",
+    "GITHUB_CREATE_AN_ORGANIZATION_REPOSITORY:output:$.data.name=>GITHUB_SYNC_FORK_BRANCH_WITH_UPSTREAM:input:$.repo",
+    "GITHUB_CREATE_A_GITHUB_PAGES_SITE:output:$.data.source.branch=>GITHUB_CREATE_A_DEPLOYMENT_BRANCH_POLICY:input:$.name",
+    "GITHUB_FIND_REPOSITORIES:output:$.data.items[].full_name=>GITHUB_ADD_APP_ACCESS_RESTRICTIONS:input:$.repo",
+    "GITHUB_FIND_REPOSITORIES:output:$.data.items[].full_name=>GITHUB_CREATE_A_DEPLOYMENT:input:$.owner",
+    "GITHUB_GET_COMMIT_COMMENT:output:$.data.commit_id=>GITHUB_GET_A_COMMIT:input:$.ref",
+    "GITHUB_LIST_ATTESTATION_REPOSITORIES:output:$.data.repositories[].name=>GITHUB_CREATE_A_DEPLOYMENT:input:$.repo",
+    "GITHUB_LIST_REPO_ACCESS_BY_TOKEN:output:$.data.repositories[].owner.login=>GITHUB_ADD_STATUS_CHECK_CONTEXTS:input:$.owner",
+    "GITHUB_SEARCH_ISSUES_AND_PULL_REQUESTS:output:$.data.items[].number=>GITHUB_ADD_ASSIGNEES_TO_AN_ISSUE:input:$.issue_number",
+    "GITHUB_SEARCH_ISSUES_AND_PULL_REQUESTS:output:$.data.items[].number=>GITHUB_DELETE_ISSUE_REACTION:input:$.issue_number",
+    "GITHUB_UPDATE_A_CHECK_RUN:output:$.data.head_sha=>GITHUB_GET_COMMIT_STATUSES:input:$.ref",
+    "GITHUB_UPDATE_A_COMMIT_COMMENT:output:$.data.commit_id=>GITHUB_COMPARE_TWO_COMMITS:input:$.basehead",
+    "GOOGLESUPER_CREATE_CALENDAR:output:$.data.id=>GOOGLESUPER_FREE_BUSY_QUERY:input:$.items[].id",
+    "GOOGLESUPER_CREATE_DRIVE:output:$.data.backgroundImageFile.id=>GOOGLESUPER_CREATE_SHORTCUT_TO_FILE:input:$.target_id",
+    "GOOGLESUPER_CREATE_FILE:output:$.data.id=>GOOGLESUPER_DELETE_COMMENT:input:$.comment_id",
+    "GOOGLESUPER_CREATE_FILE_FROM_TEXT:output:$.data.id=>GOOGLESUPER_ADD_PARENT:input:$.id",
+    "GOOGLESUPER_CREATE_FOLDER:output:$.data.id=>GOOGLESUPER_INSERT_CHILD:input:$.id",
+    "GOOGLESUPER_CREATE_TEAM_DRIVE:output:$.data.backgroundImageFile.id=>GOOGLESUPER_CREATE_COMMENT:input:$.file_id",
+    "GOOGLESUPER_GET_CALENDAR_PROFILE:output:$.data.id=>GOOGLESUPER_CALENDARS_DELETE:input:$.calendar_id",
+    "GOOGLESUPER_GET_CHANGE:output:$.data.drive.backgroundImageFile.id=>GOOGLESUPER_CREATE_REPLY:input:$.file_id",
+    "GOOGLESUPER_GET_CONTACTS:output:$.data.connections[].emailAddresses[].value=>GOOGLESUPER_CREATE_EMAIL_DRAFT:input:$.recipient_email",
+    "GOOGLESUPER_GET_CONTACTS:output:$.data.connections[].emailAddresses[].value=>GOOGLESUPER_UPDATE_DRAFT:input:$.recipient_email"
+  ],
+  "cases": [
+    {
+      "holdoutCaseId": "H01",
+      "candidateId": "GITHUB_COMMIT_MULTIPLE_FILES:output:$.data.commit.sha=>GITHUB_CREATE_A_COMMIT_STATUS:input:$.sha",
+      "toolkit": "github",
+      "sourcePrimaryReason": "LOW_CONFIDENCE_CANONICAL_ENTITY"
+    },
+    {
+      "holdoutCaseId": "H02",
+      "candidateId": "GITHUB_CREATE_AN_ORGANIZATION_REPOSITORY:output:$.data.name=>GITHUB_SYNC_FORK_BRANCH_WITH_UPSTREAM:input:$.repo",
+      "toolkit": "github",
+      "sourcePrimaryReason": "LOW_CONFIDENCE_CANONICAL_ENTITY"
+    },
+    {
+      "holdoutCaseId": "H03",
+      "candidateId": "GITHUB_CREATE_A_GITHUB_PAGES_SITE:output:$.data.source.branch=>GITHUB_CREATE_A_DEPLOYMENT_BRANCH_POLICY:input:$.name",
+      "toolkit": "github",
+      "sourcePrimaryReason": "LOW_CONFIDENCE_CANONICAL_ENTITY"
+    },
+    {
+      "holdoutCaseId": "H04",
+      "candidateId": "GITHUB_FIND_REPOSITORIES:output:$.data.items[].full_name=>GITHUB_ADD_APP_ACCESS_RESTRICTIONS:input:$.repo",
+      "toolkit": "github",
+      "sourcePrimaryReason": "TRANSFORMATION_REQUIRED"
+    },
+    {
+      "holdoutCaseId": "H05",
+      "candidateId": "GITHUB_FIND_REPOSITORIES:output:$.data.items[].full_name=>GITHUB_CREATE_A_DEPLOYMENT:input:$.owner",
+      "toolkit": "github",
+      "sourcePrimaryReason": "TRANSFORMATION_REQUIRED"
+    },
+    {
+      "holdoutCaseId": "H06",
+      "candidateId": "GITHUB_GET_COMMIT_COMMENT:output:$.data.commit_id=>GITHUB_GET_A_COMMIT:input:$.ref",
+      "toolkit": "github",
+      "sourcePrimaryReason": "LOW_CONFIDENCE_CANONICAL_ENTITY"
+    },
+    {
+      "holdoutCaseId": "H07",
+      "candidateId": "GITHUB_LIST_ATTESTATION_REPOSITORIES:output:$.data.repositories[].name=>GITHUB_CREATE_A_DEPLOYMENT:input:$.repo",
+      "toolkit": "github",
+      "sourcePrimaryReason": "COLLECTION_REQUIRES_SELECTION"
+    },
+    {
+      "holdoutCaseId": "H13",
+      "candidateId": "GITHUB_LIST_REPO_ACCESS_BY_TOKEN:output:$.data.repositories[].owner.login=>GITHUB_ADD_STATUS_CHECK_CONTEXTS:input:$.owner",
+      "toolkit": "github",
+      "sourcePrimaryReason": "COLLECTION_REQUIRES_SELECTION"
+    },
+    {
+      "holdoutCaseId": "H17",
+      "candidateId": "GITHUB_SEARCH_ISSUES_AND_PULL_REQUESTS:output:$.data.items[].number=>GITHUB_ADD_ASSIGNEES_TO_AN_ISSUE:input:$.issue_number",
+      "toolkit": "github",
+      "sourcePrimaryReason": "AMBIGUOUS_ISSUE_PULL_REQUEST_NUMBER"
+    },
+    {
+      "holdoutCaseId": "H18",
+      "candidateId": "GITHUB_SEARCH_ISSUES_AND_PULL_REQUESTS:output:$.data.items[].number=>GITHUB_DELETE_ISSUE_REACTION:input:$.issue_number",
+      "toolkit": "github",
+      "sourcePrimaryReason": "AMBIGUOUS_ISSUE_PULL_REQUEST_NUMBER"
+    },
+    {
+      "holdoutCaseId": "H19",
+      "candidateId": "GITHUB_UPDATE_A_CHECK_RUN:output:$.data.head_sha=>GITHUB_GET_COMMIT_STATUSES:input:$.ref",
+      "toolkit": "github",
+      "sourcePrimaryReason": "LOW_CONFIDENCE_CANONICAL_ENTITY"
+    },
+    {
+      "holdoutCaseId": "H20",
+      "candidateId": "GITHUB_UPDATE_A_COMMIT_COMMENT:output:$.data.commit_id=>GITHUB_COMPARE_TWO_COMMITS:input:$.basehead",
+      "toolkit": "github",
+      "sourcePrimaryReason": "LOW_CONFIDENCE_CANONICAL_ENTITY"
+    },
+    {
+      "holdoutCaseId": "H22",
+      "candidateId": "GOOGLESUPER_CREATE_CALENDAR:output:$.data.id=>GOOGLESUPER_FREE_BUSY_QUERY:input:$.items[].id",
+      "toolkit": "googlesuper",
+      "sourcePrimaryReason": "LOW_CONFIDENCE_CANONICAL_ENTITY"
+    },
+    {
+      "holdoutCaseId": "H23",
+      "candidateId": "GOOGLESUPER_CREATE_DRIVE:output:$.data.backgroundImageFile.id=>GOOGLESUPER_CREATE_SHORTCUT_TO_FILE:input:$.target_id",
+      "toolkit": "googlesuper",
+      "sourcePrimaryReason": "LOW_CONFIDENCE_CANONICAL_ENTITY"
+    },
+    {
+      "holdoutCaseId": "H24",
+      "candidateId": "GOOGLESUPER_CREATE_FILE:output:$.data.id=>GOOGLESUPER_DELETE_COMMENT:input:$.comment_id",
+      "toolkit": "googlesuper",
+      "sourcePrimaryReason": "LOW_CONFIDENCE_CANONICAL_ENTITY"
+    },
+    {
+      "holdoutCaseId": "H25",
+      "candidateId": "GOOGLESUPER_CREATE_FILE_FROM_TEXT:output:$.data.id=>GOOGLESUPER_ADD_PARENT:input:$.id",
+      "toolkit": "googlesuper",
+      "sourcePrimaryReason": "LOW_CONFIDENCE_CANONICAL_ENTITY"
+    },
+    {
+      "holdoutCaseId": "H26",
+      "candidateId": "GOOGLESUPER_CREATE_FOLDER:output:$.data.id=>GOOGLESUPER_INSERT_CHILD:input:$.id",
+      "toolkit": "googlesuper",
+      "sourcePrimaryReason": "LOW_CONFIDENCE_CANONICAL_ENTITY"
+    },
+    {
+      "holdoutCaseId": "H27",
+      "candidateId": "GOOGLESUPER_CREATE_TEAM_DRIVE:output:$.data.backgroundImageFile.id=>GOOGLESUPER_CREATE_COMMENT:input:$.file_id",
+      "toolkit": "googlesuper",
+      "sourcePrimaryReason": "DEPRECATED_PRODUCER"
+    },
+    {
+      "holdoutCaseId": "H34",
+      "candidateId": "GOOGLESUPER_GET_CALENDAR_PROFILE:output:$.data.id=>GOOGLESUPER_CALENDARS_DELETE:input:$.calendar_id",
+      "toolkit": "googlesuper",
+      "sourcePrimaryReason": "DEPRECATED_PRODUCER"
+    },
+    {
+      "holdoutCaseId": "H35",
+      "candidateId": "GOOGLESUPER_GET_CHANGE:output:$.data.drive.backgroundImageFile.id=>GOOGLESUPER_CREATE_REPLY:input:$.file_id",
+      "toolkit": "googlesuper",
+      "sourcePrimaryReason": "DEPRECATED_PRODUCER"
+    },
+    {
+      "holdoutCaseId": "H36",
+      "candidateId": "GOOGLESUPER_GET_CONTACTS:output:$.data.connections[].emailAddresses[].value=>GOOGLESUPER_CREATE_EMAIL_DRAFT:input:$.recipient_email",
+      "toolkit": "googlesuper",
+      "sourcePrimaryReason": "IDENTITY_RESOLUTION_REQUIRES_DISAMBIGUATION"
+    },
+    {
+      "holdoutCaseId": "H37",
+      "candidateId": "GOOGLESUPER_GET_CONTACTS:output:$.data.connections[].emailAddresses[].value=>GOOGLESUPER_UPDATE_DRAFT:input:$.recipient_email",
+      "toolkit": "googlesuper",
+      "sourcePrimaryReason": "IDENTITY_RESOLUTION_REQUIRES_DISAMBIGUATION"
+    }
+  ]
+}

@@ -1,0 +1,464 @@
+{
+  "format": "adjudication-holdout-pilot-score-v1",
+  "source": {
+    "holdoutFormat": "adjudication-holdout-v1",
+    "manifestFormat": "adjudication-holdout-pilot-manifest-v1",
+    "runFormat": "adjudication-run-report-v1",
+    "model": "test/dry-run-model",
+    "promptVersion": "dependency-adjudication-v1"
+  },
+  "selection": {
+    "totalSelected": 22,
+    "github": 12,
+    "googlesuper": 10
+  },
+  "execution": {
+    "dryRun": true,
+    "requestLimit": 0,
+    "requestCount": 0,
+    "completedCount": 0,
+    "cacheHitCount": 0,
+    "failedCount": 0,
+    "dryRunCount": 22
+  },
+  "score": {
+    "format": "adjudication-holdout-score-v1",
+    "holdoutFormat": "adjudication-holdout-v1",
+    "totalCases": 22,
+    "validDecisionCount": 0,
+    "coverage": {
+      "numerator": 0,
+      "denominator": 22,
+      "rate": 0
+    },
+    "invalidResponseCount": 0,
+    "transportFailureCount": 0,
+    "dryRunResultCount": 22,
+    "missingResultCount": 0,
+    "decisions": {
+      "exactMatchCount": 0,
+      "accuracy": {
+        "numerator": 0,
+        "denominator": 22,
+        "rate": 0
+      },
+      "accept": {
+        "expectedCount": 14,
+        "predictedCount": 0,
+        "correctCount": 0,
+        "unsupportedAcceptCount": 0,
+        "precision": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "recall": {
+          "numerator": 0,
+          "denominator": 14,
+          "rate": 0
+        }
+      },
+      "reject": {
+        "expectedCount": 4,
+        "predictedCount": 0,
+        "correctCount": 0,
+        "incorrectCount": 0,
+        "accuracy": {
+          "numerator": 0,
+          "denominator": 4,
+          "rate": 0
+        }
+      },
+      "abstain": {
+        "expectedCount": 4,
+        "predictedCount": 0,
+        "correctCount": 0,
+        "incorrectCount": 0,
+        "recall": {
+          "numerator": 0,
+          "denominator": 4,
+          "rate": 0
+        }
+      }
+    },
+    "dependencyKind": {
+      "evaluatedCount": 0,
+      "matchCount": 0,
+      "matchRate": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null
+      }
+    },
+    "flags": {
+      "selection": {
+        "evaluatedCount": 0,
+        "matchCount": 0,
+        "matchRate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        }
+      },
+      "disambiguation": {
+        "evaluatedCount": 0,
+        "matchCount": 0,
+        "matchRate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        }
+      },
+      "transformation": {
+        "evaluatedCount": 0,
+        "matchCount": 0,
+        "matchRate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        }
+      }
+    },
+    "caseResults": [
+      {
+        "id": "H01",
+        "candidateId": "GITHUB_COMMIT_MULTIPLE_FILES:output:$.data.commit.sha=>GITHUB_CREATE_A_COMMIT_STATUS:input:$.sha",
+        "toolkit": "github",
+        "status": "DRY_RUN",
+        "expectedDecision": "ACCEPT",
+        "actualDecision": null,
+        "decisionMatches": false,
+        "expectedDependencyKind": "CREATOR",
+        "actualDependencyKind": null,
+        "dependencyKindMatches": false,
+        "selectionMatches": false,
+        "disambiguationMatches": false,
+        "transformationMatches": false
+      },
+      {
+        "id": "H02",
+        "candidateId": "GITHUB_CREATE_AN_ORGANIZATION_REPOSITORY:output:$.data.name=>GITHUB_SYNC_FORK_BRANCH_WITH_UPSTREAM:input:$.repo",
+        "toolkit": "github",
+        "status": "DRY_RUN",
+        "expectedDecision": "ABSTAIN",
+        "actualDecision": null,
+        "decisionMatches": false,
+        "expectedDependencyKind": "UNKNOWN",
+        "actualDependencyKind": null,
+        "dependencyKindMatches": false,
+        "selectionMatches": false,
+        "disambiguationMatches": false,
+        "transformationMatches": false
+      },
+      {
+        "id": "H03",
+        "candidateId": "GITHUB_CREATE_A_GITHUB_PAGES_SITE:output:$.data.source.branch=>GITHUB_CREATE_A_DEPLOYMENT_BRANCH_POLICY:input:$.name",
+        "toolkit": "github",
+        "status": "DRY_RUN",
+        "expectedDecision": "ACCEPT",
+        "actualDecision": null,
+        "decisionMatches": false,
+        "expectedDependencyKind": "RESOLVER",
+        "actualDependencyKind": null,
+        "dependencyKindMatches": false,
+        "selectionMatches": false,
+        "disambiguationMatches": false,
+        "transformationMatches": false
+      },
+      {
+        "id": "H04",
+        "candidateId": "GITHUB_FIND_REPOSITORIES:output:$.data.items[].full_name=>GITHUB_ADD_APP_ACCESS_RESTRICTIONS:input:$.repo",
+        "toolkit": "github",
+        "status": "DRY_RUN",
+        "expectedDecision": "ACCEPT",
+        "actualDecision": null,
+        "decisionMatches": false,
+        "expectedDependencyKind": "TRANSFORMATION",
+        "actualDependencyKind": null,
+        "dependencyKindMatches": false,
+        "selectionMatches": false,
+        "disambiguationMatches": false,
+        "transformationMatches": false
+      },
+      {
+        "id": "H05",
+        "candidateId": "GITHUB_FIND_REPOSITORIES:output:$.data.items[].full_name=>GITHUB_CREATE_A_DEPLOYMENT:input:$.owner",
+        "toolkit": "github",
+        "status": "DRY_RUN",
+        "expectedDecision": "ACCEPT",
+        "actualDecision": null,
+        "decisionMatches": false,
+        "expectedDependencyKind": "TRANSFORMATION",
+        "actualDependencyKind": null,
+        "dependencyKindMatches": false,
+        "selectionMatches": false,
+        "disambiguationMatches": false,
+        "transformationMatches": false
+      },
+      {
+        "id": "H06",
+        "candidateId": "GITHUB_GET_COMMIT_COMMENT:output:$.data.commit_id=>GITHUB_GET_A_COMMIT:input:$.ref",
+        "toolkit": "github",
+        "status": "DRY_RUN",
+        "expectedDecision": "ACCEPT",
+        "actualDecision": null,
+        "decisionMatches": false,
+        "expectedDependencyKind": "LOOKUP",
+        "actualDependencyKind": null,
+        "dependencyKindMatches": false,
+        "selectionMatches": false,
+        "disambiguationMatches": false,
+        "transformationMatches": false
+      },
+      {
+        "id": "H07",
+        "candidateId": "GITHUB_LIST_ATTESTATION_REPOSITORIES:output:$.data.repositories[].name=>GITHUB_CREATE_A_DEPLOYMENT:input:$.repo",
+        "toolkit": "github",
+        "status": "DRY_RUN",
+        "expectedDecision": "ABSTAIN",
+        "actualDecision": null,
+        "decisionMatches": false,
+        "expectedDependencyKind": "UNKNOWN",
+        "actualDependencyKind": null,
+        "dependencyKindMatches": false,
+        "selectionMatches": false,
+        "disambiguationMatches": false,
+        "transformationMatches": false
+      },
+      {
+        "id": "H13",
+        "candidateId": "GITHUB_LIST_REPO_ACCESS_BY_TOKEN:output:$.data.repositories[].owner.login=>GITHUB_ADD_STATUS_CHECK_CONTEXTS:input:$.owner",
+        "toolkit": "github",
+        "status": "DRY_RUN",
+        "expectedDecision": "ACCEPT",
+        "actualDecision": null,
+        "decisionMatches": false,
+        "expectedDependencyKind": "LOOKUP",
+        "actualDependencyKind": null,
+        "dependencyKindMatches": false,
+        "selectionMatches": false,
+        "disambiguationMatches": false,
+        "transformationMatches": false
+      },
+      {
+        "id": "H17",
+        "candidateId": "GITHUB_SEARCH_ISSUES_AND_PULL_REQUESTS:output:$.data.items[].number=>GITHUB_ADD_ASSIGNEES_TO_AN_ISSUE:input:$.issue_number",
+        "toolkit": "github",
+        "status": "DRY_RUN",
+        "expectedDecision": "ABSTAIN",
+        "actualDecision": null,
+        "decisionMatches": false,
+        "expectedDependencyKind": "UNKNOWN",
+        "actualDependencyKind": null,
+        "dependencyKindMatches": false,
+        "selectionMatches": false,
+        "disambiguationMatches": false,
+        "transformationMatches": false
+      },
+      {
+        "id": "H18",
+        "candidateId": "GITHUB_SEARCH_ISSUES_AND_PULL_REQUESTS:output:$.data.items[].number=>GITHUB_DELETE_ISSUE_REACTION:input:$.issue_number",
+        "toolkit": "github",
+        "status": "DRY_RUN",
+        "expectedDecision": "ABSTAIN",
+        "actualDecision": null,
+        "decisionMatches": false,
+        "expectedDependencyKind": "UNKNOWN",
+        "actualDependencyKind": null,
+        "dependencyKindMatches": false,
+        "selectionMatches": false,
+        "disambiguationMatches": false,
+        "transformationMatches": false
+      },
+      {
+        "id": "H19",
+        "candidateId": "GITHUB_UPDATE_A_CHECK_RUN:output:$.data.head_sha=>GITHUB_GET_COMMIT_STATUSES:input:$.ref",
+        "toolkit": "github",
+        "status": "DRY_RUN",
+        "expectedDecision": "ACCEPT",
+        "actualDecision": null,
+        "decisionMatches": false,
+        "expectedDependencyKind": "RESOLVER",
+        "actualDependencyKind": null,
+        "dependencyKindMatches": false,
+        "selectionMatches": false,
+        "disambiguationMatches": false,
+        "transformationMatches": false
+      },
+      {
+        "id": "H20",
+        "candidateId": "GITHUB_UPDATE_A_COMMIT_COMMENT:output:$.data.commit_id=>GITHUB_COMPARE_TWO_COMMITS:input:$.basehead",
+        "toolkit": "github",
+        "status": "DRY_RUN",
+        "expectedDecision": "REJECT",
+        "actualDecision": null,
+        "decisionMatches": false,
+        "expectedDependencyKind": "UNKNOWN",
+        "actualDependencyKind": null,
+        "dependencyKindMatches": false,
+        "selectionMatches": false,
+        "disambiguationMatches": false,
+        "transformationMatches": false
+      },
+      {
+        "id": "H22",
+        "candidateId": "GOOGLESUPER_CREATE_CALENDAR:output:$.data.id=>GOOGLESUPER_FREE_BUSY_QUERY:input:$.items[].id",
+        "toolkit": "googlesuper",
+        "status": "DRY_RUN",
+        "expectedDecision": "ACCEPT",
+        "actualDecision": null,
+        "decisionMatches": false,
+        "expectedDependencyKind": "CREATOR",
+        "actualDependencyKind": null,
+        "dependencyKindMatches": false,
+        "selectionMatches": false,
+        "disambiguationMatches": false,
+        "transformationMatches": false
+      },
+      {
+        "id": "H23",
+        "candidateId": "GOOGLESUPER_CREATE_DRIVE:output:$.data.backgroundImageFile.id=>GOOGLESUPER_CREATE_SHORTCUT_TO_FILE:input:$.target_id",
+        "toolkit": "googlesuper",
+        "status": "DRY_RUN",
+        "expectedDecision": "ACCEPT",
+        "actualDecision": null,
+        "decisionMatches": false,
+        "expectedDependencyKind": "RESOLVER",
+        "actualDependencyKind": null,
+        "dependencyKindMatches": false,
+        "selectionMatches": false,
+        "disambiguationMatches": false,
+        "transformationMatches": false
+      },
+      {
+        "id": "H24",
+        "candidateId": "GOOGLESUPER_CREATE_FILE:output:$.data.id=>GOOGLESUPER_DELETE_COMMENT:input:$.comment_id",
+        "toolkit": "googlesuper",
+        "status": "DRY_RUN",
+        "expectedDecision": "REJECT",
+        "actualDecision": null,
+        "decisionMatches": false,
+        "expectedDependencyKind": "UNKNOWN",
+        "actualDependencyKind": null,
+        "dependencyKindMatches": false,
+        "selectionMatches": false,
+        "disambiguationMatches": false,
+        "transformationMatches": false
+      },
+      {
+        "id": "H25",
+        "candidateId": "GOOGLESUPER_CREATE_FILE_FROM_TEXT:output:$.data.id=>GOOGLESUPER_ADD_PARENT:input:$.id",
+        "toolkit": "googlesuper",
+        "status": "DRY_RUN",
+        "expectedDecision": "REJECT",
+        "actualDecision": null,
+        "decisionMatches": false,
+        "expectedDependencyKind": "UNKNOWN",
+        "actualDependencyKind": null,
+        "dependencyKindMatches": false,
+        "selectionMatches": false,
+        "disambiguationMatches": false,
+        "transformationMatches": false
+      },
+      {
+        "id": "H26",
+        "candidateId": "GOOGLESUPER_CREATE_FOLDER:output:$.data.id=>GOOGLESUPER_INSERT_CHILD:input:$.id",
+        "toolkit": "googlesuper",
+        "status": "DRY_RUN",
+        "expectedDecision": "ACCEPT",
+        "actualDecision": null,
+        "decisionMatches": false,
+        "expectedDependencyKind": "CREATOR",
+        "actualDependencyKind": null,
+        "dependencyKindMatches": false,
+        "selectionMatches": false,
+        "disambiguationMatches": false,
+        "transformationMatches": false
+      },
+      {
+        "id": "H27",
+        "candidateId": "GOOGLESUPER_CREATE_TEAM_DRIVE:output:$.data.backgroundImageFile.id=>GOOGLESUPER_CREATE_COMMENT:input:$.file_id",
+        "toolkit": "googlesuper",
+        "status": "DRY_RUN",
+        "expectedDecision": "ACCEPT",
+        "actualDecision": null,
+        "decisionMatches": false,
+        "expectedDependencyKind": "RESOLVER",
+        "actualDependencyKind": null,
+        "dependencyKindMatches": false,
+        "selectionMatches": false,
+        "disambiguationMatches": false,
+        "transformationMatches": false
+      },
+      {
+        "id": "H34",
+        "candidateId": "GOOGLESUPER_GET_CALENDAR_PROFILE:output:$.data.id=>GOOGLESUPER_CALENDARS_DELETE:input:$.calendar_id",
+        "toolkit": "googlesuper",
+        "status": "DRY_RUN",
+        "expectedDecision": "REJECT",
+        "actualDecision": null,
+        "decisionMatches": false,
+        "expectedDependencyKind": "UNKNOWN",
+        "actualDependencyKind": null,
+        "dependencyKindMatches": false,
+        "selectionMatches": false,
+        "disambiguationMatches": false,
+        "transformationMatches": false
+      },
+      {
+        "id": "H35",
+        "candidateId": "GOOGLESUPER_GET_CHANGE:output:$.data.drive.backgroundImageFile.id=>GOOGLESUPER_CREATE_REPLY:input:$.file_id",
+        "toolkit": "googlesuper",
+        "status": "DRY_RUN",
+        "expectedDecision": "ACCEPT",
+        "actualDecision": null,
+        "decisionMatches": false,
+        "expectedDependencyKind": "LOOKUP",
+        "actualDependencyKind": null,
+        "dependencyKindMatches": false,
+        "selectionMatches": false,
+        "disambiguationMatches": false,
+        "transformationMatches": false
+      },
+      {
+        "id": "H36",
+        "candidateId": "GOOGLESUPER_GET_CONTACTS:output:$.data.connections[].emailAddresses[].value=>GOOGLESUPER_CREATE_EMAIL_DRAFT:input:$.recipient_email",
+        "toolkit": "googlesuper",
+        "status": "DRY_RUN",
+        "expectedDecision": "ACCEPT",
+        "actualDecision": null,
+        "decisionMatches": false,
+        "expectedDependencyKind": "RESOLVER",
+        "actualDependencyKind": null,
+        "dependencyKindMatches": false,
+        "selectionMatches": false,
+        "disambiguationMatches": false,
+        "transformationMatches": false
+      },
+      {
+        "id": "H37",
+        "candidateId": "GOOGLESUPER_GET_CONTACTS:output:$.data.connections[].emailAddresses[].value=>GOOGLESUPER_UPDATE_DRAFT:input:$.recipient_email",
+        "toolkit": "googlesuper",
+        "status": "DRY_RUN",
+        "expectedDecision": "ACCEPT",
+        "actualDecision": null,
+        "decisionMatches": false,
+        "expectedDependencyKind": "RESOLVER",
+        "actualDependencyKind": null,
+        "dependencyKindMatches": false,
+        "selectionMatches": false,
+        "disambiguationMatches": false,
+        "transformationMatches": false
+      }
+    ]
+  },
+  "safetyGate": {
+    "fullCoverage": false,
+    "zeroUnsupportedAccepts": true,
+    "noInvalidResponses": true,
+    "noTransportFailures": true,
+    "noDryRunResults": false,
+    "noMissingResults": true,
+    "passed": false
+  }
+}

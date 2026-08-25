@@ -1,0 +1,2605 @@
+=== TOP LEVEL ===
+{
+  [0mformat[2m:[0m [0m[32m[0m[32m"normalized-tool-catalog-v1"[0m[0m[0m[2m,[0m
+  [0mgeneratedAt[2m:[0m [0m[32m[0m[32m"2026-07-20T15:09:23.259Z"[0m[0m[0m[2m,[0m
+  [0mkeys[2m:[0m [ [0m[32m"format"[0m[0m[0m[2m,[0m [0m[32m"generatedAt"[0m[0m[0m[2m,[0m [0m[32m"sourceFiles"[0m[0m[0m[2m,[0m [0m[32m"tools"[0m[0m[0m[2m,[0m [0m[32m"summary"[0m[0m ][0m[2m,[0m
+  [0msourceFiles[2m:[0m [
+    {
+      [0mtoolkit[2m:[0m [0m[32m[0m[32m"googlesuper"[0m[0m[0m[2m,[0m
+      [0mpath[2m:[0m [0m[32m[0m[32m"data/raw/googlesuper-tools.json"[0m[0m[0m[2m,[0m
+      [0mtoolkitVersion[2m:[0m [0m[32m[0m[32m"20260714_00"[0m[0m[0m[2m,[0m
+      [0mtoolCount[2m:[0m [0m[33m467[0m[0m[2m,[0m
+    }[0m[2m,[0m {
+      [0mtoolkit[2m:[0m [0m[32m[0m[32m"github"[0m[0m[0m[2m,[0m
+      [0mpath[2m:[0m [0m[32m[0m[32m"data/raw/github-tools.json"[0m[0m[0m[2m,[0m
+      [0mtoolkitVersion[2m:[0m [0m[32m[0m[32m"20260713_00"[0m[0m[0m[2m,[0m
+      [0mtoolCount[2m:[0m [0m[33m893[0m[0m[2m,[0m
+    }
+  ][0m[2m,[0m
+  [0mtoolCount[2m:[0m [0m[33m1360[0m[0m[2m,[0m
+  [0msummary[2m:[0m {
+    [0mtoolCount[2m:[0m [0m[33m1360[0m[0m[2m,[0m
+    [0minputFieldCount[2m:[0m [0m[33m7638[0m[0m[2m,[0m
+    [0moutputFieldCount[2m:[0m [0m[33m53844[0m[0m[2m,[0m
+    [0mtoolsByToolkit[2m:[0m {
+      [0mgithub[2m:[0m [0m[33m893[0m[0m[2m,[0m
+      [0mgooglesuper[2m:[0m [0m[33m467[0m[0m[2m,[0m
+    }[0m[2m,[0m
+    [0mtoolsByService[2m:[0m {
+      [0mgithub[2m:[0m [0m[33m893[0m[0m[2m,[0m
+      [0mcalendar[2m:[0m [0m[33m63[0m[0m[2m,[0m
+      [0munknown[2m:[0m [0m[33m111[0m[0m[2m,[0m
+      [0mdrive[2m:[0m [0m[33m84[0m[0m[2m,[0m
+      [0mgmail[2m:[0m [0m[33m57[0m[0m[2m,[0m
+      [0mpeople[2m:[0m [0m[33m4[0m[0m[2m,[0m
+      [0msheets[2m:[0m [0m[33m47[0m[0m[2m,[0m
+      [0mtasks[2m:[0m [0m[33m19[0m[0m[2m,[0m
+      [0manalytics[2m:[0m [0m[33m22[0m[0m[2m,[0m
+      [0mdocs[2m:[0m [0m[33m43[0m[0m[2m,[0m
+      [0mslides[2m:[0m [0m[33m6[0m[0m[2m,[0m
+      [0mmeet[2m:[0m [0m[33m11[0m[0m[2m,[0m
+    }[0m[2m,[0m
+    [0mtoolsByResourceFamily[2m:[0m {
+      [0mrepository[2m:[0m [0m[33m180[0m[0m[2m,[0m
+      [0morganization[2m:[0m [0m[33m202[0m[0m[2m,[0m
+      [0mbranch[2m:[0m [0m[33m76[0m[0m[2m,[0m
+      [0missue[2m:[0m [0m[33m40[0m[0m[2m,[0m
+      [0muser[2m:[0m [0m[33m102[0m[0m[2m,[0m
+      [0mproject[2m:[0m [0m[33m22[0m[0m[2m,[0m
+      [0mpull_request[2m:[0m [0m[33m74[0m[0m[2m,[0m
+      [0mworkflow[2m:[0m [0m[33m38[0m[0m[2m,[0m
+      [0munknown[2m:[0m [0m[33m176[0m[0m[2m,[0m
+      [0mworkflow_run[2m:[0m [0m[33m24[0m[0m[2m,[0m
+      [0mcommit[2m:[0m [0m[33m28[0m[0m[2m,[0m
+      [0mjob[2m:[0m [0m[33m1[0m[0m[2m,[0m
+      [0mrelease[2m:[0m [0m[33m9[0m[0m[2m,[0m
+      [0menvironment[2m:[0m [0m[33m23[0m[0m[2m,[0m
+      [0mrelease_asset[2m:[0m [0m[33m5[0m[0m[2m,[0m
+      [0mrepository_content[2m:[0m [0m[33m3[0m[0m[2m,[0m
+      [0mteam[2m:[0m [0m[33m1[0m[0m[2m,[0m
+      [0mcalendar[2m:[0m [0m[33m24[0m[0m[2m,[0m
+      [0mpermission[2m:[0m [0m[33m12[0m[0m[2m,[0m
+      [0mlabel[2m:[0m [0m[33m7[0m[0m[2m,[0m
+      [0mcontact[2m:[0m [0m[33m4[0m[0m[2m,[0m
+      [0mfile[2m:[0m [0m[33m72[0m[0m[2m,[0m
+      [0mspreadsheet[2m:[0m [0m[33m41[0m[0m[2m,[0m
+      [0mmessage[2m:[0m [0m[33m20[0m[0m[2m,[0m
+      [0mevent[2m:[0m [0m[33m39[0m[0m[2m,[0m
+      [0mtasks[2m:[0m [0m[33m19[0m[0m[2m,[0m
+      [0manalytics[2m:[0m [0m[33m22[0m[0m[2m,[0m
+      [0msheet[2m:[0m [0m[33m6[0m[0m[2m,[0m
+      [0mdocs[2m:[0m [0m[33m43[0m[0m[2m,[0m
+      [0mthread[2m:[0m [0m[33m13[0m[0m[2m,[0m
+      [0mslides[2m:[0m [0m[33m6[0m[0m[2m,[0m
+      [0mdraft[2m:[0m [0m[33m6[0m[0m[2m,[0m
+      [0mmeet[2m:[0m [0m[33m11[0m[0m[2m,[0m
+      [0mgmail[2m:[0m [0m[33m11[0m[0m[2m,[0m
+    }[0m[2m,[0m
+    [0mschemaCompleteness[2m:[0m {
+      [0mCOMPLETE[2m:[0m [0m[33m2510[0m[0m[2m,[0m
+      [0mPARTIAL[2m:[0m [0m[33m1[0m[0m[2m,[0m
+      [0mGENERIC[2m:[0m [0m[33m209[0m[0m[2m,[0m
+      [0mMISSING[2m:[0m [0m[33m0[0m[0m[2m,[0m
+    }[0m[2m,[0m
+    [0mabstractionLevels[2m:[0m {
+      [0mPRIMITIVE[2m:[0m [0m[33m18[0m[0m[2m,[0m
+      [0mRESOURCE_OPERATION[2m:[0m [0m[33m1340[0m[0m[2m,[0m
+      [0mCONVENIENCE_WORKFLOW[2m:[0m [0m[33m2[0m[0m[2m,[0m
+      [0mUNKNOWN[2m:[0m [0m[33m0[0m[0m[2m,[0m
+    }[0m[2m,[0m
+    [0mdeprecatedToolCount[2m:[0m [0m[33m65[0m[0m[2m,[0m
+    [0mlegacyToolCount[2m:[0m [0m[33m15[0m[0m[2m,[0m
+    [0mbetaToolCount[2m:[0m [0m[33m3[0m[0m[2m,[0m
+    [0mcanonicalEntityAssignments[2m:[0m [0m[33m4775[0m[0m[2m,[0m
+    [0mdeliberatelyUnclassifiedFields[2m:[0m [0m[33m44883[0m[0m[2m,[0m
+    [0mwarningCount[2m:[0m [0m[33m288[0m[0m[2m,[0m
+  }[0m[2m,[0m
+}
+
+=== NORMALIZED GOOGLE TOOL ===
+{
+  "found": true,
+  "metadata": {
+    "slug": "GOOGLESUPER_LIST_THREADS",
+    "name": "List threads",
+    "description": "Retrieves a list of email threads from a Gmail account, identified by `user_id` (email address or 'me'), supporting filtering and pagination. Spam and trash are excluded by default unless explicitly targeted via `label:spam` or `label:trash` in the query.",
+    "toolkit": "googlesuper",
+    "toolkitVersion": "20260714_00",
+    "availableToolkitVersions": [
+      "20260714_00"
+    ],
+    "underlyingService": "gmail",
+    "resourceFamily": "thread",
+    "actionFamily": "list",
+    "deprecated": false,
+    "legacy": false,
+    "beta": false,
+    "lifecycle": "CURRENT",
+    "apiGeneration": "unknown",
+    "apiVariant": "default",
+    "protocol": "REST",
+    "abstractionLevel": "RESOURCE_OPERATION",
+    "inputSchemaCompleteness": "COMPLETE",
+    "outputSchemaCompleteness": "COMPLETE",
+    "oauthScopes": [
+      "https://mail.google.com/",
+      "https://www.googleapis.com/auth/gmail.modify",
+      "https://www.googleapis.com/auth/gmail.readonly"
+    ],
+    "resourceScopes": [
+      {
+        "kind": "account",
+        "requiredForIdentity": false,
+        "evidence": [
+          "Ontology requires account scope.",
+          "Scope supplied by $.user_id."
+        ],
+        "valueSourcePath": "$.user_id"
+      }
+    ],
+    "tags": [
+      "readOnlyHint",
+      "openWorldHint"
+    ],
+    "rawSource": {
+      "rawFile": "data/raw/googlesuper-tools.json",
+      "snapshotFormat": "authenticated-raw-tool-snapshot",
+      "pageIndex": 0,
+      "itemIndex": 326,
+      "toolSlug": "GOOGLESUPER_LIST_THREADS"
+    }
+  },
+  "inputFields": [],
+  "outputFields": [
+    {
+      "fieldId": "GOOGLESUPER_LIST_THREADS:output:$.data",
+      "direction": "output",
+      "jsonPath": "$.data",
+      "sourceSchemaPath": "$.properties.data",
+      "originalFieldName": "data",
+      "jsonTypes": [
+        "object"
+      ],
+      "requiredAtParent": true,
+      "effectivelyRequired": true,
+      "arrayDepth": 0,
+      "safeForInference": false,
+      "safetyReasons": [
+        "NO_CANONICAL_ENTITY",
+        "NON_SCALAR_FIELD"
+      ],
+      "scopes": []
+    },
+    {
+      "fieldId": "GOOGLESUPER_LIST_THREADS:output:$.data.threads",
+      "direction": "output",
+      "jsonPath": "$.data.threads",
+      "sourceSchemaPath": "$.$defs.ListThreadsResponse.properties.threads",
+      "originalFieldName": "threads",
+      "jsonTypes": [
+        "array"
+      ],
+      "requiredAtParent": true,
+      "effectivelyRequired": true,
+      "arrayDepth": 1,
+      "safeForInference": false,
+      "safetyReasons": [
+        "NO_CANONICAL_ENTITY",
+        "NON_SCALAR_FIELD"
+      ],
+      "scopes": []
+    },
+    {
+      "fieldId": "GOOGLESUPER_LIST_THREADS:output:$.data.threads[]",
+      "direction": "output",
+      "jsonPath": "$.data.threads[]",
+      "sourceSchemaPath": "$.$defs.ListThreadsResponse.properties.threads.items",
+      "originalFieldName": "threads",
+      "jsonTypes": [
+        "object"
+      ],
+      "requiredAtParent": true,
+      "effectivelyRequired": true,
+      "arrayDepth": 1,
+      "safeForInference": false,
+      "safetyReasons": [
+        "NO_CANONICAL_ENTITY",
+        "NON_SCALAR_FIELD"
+      ],
+      "scopes": []
+    },
+    {
+      "fieldId": "GOOGLESUPER_LIST_THREADS:output:$.data.threads[].id",
+      "direction": "output",
+      "jsonPath": "$.data.threads[].id",
+      "sourceSchemaPath": "$.$defs.Thread.properties.id",
+      "originalFieldName": "id",
+      "jsonTypes": [
+        "string"
+      ],
+      "requiredAtParent": true,
+      "effectivelyRequired": true,
+      "arrayDepth": 1,
+      "safeForInference": true,
+      "safetyReasons": [
+        "HIGH_CONFIDENCE_CANONICAL_ENTITY"
+      ],
+      "canonicalEntity": {
+        "entity": "gmail.thread_id",
+        "confidence": "HIGH",
+        "evidence": [
+          "compatible JSON type",
+          "compatible service",
+          "contextual field alias: id",
+          "description pattern: identifier of the thread",
+          "tool resource family is thread",
+          "resource-specific field path or reference",
+          "resource-specific field description",
+          "resource-specific tool metadata"
+        ],
+        "reasonCodes": [
+          "TYPE_COMPATIBLE",
+          "SERVICE_COMPATIBLE",
+          "ENTITY_CONTEXTUAL_FIELD_ALIAS",
+          "ENTITY_DESCRIPTION_MATCH",
+          "RESOURCE_FAMILY_MATCH",
+          "RESOURCE_CONTEXT_MATCH"
+        ]
+      },
+      "scopes": [
+        {
+          "kind": "account",
+          "requiredForIdentity": false,
+          "evidence": [
+            "Ontology requires account scope.",
+            "Scope supplied by $.user_id."
+          ],
+          "valueSourcePath": "$.user_id"
+        }
+      ]
+    },
+    {
+      "fieldId": "GOOGLESUPER_LIST_THREADS:output:$.successful",
+      "direction": "output",
+      "jsonPath": "$.successful",
+      "sourceSchemaPath": "$.properties.successful",
+      "originalFieldName": "successful",
+      "jsonTypes": [
+        "boolean"
+      ],
+      "requiredAtParent": true,
+      "effectivelyRequired": true,
+      "arrayDepth": 0,
+      "safeForInference": false,
+      "safetyReasons": [
+        "NO_CANONICAL_ENTITY"
+      ],
+      "scopes": []
+    }
+  ],
+  "unresolvedReferences": [],
+  "unsupportedSchemaFeatures": [],
+  "warnings": []
+}
+
+=== NORMALIZED GITHUB TOOL ===
+{
+  "found": true,
+  "metadata": {
+    "slug": "GITHUB_LIST_WORKFLOW_RUNS_FOR_A_REPOSITORY",
+    "name": "List workflow runs for a repository",
+    "description": "Lists workflow runs for a repository, allowing filtering by actor, branch, event, status, creation date, check suite ID, or head SHA; the repository must exist and be accessible.",
+    "toolkit": "github",
+    "toolkitVersion": "20260713_00",
+    "availableToolkitVersions": [
+      "20260713_00"
+    ],
+    "underlyingService": "github",
+    "resourceFamily": "workflow_run",
+    "actionFamily": "list",
+    "deprecated": false,
+    "legacy": false,
+    "beta": false,
+    "lifecycle": "CURRENT",
+    "apiGeneration": "unknown",
+    "apiVariant": "default",
+    "protocol": "REST",
+    "abstractionLevel": "RESOURCE_OPERATION",
+    "inputSchemaCompleteness": "COMPLETE",
+    "outputSchemaCompleteness": "COMPLETE",
+    "oauthScopes": [
+      "repo"
+    ],
+    "resourceScopes": [
+      {
+        "kind": "owner",
+        "requiredForIdentity": true,
+        "evidence": [
+          "Ontology requires owner scope.",
+          "Scope supplied by $.owner."
+        ],
+        "valueSourcePath": "$.owner"
+      },
+      {
+        "kind": "repository",
+        "requiredForIdentity": true,
+        "evidence": [
+          "Ontology requires repository scope.",
+          "Scope supplied by $.repo."
+        ],
+        "valueSourcePath": "$.repo"
+      },
+      {
+        "kind": "workflow",
+        "requiredForIdentity": true,
+        "evidence": [
+          "Ontology requires workflow scope."
+        ]
+      }
+    ],
+    "tags": [
+      "actions",
+      "openWorldHint",
+      "readOnlyHint",
+      "idempotentHint"
+    ],
+    "rawSource": {
+      "rawFile": "data/raw/github-tools.json",
+      "snapshotFormat": "authenticated-raw-tool-snapshot",
+      "pageIndex": 0,
+      "itemIndex": 684,
+      "toolSlug": "GITHUB_LIST_WORKFLOW_RUNS_FOR_A_REPOSITORY"
+    }
+  },
+  "inputFields": [
+    {
+      "fieldId": "GITHUB_LIST_WORKFLOW_RUNS_FOR_A_REPOSITORY:input:$.branch",
+      "direction": "input",
+      "jsonPath": "$.branch",
+      "sourceSchemaPath": "$.properties.branch",
+      "originalFieldName": "branch",
+      "jsonTypes": [
+        "string"
+      ],
+      "requiredAtParent": false,
+      "effectivelyRequired": false,
+      "arrayDepth": 0,
+      "safeForInference": true,
+      "safetyReasons": [
+        "HIGH_CONFIDENCE_CANONICAL_ENTITY"
+      ],
+      "canonicalEntity": {
+        "entity": "github.branch_ref",
+        "confidence": "HIGH",
+        "evidence": [
+          "compatible JSON type",
+          "compatible service",
+          "exact field alias: branch",
+          "description pattern: branch name",
+          "resource-specific field path or reference",
+          "resource-specific field description",
+          "resource-specific tool metadata"
+        ],
+        "reasonCodes": [
+          "TYPE_COMPATIBLE",
+          "SERVICE_COMPATIBLE",
+          "ENTITY_EXACT_FIELD_ALIAS",
+          "ENTITY_DESCRIPTION_MATCH",
+          "RESOURCE_CONTEXT_MATCH"
+        ]
+      },
+      "scopes": [
+        {
+          "kind": "owner",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires owner scope.",
+            "Scope supplied by $.owner."
+          ],
+          "valueSourcePath": "$.owner"
+        },
+        {
+          "kind": "repository",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires repository scope.",
+            "Scope supplied by $.repo."
+          ],
+          "valueSourcePath": "$.repo"
+        }
+      ]
+    },
+    {
+      "fieldId": "GITHUB_LIST_WORKFLOW_RUNS_FOR_A_REPOSITORY:input:$.head_sha",
+      "direction": "input",
+      "jsonPath": "$.head_sha",
+      "sourceSchemaPath": "$.properties.head_sha",
+      "originalFieldName": "head_sha",
+      "jsonTypes": [
+        "string"
+      ],
+      "requiredAtParent": false,
+      "effectivelyRequired": false,
+      "arrayDepth": 0,
+      "safeForInference": true,
+      "safetyReasons": [
+        "HIGH_CONFIDENCE_CANONICAL_ENTITY"
+      ],
+      "canonicalEntity": {
+        "entity": "github.commit_sha",
+        "confidence": "HIGH",
+        "evidence": [
+          "compatible JSON type",
+          "compatible service",
+          "exact field alias: head_sha",
+          "description pattern: commit sha",
+          "resource-specific field path or reference",
+          "resource-specific field description",
+          "resource-specific tool metadata"
+        ],
+        "reasonCodes": [
+          "TYPE_COMPATIBLE",
+          "SERVICE_COMPATIBLE",
+          "ENTITY_EXACT_FIELD_ALIAS",
+          "ENTITY_DESCRIPTION_MATCH",
+          "RESOURCE_CONTEXT_MATCH"
+        ]
+      },
+      "scopes": [
+        {
+          "kind": "owner",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires owner scope.",
+            "Scope supplied by $.owner."
+          ],
+          "valueSourcePath": "$.owner"
+        },
+        {
+          "kind": "repository",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires repository scope.",
+            "Scope supplied by $.repo."
+          ],
+          "valueSourcePath": "$.repo"
+        }
+      ]
+    },
+    {
+      "fieldId": "GITHUB_LIST_WORKFLOW_RUNS_FOR_A_REPOSITORY:input:$.owner",
+      "direction": "input",
+      "jsonPath": "$.owner",
+      "sourceSchemaPath": "$.properties.owner",
+      "originalFieldName": "owner",
+      "jsonTypes": [
+        "string"
+      ],
+      "requiredAtParent": true,
+      "effectivelyRequired": true,
+      "arrayDepth": 0,
+      "safeForInference": true,
+      "safetyReasons": [
+        "HIGH_CONFIDENCE_CANONICAL_ENTITY"
+      ],
+      "canonicalEntity": {
+        "entity": "github.owner",
+        "confidence": "HIGH",
+        "evidence": [
+          "compatible JSON type",
+          "compatible service",
+          "exact field alias: owner",
+          "description pattern: account owner",
+          "resource-specific field path or reference",
+          "resource-specific field description",
+          "resource-specific tool metadata"
+        ],
+        "reasonCodes": [
+          "TYPE_COMPATIBLE",
+          "SERVICE_COMPATIBLE",
+          "ENTITY_EXACT_FIELD_ALIAS",
+          "ENTITY_DESCRIPTION_MATCH",
+          "RESOURCE_CONTEXT_MATCH"
+        ]
+      },
+      "scopes": [
+        {
+          "kind": "owner",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires owner scope.",
+            "Scope supplied by $.owner."
+          ],
+          "valueSourcePath": "$.owner"
+        }
+      ]
+    },
+    {
+      "fieldId": "GITHUB_LIST_WORKFLOW_RUNS_FOR_A_REPOSITORY:input:$.repo",
+      "direction": "input",
+      "jsonPath": "$.repo",
+      "sourceSchemaPath": "$.properties.repo",
+      "originalFieldName": "repo",
+      "jsonTypes": [
+        "string"
+      ],
+      "requiredAtParent": true,
+      "effectivelyRequired": true,
+      "arrayDepth": 0,
+      "safeForInference": true,
+      "safetyReasons": [
+        "HIGH_CONFIDENCE_CANONICAL_ENTITY"
+      ],
+      "canonicalEntity": {
+        "entity": "github.repository_name",
+        "confidence": "HIGH",
+        "evidence": [
+          "compatible JSON type",
+          "compatible service",
+          "exact field alias: repo",
+          "description pattern: name of the repository",
+          "resource-specific field description",
+          "resource-specific tool metadata"
+        ],
+        "reasonCodes": [
+          "TYPE_COMPATIBLE",
+          "SERVICE_COMPATIBLE",
+          "ENTITY_EXACT_FIELD_ALIAS",
+          "ENTITY_DESCRIPTION_MATCH",
+          "RESOURCE_CONTEXT_MATCH"
+        ]
+      },
+      "scopes": [
+        {
+          "kind": "owner",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires owner scope.",
+            "Scope supplied by $.owner."
+          ],
+          "valueSourcePath": "$.owner"
+        },
+        {
+          "kind": "repository",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires repository scope.",
+            "Scope supplied by $.repo."
+          ],
+          "valueSourcePath": "$.repo"
+        }
+      ]
+    }
+  ],
+  "outputFields": [
+    {
+      "fieldId": "GITHUB_LIST_WORKFLOW_RUNS_FOR_A_REPOSITORY:output:$.data",
+      "direction": "output",
+      "jsonPath": "$.data",
+      "sourceSchemaPath": "$.properties.data",
+      "originalFieldName": "data",
+      "jsonTypes": [
+        "object"
+      ],
+      "requiredAtParent": true,
+      "effectivelyRequired": true,
+      "arrayDepth": 0,
+      "safeForInference": false,
+      "safetyReasons": [
+        "NO_CANONICAL_ENTITY",
+        "NON_SCALAR_FIELD"
+      ],
+      "scopes": []
+    },
+    {
+      "fieldId": "GITHUB_LIST_WORKFLOW_RUNS_FOR_A_REPOSITORY:output:$.data.total_count",
+      "direction": "output",
+      "jsonPath": "$.data.total_count",
+      "sourceSchemaPath": "$.$defs.ListWorkflowRunsForARepositoryResponse.properties.total_count",
+      "originalFieldName": "total_count",
+      "jsonTypes": [
+        "integer"
+      ],
+      "requiredAtParent": true,
+      "effectivelyRequired": true,
+      "arrayDepth": 0,
+      "safeForInference": false,
+      "safetyReasons": [
+        "NO_CANONICAL_ENTITY"
+      ],
+      "scopes": []
+    },
+    {
+      "fieldId": "GITHUB_LIST_WORKFLOW_RUNS_FOR_A_REPOSITORY:output:$.data.workflow_runs",
+      "direction": "output",
+      "jsonPath": "$.data.workflow_runs",
+      "sourceSchemaPath": "$.$defs.ListWorkflowRunsForARepositoryResponse.properties.workflow_runs",
+      "originalFieldName": "workflow_runs",
+      "jsonTypes": [
+        "array"
+      ],
+      "requiredAtParent": true,
+      "effectivelyRequired": true,
+      "arrayDepth": 1,
+      "safeForInference": false,
+      "safetyReasons": [
+        "NO_CANONICAL_ENTITY",
+        "NON_SCALAR_FIELD"
+      ],
+      "scopes": []
+    },
+    {
+      "fieldId": "GITHUB_LIST_WORKFLOW_RUNS_FOR_A_REPOSITORY:output:$.data.workflow_runs[]",
+      "direction": "output",
+      "jsonPath": "$.data.workflow_runs[]",
+      "sourceSchemaPath": "$.$defs.ListWorkflowRunsForARepositoryResponse.properties.workflow_runs.items",
+      "originalFieldName": "workflow_runs",
+      "jsonTypes": [
+        "object"
+      ],
+      "requiredAtParent": true,
+      "effectivelyRequired": true,
+      "arrayDepth": 1,
+      "safeForInference": false,
+      "safetyReasons": [
+        "NO_CANONICAL_ENTITY",
+        "NON_SCALAR_FIELD"
+      ],
+      "scopes": []
+    },
+    {
+      "fieldId": "GITHUB_LIST_WORKFLOW_RUNS_FOR_A_REPOSITORY:output:$.data.workflow_runs[].actor.id",
+      "direction": "output",
+      "jsonPath": "$.data.workflow_runs[].actor.id",
+      "sourceSchemaPath": "$.$defs.Actor.properties.id",
+      "originalFieldName": "id",
+      "jsonTypes": [
+        "integer"
+      ],
+      "requiredAtParent": false,
+      "effectivelyRequired": false,
+      "arrayDepth": 1,
+      "safeForInference": false,
+      "safetyReasons": [
+        "CANONICAL_ENTITY_NOT_HIGH_CONFIDENCE"
+      ],
+      "canonicalEntity": {
+        "entity": "github.workflow_run_id",
+        "confidence": "MEDIUM",
+        "evidence": [
+          "compatible JSON type",
+          "compatible service",
+          "contextual field alias: id",
+          "tool resource family is workflow_run",
+          "resource-specific field path or reference",
+          "resource-specific tool metadata"
+        ],
+        "reasonCodes": [
+          "TYPE_COMPATIBLE",
+          "SERVICE_COMPATIBLE",
+          "ENTITY_CONTEXTUAL_FIELD_ALIAS",
+          "RESOURCE_FAMILY_MATCH",
+          "RESOURCE_CONTEXT_MATCH"
+        ]
+      },
+      "scopes": [
+        {
+          "kind": "owner",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires owner scope.",
+            "Scope supplied by $.owner."
+          ],
+          "valueSourcePath": "$.owner"
+        },
+        {
+          "kind": "repository",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires repository scope.",
+            "Scope supplied by $.repo."
+          ],
+          "valueSourcePath": "$.repo"
+        },
+        {
+          "kind": "workflow",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires workflow scope."
+          ]
+        }
+      ]
+    },
+    {
+      "fieldId": "GITHUB_LIST_WORKFLOW_RUNS_FOR_A_REPOSITORY:output:$.data.workflow_runs[].actor.node_id",
+      "direction": "output",
+      "jsonPath": "$.data.workflow_runs[].actor.node_id",
+      "sourceSchemaPath": "$.$defs.Actor.properties.node_id",
+      "originalFieldName": "node_id",
+      "jsonTypes": [
+        "string"
+      ],
+      "requiredAtParent": false,
+      "effectivelyRequired": false,
+      "arrayDepth": 1,
+      "safeForInference": false,
+      "safetyReasons": [
+        "CANONICAL_ENTITY_NOT_HIGH_CONFIDENCE"
+      ],
+      "canonicalEntity": {
+        "entity": "github.repository_node_id",
+        "confidence": "LOW",
+        "evidence": [
+          "compatible JSON type",
+          "compatible service",
+          "contextual field alias: node_id",
+          "resource-specific field path or reference",
+          "resource-specific field description",
+          "resource-specific tool metadata"
+        ],
+        "reasonCodes": [
+          "TYPE_COMPATIBLE",
+          "SERVICE_COMPATIBLE",
+          "ENTITY_CONTEXTUAL_FIELD_ALIAS",
+          "RESOURCE_CONTEXT_MATCH"
+        ]
+      },
+      "scopes": [
+        {
+          "kind": "repository",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires repository scope.",
+            "Scope supplied by $.repo."
+          ],
+          "valueSourcePath": "$.repo"
+        }
+      ]
+    },
+    {
+      "fieldId": "GITHUB_LIST_WORKFLOW_RUNS_FOR_A_REPOSITORY:output:$.data.workflow_runs[].head_branch",
+      "direction": "output",
+      "jsonPath": "$.data.workflow_runs[].head_branch",
+      "sourceSchemaPath": "$.$defs.WorkflowRun.properties.head_branch",
+      "originalFieldName": "head_branch",
+      "jsonTypes": [
+        "string"
+      ],
+      "requiredAtParent": false,
+      "effectivelyRequired": false,
+      "arrayDepth": 1,
+      "safeForInference": false,
+      "safetyReasons": [
+        "CANONICAL_ENTITY_NOT_HIGH_CONFIDENCE"
+      ],
+      "canonicalEntity": {
+        "entity": "github.branch_ref",
+        "confidence": "MEDIUM",
+        "evidence": [
+          "compatible JSON type",
+          "compatible service",
+          "description pattern: name of the branch",
+          "resource-specific field path or reference",
+          "resource-specific field description",
+          "resource-specific tool metadata"
+        ],
+        "reasonCodes": [
+          "TYPE_COMPATIBLE",
+          "SERVICE_COMPATIBLE",
+          "ENTITY_DESCRIPTION_MATCH",
+          "RESOURCE_CONTEXT_MATCH"
+        ]
+      },
+      "scopes": [
+        {
+          "kind": "owner",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires owner scope.",
+            "Scope supplied by $.owner."
+          ],
+          "valueSourcePath": "$.owner"
+        },
+        {
+          "kind": "repository",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires repository scope.",
+            "Scope supplied by $.repo."
+          ],
+          "valueSourcePath": "$.repo"
+        }
+      ]
+    },
+    {
+      "fieldId": "GITHUB_LIST_WORKFLOW_RUNS_FOR_A_REPOSITORY:output:$.data.workflow_runs[].head_commit.id",
+      "direction": "output",
+      "jsonPath": "$.data.workflow_runs[].head_commit.id",
+      "sourceSchemaPath": "$.$defs.HeadCommit.properties.id",
+      "originalFieldName": "id",
+      "jsonTypes": [
+        "string"
+      ],
+      "requiredAtParent": false,
+      "effectivelyRequired": false,
+      "arrayDepth": 1,
+      "safeForInference": true,
+      "safetyReasons": [
+        "HIGH_CONFIDENCE_CANONICAL_ENTITY"
+      ],
+      "canonicalEntity": {
+        "entity": "github.commit_sha",
+        "confidence": "HIGH",
+        "evidence": [
+          "compatible JSON type",
+          "compatible service",
+          "contextual field alias: id",
+          "description pattern: sha of the commit",
+          "resource-specific field path or reference",
+          "resource-specific field description",
+          "resource-specific tool metadata"
+        ],
+        "reasonCodes": [
+          "TYPE_COMPATIBLE",
+          "SERVICE_COMPATIBLE",
+          "ENTITY_CONTEXTUAL_FIELD_ALIAS",
+          "ENTITY_DESCRIPTION_MATCH",
+          "RESOURCE_CONTEXT_MATCH"
+        ]
+      },
+      "scopes": [
+        {
+          "kind": "owner",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires owner scope.",
+            "Scope supplied by $.owner."
+          ],
+          "valueSourcePath": "$.owner"
+        },
+        {
+          "kind": "repository",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires repository scope.",
+            "Scope supplied by $.repo."
+          ],
+          "valueSourcePath": "$.repo"
+        }
+      ]
+    },
+    {
+      "fieldId": "GITHUB_LIST_WORKFLOW_RUNS_FOR_A_REPOSITORY:output:$.data.workflow_runs[].head_commit.tree_id",
+      "direction": "output",
+      "jsonPath": "$.data.workflow_runs[].head_commit.tree_id",
+      "sourceSchemaPath": "$.$defs.HeadCommit.properties.tree_id",
+      "originalFieldName": "tree_id",
+      "jsonTypes": [
+        "string"
+      ],
+      "requiredAtParent": false,
+      "effectivelyRequired": false,
+      "arrayDepth": 1,
+      "safeForInference": false,
+      "safetyReasons": [
+        "CANONICAL_ENTITY_NOT_HIGH_CONFIDENCE"
+      ],
+      "canonicalEntity": {
+        "entity": "github.commit_sha",
+        "confidence": "MEDIUM",
+        "evidence": [
+          "compatible JSON type",
+          "compatible service",
+          "description pattern: sha of the commit",
+          "resource-specific field path or reference",
+          "resource-specific field description",
+          "resource-specific tool metadata"
+        ],
+        "reasonCodes": [
+          "TYPE_COMPATIBLE",
+          "SERVICE_COMPATIBLE",
+          "ENTITY_DESCRIPTION_MATCH",
+          "RESOURCE_CONTEXT_MATCH"
+        ]
+      },
+      "scopes": [
+        {
+          "kind": "owner",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires owner scope.",
+            "Scope supplied by $.owner."
+          ],
+          "valueSourcePath": "$.owner"
+        },
+        {
+          "kind": "repository",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires repository scope.",
+            "Scope supplied by $.repo."
+          ],
+          "valueSourcePath": "$.repo"
+        }
+      ]
+    },
+    {
+      "fieldId": "GITHUB_LIST_WORKFLOW_RUNS_FOR_A_REPOSITORY:output:$.data.workflow_runs[].head_repository.full_name",
+      "direction": "output",
+      "jsonPath": "$.data.workflow_runs[].head_repository.full_name",
+      "sourceSchemaPath": "$.$defs.Repository.properties.full_name",
+      "originalFieldName": "full_name",
+      "jsonTypes": [
+        "string"
+      ],
+      "requiredAtParent": false,
+      "effectivelyRequired": false,
+      "arrayDepth": 1,
+      "safeForInference": false,
+      "safetyReasons": [
+        "CANONICAL_ENTITY_NOT_HIGH_CONFIDENCE"
+      ],
+      "canonicalEntity": {
+        "entity": "github.repository_name",
+        "confidence": "MEDIUM",
+        "evidence": [
+          "compatible JSON type",
+          "compatible service",
+          "description pattern: repository name",
+          "resource-specific field path or reference",
+          "resource-specific field description",
+          "resource-specific tool metadata"
+        ],
+        "reasonCodes": [
+          "TYPE_COMPATIBLE",
+          "SERVICE_COMPATIBLE",
+          "ENTITY_DESCRIPTION_MATCH",
+          "RESOURCE_CONTEXT_MATCH"
+        ]
+      },
+      "scopes": [
+        {
+          "kind": "owner",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires owner scope.",
+            "Scope supplied by $.owner."
+          ],
+          "valueSourcePath": "$.owner"
+        },
+        {
+          "kind": "repository",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires repository scope.",
+            "Scope supplied by $.repo."
+          ],
+          "valueSourcePath": "$.repo"
+        }
+      ]
+    },
+    {
+      "fieldId": "GITHUB_LIST_WORKFLOW_RUNS_FOR_A_REPOSITORY:output:$.data.workflow_runs[].head_repository.id",
+      "direction": "output",
+      "jsonPath": "$.data.workflow_runs[].head_repository.id",
+      "sourceSchemaPath": "$.$defs.Repository.properties.id",
+      "originalFieldName": "id",
+      "jsonTypes": [
+        "integer"
+      ],
+      "requiredAtParent": false,
+      "effectivelyRequired": false,
+      "arrayDepth": 1,
+      "safeForInference": true,
+      "safetyReasons": [
+        "HIGH_CONFIDENCE_CANONICAL_ENTITY"
+      ],
+      "canonicalEntity": {
+        "entity": "github.repository_id",
+        "confidence": "HIGH",
+        "evidence": [
+          "compatible JSON type",
+          "compatible service",
+          "contextual field alias: id",
+          "description pattern: repository id",
+          "resource-specific field path or reference",
+          "resource-specific field description",
+          "resource-specific tool metadata"
+        ],
+        "reasonCodes": [
+          "TYPE_COMPATIBLE",
+          "SERVICE_COMPATIBLE",
+          "ENTITY_CONTEXTUAL_FIELD_ALIAS",
+          "ENTITY_DESCRIPTION_MATCH",
+          "RESOURCE_CONTEXT_MATCH"
+        ]
+      },
+      "scopes": [
+        {
+          "kind": "repository",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires repository scope.",
+            "Scope supplied by $.repo."
+          ],
+          "valueSourcePath": "$.repo"
+        }
+      ]
+    },
+    {
+      "fieldId": "GITHUB_LIST_WORKFLOW_RUNS_FOR_A_REPOSITORY:output:$.data.workflow_runs[].head_repository.name",
+      "direction": "output",
+      "jsonPath": "$.data.workflow_runs[].head_repository.name",
+      "sourceSchemaPath": "$.$defs.Repository.properties.name",
+      "originalFieldName": "name",
+      "jsonTypes": [
+        "string"
+      ],
+      "requiredAtParent": false,
+      "effectivelyRequired": false,
+      "arrayDepth": 1,
+      "safeForInference": true,
+      "safetyReasons": [
+        "HIGH_CONFIDENCE_CANONICAL_ENTITY"
+      ],
+      "canonicalEntity": {
+        "entity": "github.repository_name",
+        "confidence": "HIGH",
+        "evidence": [
+          "compatible JSON type",
+          "compatible service",
+          "contextual field alias: name",
+          "description pattern: repository name",
+          "resource-specific field path or reference",
+          "resource-specific field description",
+          "resource-specific tool metadata"
+        ],
+        "reasonCodes": [
+          "TYPE_COMPATIBLE",
+          "SERVICE_COMPATIBLE",
+          "ENTITY_CONTEXTUAL_FIELD_ALIAS",
+          "ENTITY_DESCRIPTION_MATCH",
+          "RESOURCE_CONTEXT_MATCH"
+        ]
+      },
+      "scopes": [
+        {
+          "kind": "owner",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires owner scope.",
+            "Scope supplied by $.owner."
+          ],
+          "valueSourcePath": "$.owner"
+        },
+        {
+          "kind": "repository",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires repository scope.",
+            "Scope supplied by $.repo."
+          ],
+          "valueSourcePath": "$.repo"
+        }
+      ]
+    },
+    {
+      "fieldId": "GITHUB_LIST_WORKFLOW_RUNS_FOR_A_REPOSITORY:output:$.data.workflow_runs[].head_repository.node_id",
+      "direction": "output",
+      "jsonPath": "$.data.workflow_runs[].head_repository.node_id",
+      "sourceSchemaPath": "$.$defs.Repository.properties.node_id",
+      "originalFieldName": "node_id",
+      "jsonTypes": [
+        "string"
+      ],
+      "requiredAtParent": false,
+      "effectivelyRequired": false,
+      "arrayDepth": 1,
+      "safeForInference": false,
+      "safetyReasons": [
+        "CANONICAL_ENTITY_NOT_HIGH_CONFIDENCE"
+      ],
+      "canonicalEntity": {
+        "entity": "github.repository_node_id",
+        "confidence": "LOW",
+        "evidence": [
+          "compatible JSON type",
+          "compatible service",
+          "contextual field alias: node_id",
+          "resource-specific field path or reference",
+          "resource-specific field description",
+          "resource-specific tool metadata"
+        ],
+        "reasonCodes": [
+          "TYPE_COMPATIBLE",
+          "SERVICE_COMPATIBLE",
+          "ENTITY_CONTEXTUAL_FIELD_ALIAS",
+          "RESOURCE_CONTEXT_MATCH"
+        ]
+      },
+      "scopes": [
+        {
+          "kind": "repository",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires repository scope.",
+            "Scope supplied by $.repo."
+          ],
+          "valueSourcePath": "$.repo"
+        }
+      ]
+    },
+    {
+      "fieldId": "GITHUB_LIST_WORKFLOW_RUNS_FOR_A_REPOSITORY:output:$.data.workflow_runs[].head_repository.owner.id",
+      "direction": "output",
+      "jsonPath": "$.data.workflow_runs[].head_repository.owner.id",
+      "sourceSchemaPath": "$.$defs.RepositoryOwner.properties.id",
+      "originalFieldName": "id",
+      "jsonTypes": [
+        "integer"
+      ],
+      "requiredAtParent": false,
+      "effectivelyRequired": false,
+      "arrayDepth": 1,
+      "safeForInference": false,
+      "safetyReasons": [
+        "CANONICAL_ENTITY_NOT_HIGH_CONFIDENCE"
+      ],
+      "canonicalEntity": {
+        "entity": "github.workflow_run_id",
+        "confidence": "MEDIUM",
+        "evidence": [
+          "compatible JSON type",
+          "compatible service",
+          "contextual field alias: id",
+          "tool resource family is workflow_run",
+          "resource-specific field path or reference",
+          "resource-specific tool metadata"
+        ],
+        "reasonCodes": [
+          "TYPE_COMPATIBLE",
+          "SERVICE_COMPATIBLE",
+          "ENTITY_CONTEXTUAL_FIELD_ALIAS",
+          "RESOURCE_FAMILY_MATCH",
+          "RESOURCE_CONTEXT_MATCH"
+        ]
+      },
+      "scopes": [
+        {
+          "kind": "owner",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires owner scope.",
+            "Scope supplied by $.owner."
+          ],
+          "valueSourcePath": "$.owner"
+        },
+        {
+          "kind": "repository",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires repository scope.",
+            "Scope supplied by $.repo."
+          ],
+          "valueSourcePath": "$.repo"
+        },
+        {
+          "kind": "workflow",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires workflow scope."
+          ]
+        }
+      ]
+    },
+    {
+      "fieldId": "GITHUB_LIST_WORKFLOW_RUNS_FOR_A_REPOSITORY:output:$.data.workflow_runs[].head_repository.owner.node_id",
+      "direction": "output",
+      "jsonPath": "$.data.workflow_runs[].head_repository.owner.node_id",
+      "sourceSchemaPath": "$.$defs.RepositoryOwner.properties.node_id",
+      "originalFieldName": "node_id",
+      "jsonTypes": [
+        "string"
+      ],
+      "requiredAtParent": false,
+      "effectivelyRequired": false,
+      "arrayDepth": 1,
+      "safeForInference": false,
+      "safetyReasons": [
+        "CANONICAL_ENTITY_NOT_HIGH_CONFIDENCE"
+      ],
+      "canonicalEntity": {
+        "entity": "github.repository_node_id",
+        "confidence": "LOW",
+        "evidence": [
+          "compatible JSON type",
+          "compatible service",
+          "contextual field alias: node_id",
+          "resource-specific field path or reference",
+          "resource-specific field description",
+          "resource-specific tool metadata"
+        ],
+        "reasonCodes": [
+          "TYPE_COMPATIBLE",
+          "SERVICE_COMPATIBLE",
+          "ENTITY_CONTEXTUAL_FIELD_ALIAS",
+          "RESOURCE_CONTEXT_MATCH"
+        ]
+      },
+      "scopes": [
+        {
+          "kind": "repository",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires repository scope.",
+            "Scope supplied by $.repo."
+          ],
+          "valueSourcePath": "$.repo"
+        }
+      ]
+    },
+    {
+      "fieldId": "GITHUB_LIST_WORKFLOW_RUNS_FOR_A_REPOSITORY:output:$.data.workflow_runs[].head_sha",
+      "direction": "output",
+      "jsonPath": "$.data.workflow_runs[].head_sha",
+      "sourceSchemaPath": "$.$defs.WorkflowRun.properties.head_sha",
+      "originalFieldName": "head_sha",
+      "jsonTypes": [
+        "string"
+      ],
+      "requiredAtParent": false,
+      "effectivelyRequired": false,
+      "arrayDepth": 1,
+      "safeForInference": true,
+      "safetyReasons": [
+        "HIGH_CONFIDENCE_CANONICAL_ENTITY"
+      ],
+      "canonicalEntity": {
+        "entity": "github.commit_sha",
+        "confidence": "HIGH",
+        "evidence": [
+          "compatible JSON type",
+          "compatible service",
+          "exact field alias: head_sha",
+          "description pattern: sha of the commit",
+          "resource-specific field path or reference",
+          "resource-specific field description",
+          "resource-specific tool metadata"
+        ],
+        "reasonCodes": [
+          "TYPE_COMPATIBLE",
+          "SERVICE_COMPATIBLE",
+          "ENTITY_EXACT_FIELD_ALIAS",
+          "ENTITY_DESCRIPTION_MATCH",
+          "RESOURCE_CONTEXT_MATCH"
+        ]
+      },
+      "scopes": [
+        {
+          "kind": "owner",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires owner scope.",
+            "Scope supplied by $.owner."
+          ],
+          "valueSourcePath": "$.owner"
+        },
+        {
+          "kind": "repository",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires repository scope.",
+            "Scope supplied by $.repo."
+          ],
+          "valueSourcePath": "$.repo"
+        }
+      ]
+    },
+    {
+      "fieldId": "GITHUB_LIST_WORKFLOW_RUNS_FOR_A_REPOSITORY:output:$.data.workflow_runs[].id",
+      "direction": "output",
+      "jsonPath": "$.data.workflow_runs[].id",
+      "sourceSchemaPath": "$.$defs.WorkflowRun.properties.id",
+      "originalFieldName": "id",
+      "jsonTypes": [
+        "integer"
+      ],
+      "requiredAtParent": false,
+      "effectivelyRequired": false,
+      "arrayDepth": 1,
+      "safeForInference": true,
+      "safetyReasons": [
+        "HIGH_CONFIDENCE_CANONICAL_ENTITY"
+      ],
+      "canonicalEntity": {
+        "entity": "github.workflow_run_id",
+        "confidence": "HIGH",
+        "evidence": [
+          "compatible JSON type",
+          "compatible service",
+          "contextual field alias: id",
+          "description pattern: identifier for the workflow run",
+          "tool resource family is workflow_run",
+          "resource-specific field path or reference",
+          "resource-specific field description",
+          "resource-specific tool metadata"
+        ],
+        "reasonCodes": [
+          "TYPE_COMPATIBLE",
+          "SERVICE_COMPATIBLE",
+          "ENTITY_CONTEXTUAL_FIELD_ALIAS",
+          "ENTITY_DESCRIPTION_MATCH",
+          "RESOURCE_FAMILY_MATCH",
+          "RESOURCE_CONTEXT_MATCH"
+        ]
+      },
+      "scopes": [
+        {
+          "kind": "owner",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires owner scope.",
+            "Scope supplied by $.owner."
+          ],
+          "valueSourcePath": "$.owner"
+        },
+        {
+          "kind": "repository",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires repository scope.",
+            "Scope supplied by $.repo."
+          ],
+          "valueSourcePath": "$.repo"
+        },
+        {
+          "kind": "workflow",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires workflow scope."
+          ]
+        }
+      ]
+    },
+    {
+      "fieldId": "GITHUB_LIST_WORKFLOW_RUNS_FOR_A_REPOSITORY:output:$.data.workflow_runs[].node_id",
+      "direction": "output",
+      "jsonPath": "$.data.workflow_runs[].node_id",
+      "sourceSchemaPath": "$.$defs.WorkflowRun.properties.node_id",
+      "originalFieldName": "node_id",
+      "jsonTypes": [
+        "string"
+      ],
+      "requiredAtParent": false,
+      "effectivelyRequired": false,
+      "arrayDepth": 1,
+      "safeForInference": false,
+      "safetyReasons": [
+        "CANONICAL_ENTITY_NOT_HIGH_CONFIDENCE"
+      ],
+      "canonicalEntity": {
+        "entity": "github.repository_node_id",
+        "confidence": "LOW",
+        "evidence": [
+          "compatible JSON type",
+          "compatible service",
+          "contextual field alias: node_id",
+          "resource-specific field path or reference",
+          "resource-specific field description",
+          "resource-specific tool metadata"
+        ],
+        "reasonCodes": [
+          "TYPE_COMPATIBLE",
+          "SERVICE_COMPATIBLE",
+          "ENTITY_CONTEXTUAL_FIELD_ALIAS",
+          "RESOURCE_CONTEXT_MATCH"
+        ]
+      },
+      "scopes": [
+        {
+          "kind": "repository",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires repository scope.",
+            "Scope supplied by $.repo."
+          ],
+          "valueSourcePath": "$.repo"
+        }
+      ]
+    },
+    {
+      "fieldId": "GITHUB_LIST_WORKFLOW_RUNS_FOR_A_REPOSITORY:output:$.data.workflow_runs[].pull_requests[].base.ref",
+      "direction": "output",
+      "jsonPath": "$.data.workflow_runs[].pull_requests[].base.ref",
+      "sourceSchemaPath": "$.$defs.PullRequestBranch.properties.ref",
+      "originalFieldName": "ref",
+      "jsonTypes": [
+        "string"
+      ],
+      "requiredAtParent": false,
+      "effectivelyRequired": false,
+      "arrayDepth": 2,
+      "safeForInference": true,
+      "safetyReasons": [
+        "HIGH_CONFIDENCE_CANONICAL_ENTITY"
+      ],
+      "canonicalEntity": {
+        "entity": "github.branch_ref",
+        "confidence": "HIGH",
+        "evidence": [
+          "compatible JSON type",
+          "compatible service",
+          "contextual field alias: ref",
+          "description pattern: branch name",
+          "resource-specific field path or reference",
+          "resource-specific field description",
+          "resource-specific tool metadata"
+        ],
+        "reasonCodes": [
+          "TYPE_COMPATIBLE",
+          "SERVICE_COMPATIBLE",
+          "ENTITY_CONTEXTUAL_FIELD_ALIAS",
+          "ENTITY_DESCRIPTION_MATCH",
+          "RESOURCE_CONTEXT_MATCH"
+        ]
+      },
+      "scopes": [
+        {
+          "kind": "owner",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires owner scope.",
+            "Scope supplied by $.owner."
+          ],
+          "valueSourcePath": "$.owner"
+        },
+        {
+          "kind": "repository",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires repository scope.",
+            "Scope supplied by $.repo."
+          ],
+          "valueSourcePath": "$.repo"
+        }
+      ]
+    },
+    {
+      "fieldId": "GITHUB_LIST_WORKFLOW_RUNS_FOR_A_REPOSITORY:output:$.data.workflow_runs[].pull_requests[].base.repo.full_name",
+      "direction": "output",
+      "jsonPath": "$.data.workflow_runs[].pull_requests[].base.repo.full_name",
+      "sourceSchemaPath": "$.$defs.Repository.properties.full_name",
+      "originalFieldName": "full_name",
+      "jsonTypes": [
+        "string"
+      ],
+      "requiredAtParent": false,
+      "effectivelyRequired": false,
+      "arrayDepth": 2,
+      "safeForInference": false,
+      "safetyReasons": [
+        "CANONICAL_ENTITY_NOT_HIGH_CONFIDENCE"
+      ],
+      "canonicalEntity": {
+        "entity": "github.repository_name",
+        "confidence": "MEDIUM",
+        "evidence": [
+          "compatible JSON type",
+          "compatible service",
+          "description pattern: repository name",
+          "resource-specific field path or reference",
+          "resource-specific field description",
+          "resource-specific tool metadata"
+        ],
+        "reasonCodes": [
+          "TYPE_COMPATIBLE",
+          "SERVICE_COMPATIBLE",
+          "ENTITY_DESCRIPTION_MATCH",
+          "RESOURCE_CONTEXT_MATCH"
+        ]
+      },
+      "scopes": [
+        {
+          "kind": "owner",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires owner scope.",
+            "Scope supplied by $.owner."
+          ],
+          "valueSourcePath": "$.owner"
+        },
+        {
+          "kind": "repository",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires repository scope.",
+            "Scope supplied by $.repo."
+          ],
+          "valueSourcePath": "$.repo"
+        }
+      ]
+    },
+    {
+      "fieldId": "GITHUB_LIST_WORKFLOW_RUNS_FOR_A_REPOSITORY:output:$.data.workflow_runs[].pull_requests[].base.repo.id",
+      "direction": "output",
+      "jsonPath": "$.data.workflow_runs[].pull_requests[].base.repo.id",
+      "sourceSchemaPath": "$.$defs.Repository.properties.id",
+      "originalFieldName": "id",
+      "jsonTypes": [
+        "integer"
+      ],
+      "requiredAtParent": false,
+      "effectivelyRequired": false,
+      "arrayDepth": 2,
+      "safeForInference": true,
+      "safetyReasons": [
+        "HIGH_CONFIDENCE_CANONICAL_ENTITY"
+      ],
+      "canonicalEntity": {
+        "entity": "github.repository_id",
+        "confidence": "HIGH",
+        "evidence": [
+          "compatible JSON type",
+          "compatible service",
+          "contextual field alias: id",
+          "description pattern: repository id",
+          "resource-specific field path or reference",
+          "resource-specific field description",
+          "resource-specific tool metadata"
+        ],
+        "reasonCodes": [
+          "TYPE_COMPATIBLE",
+          "SERVICE_COMPATIBLE",
+          "ENTITY_CONTEXTUAL_FIELD_ALIAS",
+          "ENTITY_DESCRIPTION_MATCH",
+          "RESOURCE_CONTEXT_MATCH"
+        ]
+      },
+      "scopes": [
+        {
+          "kind": "repository",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires repository scope.",
+            "Scope supplied by $.repo."
+          ],
+          "valueSourcePath": "$.repo"
+        }
+      ]
+    },
+    {
+      "fieldId": "GITHUB_LIST_WORKFLOW_RUNS_FOR_A_REPOSITORY:output:$.data.workflow_runs[].pull_requests[].base.repo.name",
+      "direction": "output",
+      "jsonPath": "$.data.workflow_runs[].pull_requests[].base.repo.name",
+      "sourceSchemaPath": "$.$defs.Repository.properties.name",
+      "originalFieldName": "name",
+      "jsonTypes": [
+        "string"
+      ],
+      "requiredAtParent": false,
+      "effectivelyRequired": false,
+      "arrayDepth": 2,
+      "safeForInference": true,
+      "safetyReasons": [
+        "HIGH_CONFIDENCE_CANONICAL_ENTITY"
+      ],
+      "canonicalEntity": {
+        "entity": "github.repository_name",
+        "confidence": "HIGH",
+        "evidence": [
+          "compatible JSON type",
+          "compatible service",
+          "contextual field alias: name",
+          "description pattern: repository name",
+          "resource-specific field path or reference",
+          "resource-specific field description",
+          "resource-specific tool metadata"
+        ],
+        "reasonCodes": [
+          "TYPE_COMPATIBLE",
+          "SERVICE_COMPATIBLE",
+          "ENTITY_CONTEXTUAL_FIELD_ALIAS",
+          "ENTITY_DESCRIPTION_MATCH",
+          "RESOURCE_CONTEXT_MATCH"
+        ]
+      },
+      "scopes": [
+        {
+          "kind": "owner",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires owner scope.",
+            "Scope supplied by $.owner."
+          ],
+          "valueSourcePath": "$.owner"
+        },
+        {
+          "kind": "repository",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires repository scope.",
+            "Scope supplied by $.repo."
+          ],
+          "valueSourcePath": "$.repo"
+        }
+      ]
+    },
+    {
+      "fieldId": "GITHUB_LIST_WORKFLOW_RUNS_FOR_A_REPOSITORY:output:$.data.workflow_runs[].pull_requests[].base.repo.node_id",
+      "direction": "output",
+      "jsonPath": "$.data.workflow_runs[].pull_requests[].base.repo.node_id",
+      "sourceSchemaPath": "$.$defs.Repository.properties.node_id",
+      "originalFieldName": "node_id",
+      "jsonTypes": [
+        "string"
+      ],
+      "requiredAtParent": false,
+      "effectivelyRequired": false,
+      "arrayDepth": 2,
+      "safeForInference": false,
+      "safetyReasons": [
+        "CANONICAL_ENTITY_NOT_HIGH_CONFIDENCE"
+      ],
+      "canonicalEntity": {
+        "entity": "github.repository_node_id",
+        "confidence": "LOW",
+        "evidence": [
+          "compatible JSON type",
+          "compatible service",
+          "contextual field alias: node_id",
+          "resource-specific field path or reference",
+          "resource-specific field description",
+          "resource-specific tool metadata"
+        ],
+        "reasonCodes": [
+          "TYPE_COMPATIBLE",
+          "SERVICE_COMPATIBLE",
+          "ENTITY_CONTEXTUAL_FIELD_ALIAS",
+          "RESOURCE_CONTEXT_MATCH"
+        ]
+      },
+      "scopes": [
+        {
+          "kind": "repository",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires repository scope.",
+            "Scope supplied by $.repo."
+          ],
+          "valueSourcePath": "$.repo"
+        }
+      ]
+    },
+    {
+      "fieldId": "GITHUB_LIST_WORKFLOW_RUNS_FOR_A_REPOSITORY:output:$.data.workflow_runs[].pull_requests[].base.repo.owner.id",
+      "direction": "output",
+      "jsonPath": "$.data.workflow_runs[].pull_requests[].base.repo.owner.id",
+      "sourceSchemaPath": "$.$defs.RepositoryOwner.properties.id",
+      "originalFieldName": "id",
+      "jsonTypes": [
+        "integer"
+      ],
+      "requiredAtParent": false,
+      "effectivelyRequired": false,
+      "arrayDepth": 2,
+      "safeForInference": false,
+      "safetyReasons": [
+        "CANONICAL_ENTITY_NOT_HIGH_CONFIDENCE"
+      ],
+      "canonicalEntity": {
+        "entity": "github.workflow_run_id",
+        "confidence": "MEDIUM",
+        "evidence": [
+          "compatible JSON type",
+          "compatible service",
+          "contextual field alias: id",
+          "tool resource family is workflow_run",
+          "resource-specific field path or reference",
+          "resource-specific tool metadata"
+        ],
+        "reasonCodes": [
+          "TYPE_COMPATIBLE",
+          "SERVICE_COMPATIBLE",
+          "ENTITY_CONTEXTUAL_FIELD_ALIAS",
+          "RESOURCE_FAMILY_MATCH",
+          "RESOURCE_CONTEXT_MATCH"
+        ]
+      },
+      "scopes": [
+        {
+          "kind": "owner",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires owner scope.",
+            "Scope supplied by $.owner."
+          ],
+          "valueSourcePath": "$.owner"
+        },
+        {
+          "kind": "repository",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires repository scope.",
+            "Scope supplied by $.repo."
+          ],
+          "valueSourcePath": "$.repo"
+        },
+        {
+          "kind": "workflow",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires workflow scope."
+          ]
+        }
+      ]
+    },
+    {
+      "fieldId": "GITHUB_LIST_WORKFLOW_RUNS_FOR_A_REPOSITORY:output:$.data.workflow_runs[].pull_requests[].base.repo.owner.node_id",
+      "direction": "output",
+      "jsonPath": "$.data.workflow_runs[].pull_requests[].base.repo.owner.node_id",
+      "sourceSchemaPath": "$.$defs.RepositoryOwner.properties.node_id",
+      "originalFieldName": "node_id",
+      "jsonTypes": [
+        "string"
+      ],
+      "requiredAtParent": false,
+      "effectivelyRequired": false,
+      "arrayDepth": 2,
+      "safeForInference": false,
+      "safetyReasons": [
+        "CANONICAL_ENTITY_NOT_HIGH_CONFIDENCE"
+      ],
+      "canonicalEntity": {
+        "entity": "github.repository_node_id",
+        "confidence": "LOW",
+        "evidence": [
+          "compatible JSON type",
+          "compatible service",
+          "contextual field alias: node_id",
+          "resource-specific field path or reference",
+          "resource-specific field description",
+          "resource-specific tool metadata"
+        ],
+        "reasonCodes": [
+          "TYPE_COMPATIBLE",
+          "SERVICE_COMPATIBLE",
+          "ENTITY_CONTEXTUAL_FIELD_ALIAS",
+          "RESOURCE_CONTEXT_MATCH"
+        ]
+      },
+      "scopes": [
+        {
+          "kind": "repository",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires repository scope.",
+            "Scope supplied by $.repo."
+          ],
+          "valueSourcePath": "$.repo"
+        }
+      ]
+    },
+    {
+      "fieldId": "GITHUB_LIST_WORKFLOW_RUNS_FOR_A_REPOSITORY:output:$.data.workflow_runs[].pull_requests[].base.sha",
+      "direction": "output",
+      "jsonPath": "$.data.workflow_runs[].pull_requests[].base.sha",
+      "sourceSchemaPath": "$.$defs.PullRequestBranch.properties.sha",
+      "originalFieldName": "sha",
+      "jsonTypes": [
+        "string"
+      ],
+      "requiredAtParent": false,
+      "effectivelyRequired": false,
+      "arrayDepth": 2,
+      "safeForInference": true,
+      "safetyReasons": [
+        "HIGH_CONFIDENCE_CANONICAL_ENTITY"
+      ],
+      "canonicalEntity": {
+        "entity": "github.commit_sha",
+        "confidence": "HIGH",
+        "evidence": [
+          "compatible JSON type",
+          "compatible service",
+          "contextual field alias: sha",
+          "description pattern: commit sha",
+          "resource-specific field path or reference",
+          "resource-specific field description",
+          "resource-specific tool metadata"
+        ],
+        "reasonCodes": [
+          "TYPE_COMPATIBLE",
+          "SERVICE_COMPATIBLE",
+          "ENTITY_CONTEXTUAL_FIELD_ALIAS",
+          "ENTITY_DESCRIPTION_MATCH",
+          "RESOURCE_CONTEXT_MATCH"
+        ]
+      },
+      "scopes": [
+        {
+          "kind": "owner",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires owner scope.",
+            "Scope supplied by $.owner."
+          ],
+          "valueSourcePath": "$.owner"
+        },
+        {
+          "kind": "repository",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires repository scope.",
+            "Scope supplied by $.repo."
+          ],
+          "valueSourcePath": "$.repo"
+        }
+      ]
+    },
+    {
+      "fieldId": "GITHUB_LIST_WORKFLOW_RUNS_FOR_A_REPOSITORY:output:$.data.workflow_runs[].pull_requests[].head.ref",
+      "direction": "output",
+      "jsonPath": "$.data.workflow_runs[].pull_requests[].head.ref",
+      "sourceSchemaPath": "$.$defs.PullRequestBranch.properties.ref",
+      "originalFieldName": "ref",
+      "jsonTypes": [
+        "string"
+      ],
+      "requiredAtParent": false,
+      "effectivelyRequired": false,
+      "arrayDepth": 2,
+      "safeForInference": true,
+      "safetyReasons": [
+        "HIGH_CONFIDENCE_CANONICAL_ENTITY"
+      ],
+      "canonicalEntity": {
+        "entity": "github.branch_ref",
+        "confidence": "HIGH",
+        "evidence": [
+          "compatible JSON type",
+          "compatible service",
+          "contextual field alias: ref",
+          "description pattern: branch name",
+          "resource-specific field path or reference",
+          "resource-specific field description",
+          "resource-specific tool metadata"
+        ],
+        "reasonCodes": [
+          "TYPE_COMPATIBLE",
+          "SERVICE_COMPATIBLE",
+          "ENTITY_CONTEXTUAL_FIELD_ALIAS",
+          "ENTITY_DESCRIPTION_MATCH",
+          "RESOURCE_CONTEXT_MATCH"
+        ]
+      },
+      "scopes": [
+        {
+          "kind": "owner",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires owner scope.",
+            "Scope supplied by $.owner."
+          ],
+          "valueSourcePath": "$.owner"
+        },
+        {
+          "kind": "repository",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires repository scope.",
+            "Scope supplied by $.repo."
+          ],
+          "valueSourcePath": "$.repo"
+        }
+      ]
+    },
+    {
+      "fieldId": "GITHUB_LIST_WORKFLOW_RUNS_FOR_A_REPOSITORY:output:$.data.workflow_runs[].pull_requests[].head.repo.full_name",
+      "direction": "output",
+      "jsonPath": "$.data.workflow_runs[].pull_requests[].head.repo.full_name",
+      "sourceSchemaPath": "$.$defs.Repository.properties.full_name",
+      "originalFieldName": "full_name",
+      "jsonTypes": [
+        "string"
+      ],
+      "requiredAtParent": false,
+      "effectivelyRequired": false,
+      "arrayDepth": 2,
+      "safeForInference": false,
+      "safetyReasons": [
+        "CANONICAL_ENTITY_NOT_HIGH_CONFIDENCE"
+      ],
+      "canonicalEntity": {
+        "entity": "github.repository_name",
+        "confidence": "MEDIUM",
+        "evidence": [
+          "compatible JSON type",
+          "compatible service",
+          "description pattern: repository name",
+          "resource-specific field path or reference",
+          "resource-specific field description",
+          "resource-specific tool metadata"
+        ],
+        "reasonCodes": [
+          "TYPE_COMPATIBLE",
+          "SERVICE_COMPATIBLE",
+          "ENTITY_DESCRIPTION_MATCH",
+          "RESOURCE_CONTEXT_MATCH"
+        ]
+      },
+      "scopes": [
+        {
+          "kind": "owner",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires owner scope.",
+            "Scope supplied by $.owner."
+          ],
+          "valueSourcePath": "$.owner"
+        },
+        {
+          "kind": "repository",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires repository scope.",
+            "Scope supplied by $.repo."
+          ],
+          "valueSourcePath": "$.repo"
+        }
+      ]
+    },
+    {
+      "fieldId": "GITHUB_LIST_WORKFLOW_RUNS_FOR_A_REPOSITORY:output:$.data.workflow_runs[].pull_requests[].head.repo.id",
+      "direction": "output",
+      "jsonPath": "$.data.workflow_runs[].pull_requests[].head.repo.id",
+      "sourceSchemaPath": "$.$defs.Repository.properties.id",
+      "originalFieldName": "id",
+      "jsonTypes": [
+        "integer"
+      ],
+      "requiredAtParent": false,
+      "effectivelyRequired": false,
+      "arrayDepth": 2,
+      "safeForInference": true,
+      "safetyReasons": [
+        "HIGH_CONFIDENCE_CANONICAL_ENTITY"
+      ],
+      "canonicalEntity": {
+        "entity": "github.repository_id",
+        "confidence": "HIGH",
+        "evidence": [
+          "compatible JSON type",
+          "compatible service",
+          "contextual field alias: id",
+          "description pattern: repository id",
+          "resource-specific field path or reference",
+          "resource-specific field description",
+          "resource-specific tool metadata"
+        ],
+        "reasonCodes": [
+          "TYPE_COMPATIBLE",
+          "SERVICE_COMPATIBLE",
+          "ENTITY_CONTEXTUAL_FIELD_ALIAS",
+          "ENTITY_DESCRIPTION_MATCH",
+          "RESOURCE_CONTEXT_MATCH"
+        ]
+      },
+      "scopes": [
+        {
+          "kind": "repository",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires repository scope.",
+            "Scope supplied by $.repo."
+          ],
+          "valueSourcePath": "$.repo"
+        }
+      ]
+    },
+    {
+      "fieldId": "GITHUB_LIST_WORKFLOW_RUNS_FOR_A_REPOSITORY:output:$.data.workflow_runs[].pull_requests[].head.repo.name",
+      "direction": "output",
+      "jsonPath": "$.data.workflow_runs[].pull_requests[].head.repo.name",
+      "sourceSchemaPath": "$.$defs.Repository.properties.name",
+      "originalFieldName": "name",
+      "jsonTypes": [
+        "string"
+      ],
+      "requiredAtParent": false,
+      "effectivelyRequired": false,
+      "arrayDepth": 2,
+      "safeForInference": true,
+      "safetyReasons": [
+        "HIGH_CONFIDENCE_CANONICAL_ENTITY"
+      ],
+      "canonicalEntity": {
+        "entity": "github.repository_name",
+        "confidence": "HIGH",
+        "evidence": [
+          "compatible JSON type",
+          "compatible service",
+          "contextual field alias: name",
+          "description pattern: repository name",
+          "resource-specific field path or reference",
+          "resource-specific field description",
+          "resource-specific tool metadata"
+        ],
+        "reasonCodes": [
+          "TYPE_COMPATIBLE",
+          "SERVICE_COMPATIBLE",
+          "ENTITY_CONTEXTUAL_FIELD_ALIAS",
+          "ENTITY_DESCRIPTION_MATCH",
+          "RESOURCE_CONTEXT_MATCH"
+        ]
+      },
+      "scopes": [
+        {
+          "kind": "owner",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires owner scope.",
+            "Scope supplied by $.owner."
+          ],
+          "valueSourcePath": "$.owner"
+        },
+        {
+          "kind": "repository",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires repository scope.",
+            "Scope supplied by $.repo."
+          ],
+          "valueSourcePath": "$.repo"
+        }
+      ]
+    },
+    {
+      "fieldId": "GITHUB_LIST_WORKFLOW_RUNS_FOR_A_REPOSITORY:output:$.data.workflow_runs[].pull_requests[].head.repo.node_id",
+      "direction": "output",
+      "jsonPath": "$.data.workflow_runs[].pull_requests[].head.repo.node_id",
+      "sourceSchemaPath": "$.$defs.Repository.properties.node_id",
+      "originalFieldName": "node_id",
+      "jsonTypes": [
+        "string"
+      ],
+      "requiredAtParent": false,
+      "effectivelyRequired": false,
+      "arrayDepth": 2,
+      "safeForInference": false,
+      "safetyReasons": [
+        "CANONICAL_ENTITY_NOT_HIGH_CONFIDENCE"
+      ],
+      "canonicalEntity": {
+        "entity": "github.repository_node_id",
+        "confidence": "LOW",
+        "evidence": [
+          "compatible JSON type",
+          "compatible service",
+          "contextual field alias: node_id",
+          "resource-specific field path or reference",
+          "resource-specific field description",
+          "resource-specific tool metadata"
+        ],
+        "reasonCodes": [
+          "TYPE_COMPATIBLE",
+          "SERVICE_COMPATIBLE",
+          "ENTITY_CONTEXTUAL_FIELD_ALIAS",
+          "RESOURCE_CONTEXT_MATCH"
+        ]
+      },
+      "scopes": [
+        {
+          "kind": "repository",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires repository scope.",
+            "Scope supplied by $.repo."
+          ],
+          "valueSourcePath": "$.repo"
+        }
+      ]
+    },
+    {
+      "fieldId": "GITHUB_LIST_WORKFLOW_RUNS_FOR_A_REPOSITORY:output:$.data.workflow_runs[].pull_requests[].head.repo.owner.id",
+      "direction": "output",
+      "jsonPath": "$.data.workflow_runs[].pull_requests[].head.repo.owner.id",
+      "sourceSchemaPath": "$.$defs.RepositoryOwner.properties.id",
+      "originalFieldName": "id",
+      "jsonTypes": [
+        "integer"
+      ],
+      "requiredAtParent": false,
+      "effectivelyRequired": false,
+      "arrayDepth": 2,
+      "safeForInference": false,
+      "safetyReasons": [
+        "CANONICAL_ENTITY_NOT_HIGH_CONFIDENCE"
+      ],
+      "canonicalEntity": {
+        "entity": "github.workflow_run_id",
+        "confidence": "MEDIUM",
+        "evidence": [
+          "compatible JSON type",
+          "compatible service",
+          "contextual field alias: id",
+          "tool resource family is workflow_run",
+          "resource-specific field path or reference",
+          "resource-specific tool metadata"
+        ],
+        "reasonCodes": [
+          "TYPE_COMPATIBLE",
+          "SERVICE_COMPATIBLE",
+          "ENTITY_CONTEXTUAL_FIELD_ALIAS",
+          "RESOURCE_FAMILY_MATCH",
+          "RESOURCE_CONTEXT_MATCH"
+        ]
+      },
+      "scopes": [
+        {
+          "kind": "owner",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires owner scope.",
+            "Scope supplied by $.owner."
+          ],
+          "valueSourcePath": "$.owner"
+        },
+        {
+          "kind": "repository",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires repository scope.",
+            "Scope supplied by $.repo."
+          ],
+          "valueSourcePath": "$.repo"
+        },
+        {
+          "kind": "workflow",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires workflow scope."
+          ]
+        }
+      ]
+    },
+    {
+      "fieldId": "GITHUB_LIST_WORKFLOW_RUNS_FOR_A_REPOSITORY:output:$.data.workflow_runs[].pull_requests[].head.repo.owner.node_id",
+      "direction": "output",
+      "jsonPath": "$.data.workflow_runs[].pull_requests[].head.repo.owner.node_id",
+      "sourceSchemaPath": "$.$defs.RepositoryOwner.properties.node_id",
+      "originalFieldName": "node_id",
+      "jsonTypes": [
+        "string"
+      ],
+      "requiredAtParent": false,
+      "effectivelyRequired": false,
+      "arrayDepth": 2,
+      "safeForInference": false,
+      "safetyReasons": [
+        "CANONICAL_ENTITY_NOT_HIGH_CONFIDENCE"
+      ],
+      "canonicalEntity": {
+        "entity": "github.repository_node_id",
+        "confidence": "LOW",
+        "evidence": [
+          "compatible JSON type",
+          "compatible service",
+          "contextual field alias: node_id",
+          "resource-specific field path or reference",
+          "resource-specific field description",
+          "resource-specific tool metadata"
+        ],
+        "reasonCodes": [
+          "TYPE_COMPATIBLE",
+          "SERVICE_COMPATIBLE",
+          "ENTITY_CONTEXTUAL_FIELD_ALIAS",
+          "RESOURCE_CONTEXT_MATCH"
+        ]
+      },
+      "scopes": [
+        {
+          "kind": "repository",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires repository scope.",
+            "Scope supplied by $.repo."
+          ],
+          "valueSourcePath": "$.repo"
+        }
+      ]
+    },
+    {
+      "fieldId": "GITHUB_LIST_WORKFLOW_RUNS_FOR_A_REPOSITORY:output:$.data.workflow_runs[].pull_requests[].head.sha",
+      "direction": "output",
+      "jsonPath": "$.data.workflow_runs[].pull_requests[].head.sha",
+      "sourceSchemaPath": "$.$defs.PullRequestBranch.properties.sha",
+      "originalFieldName": "sha",
+      "jsonTypes": [
+        "string"
+      ],
+      "requiredAtParent": false,
+      "effectivelyRequired": false,
+      "arrayDepth": 2,
+      "safeForInference": true,
+      "safetyReasons": [
+        "HIGH_CONFIDENCE_CANONICAL_ENTITY"
+      ],
+      "canonicalEntity": {
+        "entity": "github.commit_sha",
+        "confidence": "HIGH",
+        "evidence": [
+          "compatible JSON type",
+          "compatible service",
+          "contextual field alias: sha",
+          "description pattern: commit sha",
+          "resource-specific field path or reference",
+          "resource-specific field description",
+          "resource-specific tool metadata"
+        ],
+        "reasonCodes": [
+          "TYPE_COMPATIBLE",
+          "SERVICE_COMPATIBLE",
+          "ENTITY_CONTEXTUAL_FIELD_ALIAS",
+          "ENTITY_DESCRIPTION_MATCH",
+          "RESOURCE_CONTEXT_MATCH"
+        ]
+      },
+      "scopes": [
+        {
+          "kind": "owner",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires owner scope.",
+            "Scope supplied by $.owner."
+          ],
+          "valueSourcePath": "$.owner"
+        },
+        {
+          "kind": "repository",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires repository scope.",
+            "Scope supplied by $.repo."
+          ],
+          "valueSourcePath": "$.repo"
+        }
+      ]
+    },
+    {
+      "fieldId": "GITHUB_LIST_WORKFLOW_RUNS_FOR_A_REPOSITORY:output:$.data.workflow_runs[].pull_requests[].id",
+      "direction": "output",
+      "jsonPath": "$.data.workflow_runs[].pull_requests[].id",
+      "sourceSchemaPath": "$.$defs.PullRequest.properties.id",
+      "originalFieldName": "id",
+      "jsonTypes": [
+        "integer"
+      ],
+      "requiredAtParent": false,
+      "effectivelyRequired": false,
+      "arrayDepth": 2,
+      "safeForInference": false,
+      "safetyReasons": [
+        "CANONICAL_ENTITY_NOT_HIGH_CONFIDENCE"
+      ],
+      "canonicalEntity": {
+        "entity": "github.workflow_run_id",
+        "confidence": "MEDIUM",
+        "evidence": [
+          "compatible JSON type",
+          "compatible service",
+          "contextual field alias: id",
+          "tool resource family is workflow_run",
+          "resource-specific field path or reference",
+          "resource-specific tool metadata"
+        ],
+        "reasonCodes": [
+          "TYPE_COMPATIBLE",
+          "SERVICE_COMPATIBLE",
+          "ENTITY_CONTEXTUAL_FIELD_ALIAS",
+          "RESOURCE_FAMILY_MATCH",
+          "RESOURCE_CONTEXT_MATCH"
+        ]
+      },
+      "scopes": [
+        {
+          "kind": "owner",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires owner scope.",
+            "Scope supplied by $.owner."
+          ],
+          "valueSourcePath": "$.owner"
+        },
+        {
+          "kind": "repository",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires repository scope.",
+            "Scope supplied by $.repo."
+          ],
+          "valueSourcePath": "$.repo"
+        },
+        {
+          "kind": "workflow",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires workflow scope."
+          ]
+        }
+      ]
+    },
+    {
+      "fieldId": "GITHUB_LIST_WORKFLOW_RUNS_FOR_A_REPOSITORY:output:$.data.workflow_runs[].pull_requests[].number",
+      "direction": "output",
+      "jsonPath": "$.data.workflow_runs[].pull_requests[].number",
+      "sourceSchemaPath": "$.$defs.PullRequest.properties.number",
+      "originalFieldName": "number",
+      "jsonTypes": [
+        "integer"
+      ],
+      "requiredAtParent": false,
+      "effectivelyRequired": false,
+      "arrayDepth": 2,
+      "safeForInference": true,
+      "safetyReasons": [
+        "HIGH_CONFIDENCE_CANONICAL_ENTITY"
+      ],
+      "canonicalEntity": {
+        "entity": "github.pull_request_number",
+        "confidence": "HIGH",
+        "evidence": [
+          "compatible JSON type",
+          "compatible service",
+          "contextual field alias: number",
+          "description pattern: pull request number",
+          "resource-specific field path or reference",
+          "resource-specific field description",
+          "resource-specific tool metadata"
+        ],
+        "reasonCodes": [
+          "TYPE_COMPATIBLE",
+          "SERVICE_COMPATIBLE",
+          "ENTITY_CONTEXTUAL_FIELD_ALIAS",
+          "ENTITY_DESCRIPTION_MATCH",
+          "RESOURCE_CONTEXT_MATCH"
+        ]
+      },
+      "scopes": [
+        {
+          "kind": "owner",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires owner scope.",
+            "Scope supplied by $.owner."
+          ],
+          "valueSourcePath": "$.owner"
+        },
+        {
+          "kind": "repository",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires repository scope.",
+            "Scope supplied by $.repo."
+          ],
+          "valueSourcePath": "$.repo"
+        }
+      ]
+    },
+    {
+      "fieldId": "GITHUB_LIST_WORKFLOW_RUNS_FOR_A_REPOSITORY:output:$.data.workflow_runs[].referenced_workflows[].ref",
+      "direction": "output",
+      "jsonPath": "$.data.workflow_runs[].referenced_workflows[].ref",
+      "sourceSchemaPath": "$.$defs.ReferencedWorkflow.properties.ref",
+      "originalFieldName": "ref",
+      "jsonTypes": [
+        "string"
+      ],
+      "requiredAtParent": false,
+      "effectivelyRequired": false,
+      "arrayDepth": 2,
+      "safeForInference": false,
+      "safetyReasons": [
+        "CANONICAL_ENTITY_NOT_HIGH_CONFIDENCE"
+      ],
+      "canonicalEntity": {
+        "entity": "github.branch_ref",
+        "confidence": "LOW",
+        "evidence": [
+          "compatible JSON type",
+          "compatible service",
+          "contextual field alias: ref",
+          "resource-specific field path or reference",
+          "resource-specific field description",
+          "resource-specific tool metadata"
+        ],
+        "reasonCodes": [
+          "TYPE_COMPATIBLE",
+          "SERVICE_COMPATIBLE",
+          "ENTITY_CONTEXTUAL_FIELD_ALIAS",
+          "RESOURCE_CONTEXT_MATCH"
+        ]
+      },
+      "scopes": [
+        {
+          "kind": "owner",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires owner scope.",
+            "Scope supplied by $.owner."
+          ],
+          "valueSourcePath": "$.owner"
+        },
+        {
+          "kind": "repository",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires repository scope.",
+            "Scope supplied by $.repo."
+          ],
+          "valueSourcePath": "$.repo"
+        }
+      ]
+    },
+    {
+      "fieldId": "GITHUB_LIST_WORKFLOW_RUNS_FOR_A_REPOSITORY:output:$.data.workflow_runs[].referenced_workflows[].sha",
+      "direction": "output",
+      "jsonPath": "$.data.workflow_runs[].referenced_workflows[].sha",
+      "sourceSchemaPath": "$.$defs.ReferencedWorkflow.properties.sha",
+      "originalFieldName": "sha",
+      "jsonTypes": [
+        "string"
+      ],
+      "requiredAtParent": false,
+      "effectivelyRequired": false,
+      "arrayDepth": 2,
+      "safeForInference": false,
+      "safetyReasons": [
+        "CANONICAL_ENTITY_NOT_HIGH_CONFIDENCE"
+      ],
+      "canonicalEntity": {
+        "entity": "github.commit_sha",
+        "confidence": "LOW",
+        "evidence": [
+          "compatible JSON type",
+          "compatible service",
+          "contextual field alias: sha",
+          "resource-specific field path or reference",
+          "resource-specific field description",
+          "resource-specific tool metadata"
+        ],
+        "reasonCodes": [
+          "TYPE_COMPATIBLE",
+          "SERVICE_COMPATIBLE",
+          "ENTITY_CONTEXTUAL_FIELD_ALIAS",
+          "RESOURCE_CONTEXT_MATCH"
+        ]
+      },
+      "scopes": [
+        {
+          "kind": "owner",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires owner scope.",
+            "Scope supplied by $.owner."
+          ],
+          "valueSourcePath": "$.owner"
+        },
+        {
+          "kind": "repository",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires repository scope.",
+            "Scope supplied by $.repo."
+          ],
+          "valueSourcePath": "$.repo"
+        }
+      ]
+    },
+    {
+      "fieldId": "GITHUB_LIST_WORKFLOW_RUNS_FOR_A_REPOSITORY:output:$.data.workflow_runs[].repository.full_name",
+      "direction": "output",
+      "jsonPath": "$.data.workflow_runs[].repository.full_name",
+      "sourceSchemaPath": "$.$defs.Repository.properties.full_name",
+      "originalFieldName": "full_name",
+      "jsonTypes": [
+        "string"
+      ],
+      "requiredAtParent": false,
+      "effectivelyRequired": false,
+      "arrayDepth": 1,
+      "safeForInference": false,
+      "safetyReasons": [
+        "CANONICAL_ENTITY_NOT_HIGH_CONFIDENCE"
+      ],
+      "canonicalEntity": {
+        "entity": "github.repository_name",
+        "confidence": "MEDIUM",
+        "evidence": [
+          "compatible JSON type",
+          "compatible service",
+          "description pattern: repository name",
+          "resource-specific field path or reference",
+          "resource-specific field description",
+          "resource-specific tool metadata"
+        ],
+        "reasonCodes": [
+          "TYPE_COMPATIBLE",
+          "SERVICE_COMPATIBLE",
+          "ENTITY_DESCRIPTION_MATCH",
+          "RESOURCE_CONTEXT_MATCH"
+        ]
+      },
+      "scopes": [
+        {
+          "kind": "owner",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires owner scope.",
+            "Scope supplied by $.owner."
+          ],
+          "valueSourcePath": "$.owner"
+        },
+        {
+          "kind": "repository",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires repository scope.",
+            "Scope supplied by $.repo."
+          ],
+          "valueSourcePath": "$.repo"
+        }
+      ]
+    },
+    {
+      "fieldId": "GITHUB_LIST_WORKFLOW_RUNS_FOR_A_REPOSITORY:output:$.data.workflow_runs[].repository.id",
+      "direction": "output",
+      "jsonPath": "$.data.workflow_runs[].repository.id",
+      "sourceSchemaPath": "$.$defs.Repository.properties.id",
+      "originalFieldName": "id",
+      "jsonTypes": [
+        "integer"
+      ],
+      "requiredAtParent": false,
+      "effectivelyRequired": false,
+      "arrayDepth": 1,
+      "safeForInference": true,
+      "safetyReasons": [
+        "HIGH_CONFIDENCE_CANONICAL_ENTITY"
+      ],
+      "canonicalEntity": {
+        "entity": "github.repository_id",
+        "confidence": "HIGH",
+        "evidence": [
+          "compatible JSON type",
+          "compatible service",
+          "contextual field alias: id",
+          "description pattern: repository id",
+          "resource-specific field path or reference",
+          "resource-specific field description",
+          "resource-specific tool metadata"
+        ],
+        "reasonCodes": [
+          "TYPE_COMPATIBLE",
+          "SERVICE_COMPATIBLE",
+          "ENTITY_CONTEXTUAL_FIELD_ALIAS",
+          "ENTITY_DESCRIPTION_MATCH",
+          "RESOURCE_CONTEXT_MATCH"
+        ]
+      },
+      "scopes": [
+        {
+          "kind": "repository",
+          "requiredForIdentity": true,
+          "evidence": [
+            "Ontology requires repository scope.",
+            "Scope supplied by $.repo."
+          ],
+          "valueSourcePath": "$.repo"
+        }
+      ]
+    }
+  ],
+  "unresolvedReferences": [],
+  "unsupportedSchemaFeatures": [],
+  "warnings": []
+}

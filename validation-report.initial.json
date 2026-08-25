@@ -1,0 +1,84 @@
+{
+  "format": "validation-report-initial-v1",
+  "source": {
+    "catalogFormat": "normalized-tool-catalog-v1",
+    "toolCount": 1360,
+    "toolkitCounts": {
+      "github": 893,
+      "googlesuper": 467
+    },
+    "toolkitVersions": {
+      "github": "20260713_00",
+      "googlesuper": "20260714_00"
+    },
+    "fixtureFormat": "dependency-evaluation-cases-v1",
+    "fixtureCaseCount": 50
+  },
+  "candidateGeneration": {
+    "candidateCount": 148598,
+    "generationReasonCounts": {
+      "GENERIC_IDENTITY_FIELD": 50750,
+      "EXACT_CANONICAL_ENTITY": 90098,
+      "HARD_SEPARATION_PAIR": 6803,
+      "REPOSITORY_FULL_NAME_TRANSFORMATION": 890,
+      "ISSUE_PULL_REQUEST_NUMBER_AMBIGUITY": 52,
+      "CONTACT_EMAIL_RECIPIENT_DISAMBIGUATION": 5
+    }
+  },
+  "decisions": {
+    "accepted": 6456,
+    "uncertain": 25150,
+    "rejected": 116992,
+    "decisionReasonCounts": {
+      "GENERIC_FIELD_WITHOUT_RESOURCE_EVIDENCE": 50750,
+      "PRODUCER_ADDS_NO_NEW_INFORMATION": 59439,
+      "ENTITY_MISMATCH": 4215,
+      "EXACT_CANONICAL_ENTITY_MATCH": 6456,
+      "LOW_CONFIDENCE_CANONICAL_ENTITY": 759,
+      "PROTOCOL_IDENTITY_MISMATCH": 960,
+      "COLLECTION_REQUIRES_SELECTION": 23016,
+      "TRANSFORMATION_REQUIRED": 890,
+      "AMBIGUOUS_ISSUE_PULL_REQUEST_NUMBER": 52,
+      "SERVICE_MISMATCH": 1628,
+      "DEPRECATED_PRODUCER": 428,
+      "IDENTITY_RESOLUTION_REQUIRES_DISAMBIGUATION": 5
+    }
+  },
+  "safetyAndWorkflow": {
+    "genericFieldRejections": 50750,
+    "sameInformationRejections": 59439,
+    "serviceMismatchRejections": 1628,
+    "typeMismatchRejections": 0,
+    "entityMismatchRejections": 4215,
+    "protocolIdentityMismatchRejections": 960,
+    "selectionRequired": 26442,
+    "disambiguationRequired": 25150,
+    "transformationRequired": 890,
+    "deprecatedProducerUncertain": 428,
+    "incompleteSchemaUncertain": 0
+  },
+  "goldEvaluation": {
+    "totalCases": 50,
+    "generatedCases": 50,
+    "missingCases": [],
+    "decisionMatches": 50,
+    "reasonMatches": 50,
+    "flagMatches": 50,
+    "positiveCases": 20,
+    "positiveAccepted": 20,
+    "falseNegatives": [],
+    "positiveRecall": 1,
+    "negativeCases": 20,
+    "negativeRejected": 20,
+    "falsePositives": [],
+    "negativeRejectionRate": 1,
+    "ambiguousCases": 10,
+    "ambiguousIncorrectlyAccepted": []
+  },
+  "invariants": {
+    "everyCandidatePartitionedExactlyOnce": true,
+    "decisionFilesSortedByCandidateId": true,
+    "noAmbiguousCaseAccepted": true,
+    "noGoldCaseMissing": true
+  }
+}
